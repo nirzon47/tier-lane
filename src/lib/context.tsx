@@ -12,8 +12,6 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
 	})
 
 	const updateFilter = (key: keyof FilterType, value: string | string[]) => {
-		console.log(filter)
-
 		setFilter((prev) => {
 			return { ...prev, [key]: value }
 		})

@@ -1,0 +1,11 @@
+export type FilterType = {
+	name: string
+	rarity: string[]
+	hull: string[]
+	faction: string[]
+}
+
+export type FilterContextType = {
+	filter: FilterType
+	updateFilter: (key: keyof FilterType, value: string | string[]) => void
+}

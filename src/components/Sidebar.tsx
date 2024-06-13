@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { cn } from '../lib/cn'
+import { FilterContext } from '../lib/context'
 
 const hullTypes = [
 	{ id: 1, name: 'DD' },
@@ -35,6 +36,14 @@ const rarityTypes = [
 ]
 
 const Sidebar = () => {
+	const filterContext = useContext(FilterContext)
+
+	const handleNameFilterChange = (
+		event: React.ChangeEvent<HTMLInputElement>,
+	) => {
+		filterContext?.updateFilter('name', event.target.value)
+	}
+
 	return (
 		<aside className='col-span-2 grid gap-3'>
 			<div className='grid gap-px'>
@@ -46,6 +55,8 @@ const Sidebar = () => {
 					name='search'
 					id='search'
 					className='max-w-xs bg-black/20 px-4 py-1 focus:outline-none'
+					value={filterContext?.filter.name}
+					onChange={handleNameFilterChange}
 				/>
 			</div>
 			<div className='grid gap-2'>
@@ -74,18 +85,30 @@ const HullFilters = () => {
 	)
 }
 
+// Individual hull filter
 const HullFilter = ({ name }: { name: string }) => {
-	const [isOn, setIsOn] = useState<boolean>(false)
+	const filterContext = useContext(FilterContext)
+
+	const handleHullFilterClick = () => {
+		if (filterContext?.filter.hull.includes(name)) {
+			filterContext?.updateFilter(
+				'hull',
+				filterContext?.filter.hull.filter((hull) => hull !== name),
+			)
+		} else {
+			filterContext?.updateFilter('hull', [...filterContext.filter.hull, name])
+		}
+	}
 
 	return (
 		<button
 			className={cn(
-				'font-zhun w-24 bg-cover bg-center py-1 text-sm duration-150 hover:backdrop-brightness-50',
-				isOn
+				'w-24 bg-cover bg-center py-1 font-zhun text-sm duration-150 hover:backdrop-brightness-50',
+				filterContext?.filter.hull.includes(name)
 					? "bg-[url('src/assets/images/button-on.webp')]"
 					: "bg-[url('src/assets/images/button-off.webp')]",
 			)}
-			onClick={() => setIsOn(!isOn)}
+			onClick={handleHullFilterClick}
 		>
 			{name}
 		</button>
@@ -102,18 +125,33 @@ const FactionFilters = () => {
 	)
 }
 
+// Individual faction filter
 const FactionFilter = ({ name }: { name: string }) => {
-	const [isOn, setIsOn] = useState<boolean>(false)
+	const filterContext = useContext(FilterContext)
+
+	const handleFactionFilterClick = () => {
+		if (filterContext?.filter.faction.includes(name)) {
+			filterContext?.updateFilter(
+				'faction',
+				filterContext?.filter.faction.filter((faction) => faction !== name),
+			)
+		} else {
+			filterContext?.updateFilter('faction', [
+				...filterContext.filter.faction,
+				name,
+			])
+		}
+	}
 
 	return (
 		<button
 			className={cn(
-				'font-zhun w-24 bg-cover bg-center px-1 py-px text-xs duration-150 hover:backdrop-brightness-50',
-				isOn
+				'h-[34px] w-24 bg-cover bg-center px-1 py-px font-zhun text-xs duration-150 hover:backdrop-brightness-50',
+				filterContext?.filter.faction.includes(name)
 					? "bg-[url('src/assets/images/button-on.webp')]"
 					: "bg-[url('src/assets/images/button-off.webp')]",
 			)}
-			onClick={() => setIsOn(!isOn)}
+			onClick={handleFactionFilterClick}
 		>
 			{name}
 		</button>
@@ -130,18 +168,33 @@ const RarityFilters = () => {
 	)
 }
 
+// Individual rarity filter
 const RarityFilter = ({ name }: { name: string }) => {
-	const [isOn, setIsOn] = useState<boolean>(false)
+	const filterContext = useContext(FilterContext)
+
+	const handleRarityFilterClick = () => {
+		if (filterContext?.filter.rarity.includes(name)) {
+			filterContext?.updateFilter(
+				'rarity',
+				filterContext?.filter.rarity.filter((rarity) => rarity !== name),
+			)
+		} else {
+			filterContext?.updateFilter('rarity', [
+				...filterContext.filter.rarity,
+				name,
+			])
+		}
+	}
 
 	return (
 		<button
 			className={cn(
-				'font-zhun w-24 bg-cover bg-center py-1 text-sm duration-150 hover:backdrop-brightness-50',
-				isOn
+				'w-24 bg-cover bg-center py-1 font-zhun text-sm duration-150 hover:backdrop-brightness-50',
+				filterContext?.filter.rarity.includes(name)
 					? "bg-[url('src/assets/images/button-on.webp')]"
 					: "bg-[url('src/assets/images/button-off.webp')]",
 			)}
-			onClick={() => setIsOn(!isOn)}
+			onClick={handleRarityFilterClick}
 		>
 			{name}
 		</button>

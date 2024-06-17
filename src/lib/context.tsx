@@ -40,7 +40,6 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
 
 			return matches
 		})
-		console.log(filteredShips)
 
 		setShips(filteredShips)
 		setFilter(newFilter)

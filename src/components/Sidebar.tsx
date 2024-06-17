@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { cn } from '../lib/cn'
-import { FilterContext } from '../lib/context'
+import { FilterContext, FilterProvider } from '../lib/context'
 
 const hullTypes = [
 	{ id: 1, name: 'DD' },
@@ -28,11 +28,11 @@ const factionTypes = [
 ]
 
 const rarityTypes = [
-	{ id: 1, name: 'Common' },
-	{ id: 2, name: 'Rare' },
-	{ id: 3, name: 'Elite' },
-	{ id: 4, name: 'Super Rare' },
-	{ id: 5, name: 'Ultra' },
+	{ id: 1, name: 'Common', value: 'Common' },
+	{ id: 2, name: 'Rare', value: 'Rare' },
+	{ id: 3, name: 'Elite', value: 'Elite' },
+	{ id: 4, name: 'Super Rare', value: 'Super Rare' },
+	{ id: 5, name: 'Ultra', value: 'Ultra Rare' },
 ]
 
 const Sidebar = () => {
@@ -45,34 +45,36 @@ const Sidebar = () => {
 	}
 
 	return (
-		<aside className='col-span-2 flex h-full flex-col gap-3'>
-			<div className='grid gap-px'>
-				<label htmlFor='search' className='pl-1 text-sm opacity-75'>
-					Search by name
-				</label>
-				<input
-					type='text'
-					name='search'
-					id='search'
-					className='max-w-xs bg-black/20 px-4 py-1 focus:outline-none'
-					value={filterContext?.filter.name}
-					onChange={handleNameFilterChange}
-				/>
-			</div>
-			<div className='grid gap-2'>
-				<label className='pl-1 text-sm opacity-75'>Index</label>
-				<HullFilters />
-			</div>
-			<div className='grid gap-2'>
-				<label className='pl-1 text-sm opacity-75'>Faction</label>
-				<FactionFilters />
-			</div>
-			<div className='grid gap-2'>
-				<label className='pl-1 text-sm opacity-75'>Rarity</label>
-				<RarityFilters />
-			</div>
-			<SearchResults />
-		</aside>
+		<FilterProvider>
+			<aside className='col-span-2 flex h-full flex-col gap-3'>
+				<div className='grid gap-px'>
+					<label htmlFor='search' className='pl-1 text-sm opacity-75'>
+						Search by name
+					</label>
+					<input
+						type='text'
+						name='search'
+						id='search'
+						className='max-w-xs bg-black/20 px-4 py-1 focus:outline-none'
+						value={filterContext?.filter.name}
+						onChange={handleNameFilterChange}
+					/>
+				</div>
+				<div className='grid gap-2'>
+					<label className='pl-1 text-sm opacity-75'>Index</label>
+					<HullFilters />
+				</div>
+				<div className='grid gap-2'>
+					<label className='pl-1 text-sm opacity-75'>Faction</label>
+					<FactionFilters />
+				</div>
+				<div className='grid gap-2'>
+					<label className='pl-1 text-sm opacity-75'>Rarity</label>
+					<RarityFilters />
+				</div>
+				<SearchResults />
+			</aside>
+		</FilterProvider>
 	)
 }
 
@@ -170,19 +172,19 @@ const RarityFilters = () => {
 }
 
 // Individual rarity filter
-const RarityFilter = ({ name }: { name: string }) => {
+const RarityFilter = ({ name, value }: { name: string; value: string }) => {
 	const filterContext = useContext(FilterContext)
 
 	const handleRarityFilterClick = () => {
-		if (filterContext?.filter.rarity.includes(name)) {
+		if (filterContext?.filter.rarity.includes(value)) {
 			filterContext?.updateFilter(
 				'rarity',
-				filterContext?.filter.rarity.filter((rarity) => rarity !== name),
+				filterContext?.filter.rarity.filter((rarity) => rarity !== value),
 			)
 		} else {
 			filterContext?.updateFilter('rarity', [
 				...filterContext.filter.rarity,
-				name,
+				value,
 			])
 		}
 	}
@@ -206,7 +208,9 @@ const SearchResults = () => {
 	const ships = useContext(FilterContext)?.ships
 	if (ships && ships.length > 100) {
 		return (
-			<div className='grid flex-1 grid-cols-5 gap-2'>Apply more filters</div>
+			<div className='grid flex-1 items-center pl-4'>
+				<p className='font-zhun'>Apply more filters to see results...</p>
+			</div>
 		)
 	}
 

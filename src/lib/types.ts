@@ -8,4 +8,13 @@ export type FilterType = {
 export type FilterContextType = {
 	filter: FilterType
 	updateFilter: (key: keyof FilterType, value: string | string[]) => void
+	ships: ShipType[]
+}
+
+export type ShipType = {
+	name: string
+	images: string[]
+	hull: string
+	faction: string
+	rarity: string
 }

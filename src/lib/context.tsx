@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react'
-import { FilterContextType, FilterType } from './types'
+import { FilterContextType, FilterType, ShipType } from './types'
+import shipList from '../assets/shiplist.json'
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined)
 
@@ -10,15 +11,43 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
 		hull: [],
 		faction: [],
 	})
+	const [ships, setShips] = useState<ShipType[]>(shipList)
 
 	const updateFilter = (key: keyof FilterType, value: string | string[]) => {
-		setFilter((prev) => {
-			return { ...prev, [key]: value }
+		const newFilter = { ...filter, [key]: value }
+
+		// Apply filter to ships
+		const filteredShips = shipList.filter((ship: ShipType) => {
+			let matches = true
+
+			if (newFilter.name) {
+				matches =
+					matches &&
+					ship.name.toLowerCase().includes(newFilter.name.toLowerCase())
+			}
+
+			if (newFilter.rarity.length > 0) {
+				matches = matches && newFilter.rarity.includes(ship.rarity)
+			}
+
+			if (newFilter.hull.length > 0) {
+				matches = matches && newFilter.hull.includes(ship.hull)
+			}
+
+			if (newFilter.faction.length > 0) {
+				matches = matches && newFilter.faction.includes(ship.faction)
+			}
+
+			return matches
 		})
+		console.log(filteredShips)
+
+		setShips(filteredShips)
+		setFilter(newFilter)
 	}
 
 	return (
-		<FilterContext.Provider value={{ filter, updateFilter }}>
+		<FilterContext.Provider value={{ filter, updateFilter, ships }}>
 			{children}
 		</FilterContext.Provider>
 	)

@@ -45,7 +45,7 @@ const Sidebar = () => {
 	}
 
 	return (
-		<aside className='col-span-2 grid gap-3'>
+		<aside className='col-span-2 flex h-full flex-col gap-3'>
 			<div className='grid gap-px'>
 				<label htmlFor='search' className='pl-1 text-sm opacity-75'>
 					Search by name
@@ -68,16 +68,17 @@ const Sidebar = () => {
 				<FactionFilters />
 			</div>
 			<div className='grid gap-2'>
-				<label className='pl-1 text-sm opacity-75'>Faction</label>
+				<label className='pl-1 text-sm opacity-75'>Rarity</label>
 				<RarityFilters />
 			</div>
+			<SearchResults />
 		</aside>
 	)
 }
 
 const HullFilters = () => {
 	return (
-		<div className='flex flex-wrap gap-x-3 gap-y-2'>
+		<div className='flex flex-wrap gap-2'>
 			{hullTypes.map((hullType) => (
 				<HullFilter key={hullType.id} {...hullType} />
 			))}
@@ -117,7 +118,7 @@ const HullFilter = ({ name }: { name: string }) => {
 
 const FactionFilters = () => {
 	return (
-		<div className='flex flex-wrap gap-x-3 gap-y-2'>
+		<div className='flex flex-wrap gap-2'>
 			{factionTypes.map((factionType) => (
 				<FactionFilter key={factionType.id} {...factionType} />
 			))}
@@ -160,7 +161,7 @@ const FactionFilter = ({ name }: { name: string }) => {
 
 const RarityFilters = () => {
 	return (
-		<div className='flex flex-wrap gap-x-3 gap-y-2'>
+		<div className='flex flex-wrap gap-2'>
 			{rarityTypes.map((rarityType) => (
 				<RarityFilter key={rarityType.id} {...rarityType} />
 			))}
@@ -198,6 +199,23 @@ const RarityFilter = ({ name }: { name: string }) => {
 		>
 			{name}
 		</button>
+	)
+}
+
+const SearchResults = () => {
+	const ships = useContext(FilterContext)?.ships
+	if (ships && ships.length > 100) {
+		return (
+			<div className='grid flex-1 grid-cols-5 gap-2'>Apply more filters</div>
+		)
+	}
+
+	return (
+		<div className='grid flex-1 grid-cols-5 gap-2 overflow-hidden'>
+			<div className='overflow-scroll'>
+				{ships?.map((ship) => <div key={ship.name}>{ship.name}</div>)}
+			</div>
+		</div>
 	)
 }
 

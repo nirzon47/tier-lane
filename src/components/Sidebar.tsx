@@ -1,6 +1,7 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { cn } from '../lib/cn'
 import { FilterContext, FilterProvider } from '../lib/context'
+import { ShipType } from '../lib/types'
 
 const hullTypes = [
 	{ id: 1, name: 'DD' },
@@ -28,11 +29,11 @@ const factionTypes = [
 ]
 
 const rarityTypes = [
-	{ id: 1, name: 'Common', value: 'Common' },
-	{ id: 2, name: 'Rare', value: 'Rare' },
-	{ id: 3, name: 'Elite', value: 'Elite' },
-	{ id: 4, name: 'Super Rare', value: 'Super Rare' },
-	{ id: 5, name: 'Ultra', value: 'Ultra Rare' },
+	{ id: 1, name: 'Common' },
+	{ id: 2, name: 'Rare' },
+	{ id: 3, name: 'Elite' },
+	{ id: 4, name: 'Super Rare' },
+	{ id: 5, name: 'Ultra Rare' },
 ]
 
 const Sidebar = () => {
@@ -46,7 +47,7 @@ const Sidebar = () => {
 
 	return (
 		<FilterProvider>
-			<aside className='col-span-2 flex h-full flex-col gap-3'>
+			<aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto'>
 				<div className='grid gap-px'>
 					<label htmlFor='search' className='pl-1 text-sm opacity-75'>
 						Search by name
@@ -72,7 +73,9 @@ const Sidebar = () => {
 					<label className='pl-1 text-sm opacity-75'>Rarity</label>
 					<RarityFilters />
 				</div>
-				<SearchResults />
+				<div className='flex-1'>
+					<SearchResults />
+				</div>
 			</aside>
 		</FilterProvider>
 	)
@@ -172,19 +175,19 @@ const RarityFilters = () => {
 }
 
 // Individual rarity filter
-const RarityFilter = ({ name, value }: { name: string; value: string }) => {
+const RarityFilter = ({ name }: { name: string }) => {
 	const filterContext = useContext(FilterContext)
 
 	const handleRarityFilterClick = () => {
-		if (filterContext?.filter.rarity.includes(value)) {
+		if (filterContext?.filter.rarity.includes(name)) {
 			filterContext?.updateFilter(
 				'rarity',
-				filterContext?.filter.rarity.filter((rarity) => rarity !== value),
+				filterContext?.filter.rarity.filter((rarity) => rarity !== name),
 			)
 		} else {
 			filterContext?.updateFilter('rarity', [
 				...filterContext.filter.rarity,
-				value,
+				name,
 			])
 		}
 	}
@@ -206,19 +209,37 @@ const RarityFilter = ({ name, value }: { name: string; value: string }) => {
 
 const SearchResults = () => {
 	const ships = useContext(FilterContext)?.ships
-	if (ships && ships.length > 100) {
+	if (ships && ships.length > 50) {
 		return (
-			<div className='grid flex-1 items-center pl-4'>
-				<p className='font-zhun'>Apply more filters to see results...</p>
+			<div className='grid h-full items-center px-4'>
+				<p className='font-zhun'>Apply filters to see results...</p>
 			</div>
 		)
 	}
 
 	return (
-		<div className='grid flex-1 grid-cols-5 gap-2 overflow-hidden'>
-			<div className='overflow-scroll'>
-				{ships?.map((ship) => <div key={ship.name}>{ship.name}</div>)}
-			</div>
+		<div className='flex flex-1 flex-wrap gap-2 pr-8'>
+			{ships?.map((ship) => <Ship key={ship.name} ship={ship} />)}
+		</div>
+	)
+}
+
+const Ship = ({ ship }: { ship: ShipType }) => {
+	const [image, setImage] = useState<number>(0)
+
+	const cycleImage = () => {
+		setImage((prev) => (prev + 1 >= ship.images.length ? 0 : prev + 1))
+	}
+
+	return (
+		<div className='w-16 space-y-2 bg-white/10 p-1'>
+			<img
+				src={`https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/${ship.images[image]}`}
+				alt={ship.name}
+				onClick={cycleImage}
+				className='w-16'
+			/>
+			<p className='truncate text-center font-zhun text-[10px]'>{ship.name}</p>
 		</div>
 	)
 }

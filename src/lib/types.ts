@@ -17,4 +17,5 @@ export type ShipType = {
 	hull: string
 	faction: string
 	rarity: string
+	id: string
 }

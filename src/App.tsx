@@ -1,14 +1,14 @@
-import { DragDropContext } from 'react-beautiful-dnd'
+import { DndContext } from '@dnd-kit/core'
 import Content from './components/Content'
 import Header from './components/Header'
 
 const App = () => {
 	return (
 		<>
-			<DragDropContext onDragEnd={() => {}}>
+			<DndContext>
 				<Header />
 				<Content />
-			</DragDropContext>
+			</DndContext>
 		</>
 	)
 }

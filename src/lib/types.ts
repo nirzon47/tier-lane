@@ -1,26 +1,26 @@
 export type FilterType = {
-	name: string
-	rarity: string[]
-	hull: string[]
-	faction: string[]
+   name: string
+   rarity: string[]
+   hull: string[]
+   faction: string[]
 }
 
 export type FilterContextType = {
-	filter: FilterType
-	updateFilter: (key: keyof FilterType, value: string | string[]) => void
-	ships: ShipType[]
+   filter: FilterType
+   updateFilter: (key: keyof FilterType, value: string | string[]) => void
+   ships: ShipType[]
 }
 
 export type ShipType = {
-	name: string
-	images: string[]
-	hull: string
-	faction: string
-	rarity: string
-	id: string
+   name: string
+   images: string[]
+   hull: string
+   faction: string
+   rarity: string
+   id: string
 }
 
 export type TierType = {
-	name: string
-	ships: ShipType[]
+   name: string
+   ships: ShipType[]
 }

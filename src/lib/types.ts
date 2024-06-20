@@ -19,3 +19,8 @@ export type ShipType = {
 	rarity: string
 	id: string
 }
+
+export type TierType = {
+	name: string
+	ships: ShipType[]
+}

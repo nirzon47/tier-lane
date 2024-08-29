@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
-import { cn } from '../lib/cn'
-import { FilterContext } from '../lib/context'
-import { ShipType } from '../lib/types'
+import { cn } from '@/lib/cn'
+import { FilterContext } from '@/lib/context'
+import { ShipType } from '@/lib/types'
 
 const hullTypes = [
    { id: 1, name: 'DD' },

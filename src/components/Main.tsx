@@ -1,4 +1,4 @@
-import { TierType } from '../lib/types'
+import { TierType } from '@/lib/types'
 
 const Main = ({ tierList }: { tierList: TierType[] }) => {
    return (

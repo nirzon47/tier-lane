@@ -252,12 +252,13 @@ const Ship = ({ ship }: { ship: ShipType }) => {
       return draggable({
          element: el,
          getInitialData: () => ({
-            ship,
+            name: ship.name,
+            image: `https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/${ship.images[image]}`,
          }),
          onDragStart: () => setDragging(true),
          onDrop: () => setDragging(false),
       })
-   }, [])
+   }, [image])
 
    return (
       <div
@@ -274,7 +275,7 @@ const Ship = ({ ship }: { ship: ShipType }) => {
             className='w-16'
             draggable='false'
          />
-         <p className='truncate text-center font-zhun text-[10px]'>
+         <p className='truncate text-center font-zhun text-[0.625rem]'>
             {ship.name}
          </p>
       </div>

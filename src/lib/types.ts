@@ -24,3 +24,8 @@ export type TierType = {
    name: string
    ships: ShipType[]
 }
+
+export type TierListContextType = {
+   tierList: TierType[]
+   setTierList: (tierList: TierType[]) => void
+}

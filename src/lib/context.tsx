@@ -1,5 +1,11 @@
 import { createContext, useState } from 'react'
-import { FilterContextType, FilterType, ShipType } from './types'
+import {
+   FilterContextType,
+   FilterType,
+   ShipType,
+   TierListContextType,
+   TierType,
+} from './types'
 import shipList from '@/assets/shiplist.json'
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined)
@@ -51,4 +57,24 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
    )
 }
 
-export { FilterContext, FilterProvider }
+const TierListContext = createContext<TierListContextType | undefined>(
+   undefined,
+)
+
+const TierListProvider = ({ children }: { children: React.ReactNode }) => {
+   const [tierList, setTierList] = useState<TierType[]>([
+      { name: 'S', ships: [] },
+      { name: 'A', ships: [] },
+      { name: 'B', ships: [] },
+      { name: 'C', ships: [] },
+      { name: 'D', ships: [] },
+   ])
+
+   return (
+      <TierListContext.Provider value={{ tierList, setTierList }}>
+         {children}
+      </TierListContext.Provider>
+   )
+}
+
+export { FilterContext, FilterProvider, TierListContext, TierListProvider }

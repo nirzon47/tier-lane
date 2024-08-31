@@ -48,16 +48,14 @@ const Sidebar = () => {
    }
 
    return (
-      <aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto'>
+      <aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto p-2'>
          <div className='grid gap-px'>
-            <label htmlFor='search' className='pl-1 text-sm opacity-75'>
-               Search by name
-            </label>
             <input
                type='text'
                name='search'
                id='search'
                className='max-w-xs bg-black/20 px-4 py-1 focus:outline-none'
+               placeholder='Search by name'
                value={filterContext?.filter.name}
                onChange={handleNameFilterChange}
             />

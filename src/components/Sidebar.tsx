@@ -49,7 +49,7 @@ const Sidebar = () => {
 
    return (
       <aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto p-2'>
-         <div className='grid gap-px'>
+         <section className='grid gap-px'>
             <input
                type='text'
                name='search'
@@ -59,22 +59,22 @@ const Sidebar = () => {
                value={filterContext?.filter.name}
                onChange={handleNameFilterChange}
             />
-         </div>
-         <div className='grid gap-2'>
+         </section>
+         <section className='grid gap-2'>
             <label className='pl-1 text-sm opacity-75'>Index</label>
             <HullFilters />
-         </div>
-         <div className='grid gap-2'>
+         </section>
+         <section className='grid gap-2'>
             <label className='pl-1 text-sm opacity-75'>Faction</label>
             <FactionFilters />
-         </div>
-         <div className='grid gap-2'>
+         </section>
+         <section className='grid gap-2'>
             <label className='pl-1 text-sm opacity-75'>Rarity</label>
             <RarityFilters />
-         </div>
-         <div className='flex-1'>
+         </section>
+         <section className='flex-1'>
             <SearchResults />
-         </div>
+         </section>
       </aside>
    )
 }

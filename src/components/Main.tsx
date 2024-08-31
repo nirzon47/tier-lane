@@ -10,7 +10,10 @@ const Main = () => {
    const updateTierList = useContext(TierListContext)?.updateTierList!
 
    return (
-      <main className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] gap-2 overflow-y-auto p-2'>
+      <main
+         id='tier-list'
+         className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] gap-2 overflow-y-auto p-2'
+      >
          {tierList.map((tier) => (
             <Tier key={tier.name} tier={tier} updateTierList={updateTierList} />
          ))}
@@ -42,7 +45,7 @@ const Tier = ({
    }, [])
 
    return (
-      <div
+      <section
          className={cn(
             'grid gap-4 bg-white/10 p-2',
             tier.ships.length > 0 ? 'h-fit' : 'h-28',
@@ -59,7 +62,7 @@ const Tier = ({
                ))}
             </div>
          </div>
-      </div>
+      </section>
    )
 }
 

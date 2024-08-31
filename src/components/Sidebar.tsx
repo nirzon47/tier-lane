@@ -251,6 +251,9 @@ const Ship = ({ ship }: { ship: ShipType }) => {
 
       return draggable({
          element: el,
+         getInitialData: () => ({
+            ship,
+         }),
          onDragStart: () => setDragging(true),
          onDrop: () => setDragging(false),
       })

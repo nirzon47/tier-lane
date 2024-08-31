@@ -4,6 +4,7 @@ import {
    FilterType,
    ShipType,
    TierListContextType,
+   TierShipType,
    TierType,
 } from './types'
 import shipList from '@/assets/shiplist.json'
@@ -70,8 +71,30 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       { name: 'D', ships: [] },
    ])
 
+   const updateTierList = (tier: string, ship: TierShipType) => {
+      const currentTier = tierList.find((t) => t.name === tier)
+
+      if (!currentTier) {
+         return
+      }
+      if (currentTier.ships.find((s) => s.name === ship.name)) {
+         return
+      }
+
+      currentTier.ships.push(ship)
+
+      const updatedTierList = tierList.map((t) => {
+         if (t.name === tier) {
+            return currentTier
+         }
+         return t
+      })
+
+      setTierList(updatedTierList)
+   }
+
    return (
-      <TierListContext.Provider value={{ tierList, setTierList }}>
+      <TierListContext.Provider value={{ tierList, updateTierList }}>
          {children}
       </TierListContext.Provider>
    )

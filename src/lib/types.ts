@@ -20,12 +20,17 @@ export type ShipType = {
    id: string
 }
 
+export type TierShipType = {
+   name: string
+   image: string
+}
+
 export type TierType = {
    name: string
-   ships: ShipType[]
+   ships: TierShipType[]
 }
 
 export type TierListContextType = {
    tierList: TierType[]
-   setTierList: (tierList: TierType[]) => void
+   updateTierList: (tier: string, ship: TierShipType) => void
 }

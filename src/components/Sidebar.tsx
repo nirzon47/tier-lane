@@ -1,7 +1,9 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/cn'
 import { FilterContext } from '@/lib/context'
 import { ShipType } from '@/lib/types'
+import { draggable } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
+import invariant from 'tiny-invariant'
 
 const hullTypes = [
    { id: 1, name: 'DD' },
@@ -235,19 +237,39 @@ const SearchResults = () => {
 }
 
 const Ship = ({ ship }: { ship: ShipType }) => {
+   const ref = useRef(null)
    const [image, setImage] = useState<number>(0)
+   const [dragging, setDragging] = useState<boolean>(false)
 
    const cycleImage = () => {
       setImage((prev) => (prev + 1 >= ship.images.length ? 0 : prev + 1))
    }
 
+   useEffect(() => {
+      const el = ref.current
+      invariant(el)
+
+      return draggable({
+         element: el,
+         onDragStart: () => setDragging(true),
+         onDrop: () => setDragging(false),
+      })
+   }, [])
+
    return (
-      <div className='w-16 space-y-2 bg-white/10 p-1'>
+      <div
+         className={cn(
+            'w-16 cursor-move space-y-2 bg-white/10 p-1',
+            dragging && 'animate-wiggle opacity-50',
+         )}
+         ref={ref}
+      >
          <img
             src={`https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/${ship.images[image]}`}
             alt={ship.name}
             onClick={cycleImage}
             className='w-16'
+            draggable='false'
          />
          <p className='truncate text-center font-zhun text-[10px]'>
             {ship.name}

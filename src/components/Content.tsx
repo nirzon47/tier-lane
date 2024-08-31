@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import { FilterProvider, TierListProvider } from '@/lib/context'
 import Main from './Main'
 import Sidebar from './Sidebar'

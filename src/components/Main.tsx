@@ -1,24 +1,31 @@
+import { cn } from '@/lib/cn'
 import { TierListContext } from '@/lib/context'
-import { TierType } from '@/lib/types'
+import { TierShipType, TierType } from '@/lib/types'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import invariant from 'tiny-invariant'
 
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList!
+   const updateTierList = useContext(TierListContext)?.updateTierList!
 
    return (
-      <main className='col-span-4 grid gap-2'>
+      <main className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] gap-2 overflow-y-auto'>
          {tierList.map((tier) => (
-            <Tier key={tier.name} tier={tier} />
+            <Tier key={tier.name} tier={tier} updateTierList={updateTierList} />
          ))}
       </main>
    )
 }
 
-const Tier = ({ tier }: { tier: TierType }) => {
+const Tier = ({
+   tier,
+   updateTierList,
+}: {
+   tier: TierType
+   updateTierList: (name: string, ship: TierShipType) => void
+}) => {
    const ref = useRef(null)
-   const [isDraggedOver, setIsDraggedOver] = useState<boolean>(false)
 
    useEffect(() => {
       const el = ref.current
@@ -27,32 +34,42 @@ const Tier = ({ tier }: { tier: TierType }) => {
       return dropTargetForElements({
          element: el,
          onDragEnter: () => console.log('dragged over'),
-         onDragLeave: () => setIsDraggedOver(false),
-         onDrop: ({ source }) => console.log(source),
+         onDragLeave: () => console.log('dragged out'),
+         onDrop: ({ source }) => {
+            updateTierList(tier.name, source.data as TierShipType)
+         },
       })
    }, [])
 
    return (
-      <div className='grid h-24 gap-4 bg-white/10 p-2' ref={ref}>
-         <div className='flex flex-wrap gap-2'>
-            <div className='grid w-12 place-content-center'>
+      <div
+         className={cn(
+            'grid gap-4 bg-white/10 p-2',
+            tier.ships.length > 0 ? 'h-fit' : 'h-28',
+         )}
+         ref={ref}
+      >
+         <div className='flex gap-6'>
+            <div className='grid min-w-12 place-content-center'>
                <h3 className='font-zhun text-3xl'>{tier.name}</h3>
             </div>
-            <div className='flex flex-wrap gap-2'>
+            <div className='flex flex-wrap items-center gap-2'>
                {tier.ships.map((ship) => (
-                  <div key={ship.name} className='flex flex-col'>
-                     <div className='flex items-center justify-between'>
-                        <div className='text-lg font-bold'>{ship.name}</div>
-                        <div className='text-sm'>{ship.rarity}</div>
-                     </div>
-                     <div className='flex items-center justify-between'>
-                        <div className='text-sm'>{ship.hull}</div>
-                        <div className='text-sm'>{ship.faction}</div>
-                     </div>
-                  </div>
+                  <Ship key={ship.name} ship={ship} />
                ))}
             </div>
          </div>
+      </div>
+   )
+}
+
+const Ship = ({ ship }: { ship: TierShipType }) => {
+   return (
+      <div className='flex w-[4.5rem] flex-col items-center gap-1'>
+         <img src={ship.image} />
+         <p className='h-full truncate text-center font-zhun text-xs'>
+            {ship.name.split(' ').pop()}
+         </p>
       </div>
    )
 }

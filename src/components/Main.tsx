@@ -56,7 +56,7 @@ const Tier = ({
             <div className='grid min-w-12 place-content-center'>
                <h3 className='font-zhun text-3xl'>{tier.name}</h3>
             </div>
-            <div className='flex flex-wrap items-center gap-2'>
+            <div className='flex flex-wrap items-center gap-3'>
                {tier.ships.map((ship) => (
                   <Ship key={ship.name} ship={ship} />
                ))}

@@ -12,7 +12,7 @@ const Main = () => {
    return (
       <main
          id='tier-list'
-         className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] gap-2 overflow-y-auto p-2'
+         className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] gap-2 overflow-y-auto'
       >
          {tierList.map((tier) => (
             <Tier key={tier.name} tier={tier} updateTierList={updateTierList} />

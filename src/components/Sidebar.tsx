@@ -48,7 +48,7 @@ const Sidebar = () => {
    }
 
    return (
-      <aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto p-2'>
+      <aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto'>
          <section className='grid gap-px'>
             <input
                type='text'

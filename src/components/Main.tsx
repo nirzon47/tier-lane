@@ -1,7 +1,8 @@
 import { cn } from '@/lib/cn'
-import { TierListContext } from '@/lib/context'
+import { SettingsContext, TierListContext } from '@/lib/context'
 import { TierShipType, TierType } from '@/lib/types'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
 import invariant from 'tiny-invariant'
 
@@ -67,12 +68,43 @@ const Tier = ({
 }
 
 const Ship = ({ ship }: { ship: TierShipType }) => {
+   const editEnabled = useContext(SettingsContext)?.editEnabled
+
    return (
-      <div className='flex w-[4.5rem] flex-col items-center gap-1'>
-         <img src={ship.image} />
-         <p className='h-full truncate text-center font-zhun text-xs'>
-            {ship.name.split(' ').pop()}
-         </p>
+      <div className='relative'>
+         <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
+            <img src={ship.image} />
+            <p className='h-full truncate text-center font-zhun text-xs'>
+               {ship.name.split(' ').pop()}
+            </p>
+         </div>
+
+         {/* Edit Overlay */}
+         <div
+            className={cn(
+               editEnabled
+                  ? 'absolute inset-0 z-10 grid items-center bg-black/40'
+                  : 'hidden',
+            )}
+         >
+            <div className='flex w-full items-center justify-between'>
+               <button>
+                  <ChevronLeft />
+               </button>
+               <button>
+                  <ChevronRight />
+               </button>
+            </div>
+         </div>
+         <div
+            className={cn(
+               editEnabled ? 'absolute -right-2 -top-2 z-20' : 'hidden',
+            )}
+         >
+            <button className='rounded-full bg-red-800 p-0.5'>
+               <X className='h-4 w-4' />
+            </button>
+         </div>
       </div>
    )
 }

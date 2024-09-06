@@ -1,7 +1,13 @@
 import logo from '@/assets/images/logo.webp'
+import { cn } from '@/lib/cn'
+import { SettingsContext } from '@/lib/context'
 import domToImage from 'dom-to-image'
+import { useContext } from 'react'
 
 const Header = () => {
+   const toggleEdit = useContext(SettingsContext)?.toggleEdit
+   const editEnabled = useContext(SettingsContext)?.editEnabled
+
    const getScreenshot = () => {
       const element = document.getElementById('tier-list')!
 
@@ -46,12 +52,23 @@ const Header = () => {
                </p>
             </div>
          </section>
-         <button
-            className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
-            onClick={getScreenshot}
-         >
-            Screenshot
-         </button>
+         <section className='flex gap-2'>
+            <button
+               className={cn(
+                  'bg-white/10 px-4 py-2 font-zhun text-white duration-150',
+                  editEnabled ? 'bg-white/40' : 'bg-white/10',
+               )}
+               onClick={toggleEdit}
+            >
+               {editEnabled ? 'Edit Off' : 'Edit On'}
+            </button>
+            <button
+               className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+               onClick={getScreenshot}
+            >
+               Screenshot
+            </button>
+         </section>
       </header>
    )
 }

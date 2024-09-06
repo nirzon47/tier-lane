@@ -1,11 +1,14 @@
 import Content from '@/components/Content'
 import Header from '@/components/Header'
+import { SettingsProvider } from './lib/context'
 
 const App = () => {
    return (
       <>
-         <Header />
-         <Content />
+         <SettingsProvider>
+            <Header />
+            <Content />
+         </SettingsProvider>
       </>
    )
 }

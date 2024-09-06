@@ -34,3 +34,8 @@ export type TierListContextType = {
    tierList: TierType[]
    updateTierList: (tier: string, ship: TierShipType) => void
 }
+
+export type SettingsContextType = {
+   editEnabled: boolean
+   toggleEdit: () => void
+}

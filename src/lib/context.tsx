@@ -2,6 +2,7 @@ import { createContext, useState } from 'react'
 import {
    FilterContextType,
    FilterType,
+   SettingsContextType,
    ShipType,
    TierListContextType,
    TierShipType,
@@ -100,4 +101,30 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
    )
 }
 
-export { FilterContext, FilterProvider, TierListContext, TierListProvider }
+const SettingsContext = createContext<SettingsContextType | undefined>(
+   undefined,
+)
+
+const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
+   const [editEnabled, setEditEnabled] = useState<boolean>(false)
+
+   const toggleEdit = () => {
+      console.log('logging')
+      setEditEnabled(!editEnabled)
+   }
+
+   return (
+      <SettingsContext.Provider value={{ editEnabled, toggleEdit }}>
+         {children}
+      </SettingsContext.Provider>
+   )
+}
+
+export {
+   FilterContext,
+   FilterProvider,
+   TierListContext,
+   TierListProvider,
+   SettingsContext,
+   SettingsProvider,
+}

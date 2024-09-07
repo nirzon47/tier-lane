@@ -7,6 +7,8 @@ import invariant from 'tiny-invariant'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import { RotateCcw } from 'lucide-react'
+import { TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip'
+import { Tooltip } from '@radix-ui/react-tooltip'
 
 const hullTypes = [
    { id: 1, name: 'DD' },
@@ -62,12 +64,21 @@ const Sidebar = () => {
                value={filterContext?.filter.name}
                onChange={handleNameFilterChange}
             />
-            <button
-               className='bg-black/20 px-2 py-1 duration-150 hover:bg-black/30'
-               onClick={() => filterContext?.resetFilters()}
-            >
-               <RotateCcw />
-            </button>
+
+            {/* Reset filters button */}
+            <TooltipProvider>
+               <Tooltip>
+                  <TooltipTrigger>
+                     <button
+                        className='bg-black/20 px-2 py-1 duration-150 hover:bg-black/30'
+                        onClick={() => filterContext?.resetFilters()}
+                     >
+                        <RotateCcw />
+                     </button>
+                  </TooltipTrigger>
+                  <TooltipContent>Reset filters</TooltipContent>
+               </Tooltip>
+            </TooltipProvider>
          </section>
          <section className='grid gap-2'>
             <label className='pl-1 text-sm opacity-75'>Index</label>

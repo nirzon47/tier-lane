@@ -75,7 +75,7 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
          <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
             <img src={ship.image} />
             <p className='h-full truncate text-center font-zhun text-xs'>
-               {ship.name.split(' ').pop()}
+               {ship.name.length > 12 ? ship.name.split(' ').pop() : ship.name}
             </p>
          </div>
 

@@ -83,7 +83,7 @@ const Header = () => {
                )}
                onClick={toggleEdit}
             >
-               {editEnabled ? 'Edit Off' : 'Edit On'}
+               {editEnabled ? 'Edit: On' : 'Edit: Off'}
             </button>
             <button
                className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'

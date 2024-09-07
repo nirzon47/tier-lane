@@ -151,12 +151,9 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
          )
       }
 
-      const updatedTierList = tierList.map((t) => {
-         if (t.name === tier) {
-            return currentTier
-         }
-         return t
-      })
+      const updatedTierList = tierList.map((t) =>
+         t.name === tier ? currentTier : t,
+      )
 
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
       setTierList(updatedTierList)
@@ -177,12 +174,9 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
 
       currentTier.ships.splice(index, 1)
 
-      const updatedTierList = tierList.map((t) => {
-         if (t.name === tier) {
-            return currentTier
-         }
-         return t
-      })
+      const updatedTierList = tierList.map((t) =>
+         t.name === tier ? currentTier : t,
+      )
 
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
       setTierList(updatedTierList)
@@ -200,7 +194,6 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       ]
 
       setTierList(emptyTierList)
-      console.log(tierList)
    }
 
    return (

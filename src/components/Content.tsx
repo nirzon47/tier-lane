@@ -1,4 +1,4 @@
-import { FilterProvider, TierListProvider } from '@/lib/context'
+import { FilterProvider } from '@/lib/context'
 import Main from './Main'
 import Sidebar from './Sidebar'
 
@@ -9,9 +9,7 @@ const Content = () => {
             <FilterProvider>
                <Sidebar />
             </FilterProvider>
-            <TierListProvider>
-               <Main />
-            </TierListProvider>
+            <Main />
          </section>
       </>
    )

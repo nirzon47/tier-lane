@@ -190,6 +190,18 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       setTierList(updatedTierList)
    }
 
+   const resetTierList = () => {
+      localStorage.removeItem('tierList')
+
+      setTierList([
+         { name: 'S', ships: [] },
+         { name: 'A', ships: [] },
+         { name: 'B', ships: [] },
+         { name: 'C', ships: [] },
+         { name: 'D', ships: [] },
+      ])
+   }
+
    return (
       <TierListContext.Provider
          value={{
@@ -197,6 +209,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
             updateTierList,
             updatePosition,
             removeFromTierList,
+            resetTierList,
          }}
       >
          {children}

@@ -1,13 +1,14 @@
 import logo from '@/assets/images/logo.webp'
 import { cn } from '@/lib/cn'
-import { SettingsContext } from '@/lib/context'
+import { SettingsContext, TierListContext } from '@/lib/context'
 import domToImage from 'dom-to-image'
-import { Download } from 'lucide-react'
+import { Download, Eraser } from 'lucide-react'
 import { useContext } from 'react'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
    const editEnabled = useContext(SettingsContext)?.editEnabled
+   const resetTierList = useContext(TierListContext)?.resetTierList
 
    const exportTierList = () => {
       const tierList = localStorage.getItem('tierList')
@@ -70,6 +71,12 @@ const Header = () => {
             </div>
          </section>
          <section className='flex gap-2'>
+            <button
+               className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+               onClick={resetTierList}
+            >
+               <Eraser />
+            </button>
             <button
                className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
                onClick={exportTierList}

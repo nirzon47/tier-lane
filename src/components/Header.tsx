@@ -2,11 +2,28 @@ import logo from '@/assets/images/logo.webp'
 import { cn } from '@/lib/cn'
 import { SettingsContext } from '@/lib/context'
 import domToImage from 'dom-to-image'
+import { Download } from 'lucide-react'
 import { useContext } from 'react'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
    const editEnabled = useContext(SettingsContext)?.editEnabled
+
+   const exportTierList = () => {
+      const tierList = localStorage.getItem('tierList')
+      if (!tierList) {
+         return
+      }
+
+      const jsonString = `data:text/json;charset=utf-8,${encodeURIComponent(
+         tierList,
+      )}`
+
+      const link = document.createElement('a')
+      link.href = jsonString
+      link.download = `AL-TierList-${Date.now()}.json`
+      link.click()
+   }
 
    const getScreenshot = () => {
       const element = document.getElementById('tier-list')!
@@ -33,7 +50,7 @@ const Header = () => {
          .then((dataUrl) => {
             const link = document.createElement('a')
             link.href = dataUrl
-            link.download = 'screenshot.png'
+            link.download = `AL-TierList-${Date.now()}.png`
             link.click()
          })
          .catch((error) => {
@@ -53,6 +70,12 @@ const Header = () => {
             </div>
          </section>
          <section className='flex gap-2'>
+            <button
+               className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+               onClick={exportTierList}
+            >
+               <Download />
+            </button>
             <button
                className={cn(
                   'bg-white/10 px-4 py-2 font-zhun text-white duration-150',

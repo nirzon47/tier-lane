@@ -6,6 +6,7 @@ import { draggable } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
 import invariant from 'tiny-invariant'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
+import { RotateCcw } from 'lucide-react'
 
 const hullTypes = [
    { id: 1, name: 'DD' },
@@ -51,16 +52,22 @@ const Sidebar = () => {
 
    return (
       <aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto'>
-         <section className='grid gap-px'>
+         <section className='flex gap-4'>
             <input
                type='text'
                name='search'
                id='search'
-               className='max-w-xs bg-black/20 px-4 py-1 focus:outline-none'
+               className='max-w-xs flex-1 bg-black/20 px-4 py-1 focus:outline-none'
                placeholder='Search by name'
                value={filterContext?.filter.name}
                onChange={handleNameFilterChange}
             />
+            <button
+               className='bg-black/20 px-2 py-1 duration-150 hover:bg-black/30'
+               onClick={() => filterContext?.resetFilters()}
+            >
+               <RotateCcw />
+            </button>
          </section>
          <section className='grid gap-2'>
             <label className='pl-1 text-sm opacity-75'>Index</label>

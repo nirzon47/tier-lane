@@ -9,6 +9,7 @@ export type FilterContextType = {
    filter: FilterType
    updateFilter: (key: keyof FilterType, value: string | string[]) => void
    ships: ShipType[]
+   resetFilters: () => void
 }
 
 export type ShipType = {

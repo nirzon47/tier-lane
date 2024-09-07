@@ -52,8 +52,21 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
       setFilter(newFilter)
    }
 
+   const resetFilters = () => {
+      setFilter({
+         name: '',
+         rarity: [],
+         hull: [],
+         faction: [],
+      })
+
+      setShips(shipList)
+   }
+
    return (
-      <FilterContext.Provider value={{ filter, updateFilter, ships }}>
+      <FilterContext.Provider
+         value={{ filter, updateFilter, ships, resetFilters }}
+      >
          {children}
       </FilterContext.Provider>
    )

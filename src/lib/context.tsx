@@ -94,8 +94,65 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       setTierList(updatedTierList)
    }
 
+   const updatePosition = (
+      ship: TierShipType,
+      tier: string,
+      position: 'left' | 'right',
+   ) => {
+      const tierIndex = tierList.findIndex((t) => tier === t.name)
+
+      if (tierIndex === -1) {
+         return
+      }
+
+      const currentTier = tierList[tierIndex]
+
+      const index = tierList[tierIndex].ships.findIndex(
+         (s) => s.name === ship.name,
+      )
+
+      if (
+         index === -1 ||
+         (position === 'left' && index === 0) ||
+         (position === 'right' && index === tierList.length - 1)
+      ) {
+         return
+      }
+
+      if (position === 'left') {
+         currentTier.ships.splice(
+            index - 1,
+            0,
+            currentTier.ships.splice(index, 1)[0],
+         )
+      }
+
+      if (position === 'right') {
+         currentTier.ships.splice(
+            index + 1,
+            0,
+            currentTier.ships.splice(index, 1)[0],
+         )
+      }
+
+      const updatedTierList = tierList.map((t) => {
+         if (t.name === tier) {
+            return currentTier
+         }
+         return t
+      })
+
+      setTierList(updatedTierList)
+   }
+
    return (
-      <TierListContext.Provider value={{ tierList, updateTierList }}>
+      <TierListContext.Provider
+         value={{
+            tierList,
+            updateTierList,
+            updatePosition,
+         }}
+      >
          {children}
       </TierListContext.Provider>
    )
@@ -109,7 +166,6 @@ const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
    const [editEnabled, setEditEnabled] = useState<boolean>(false)
 
    const toggleEdit = () => {
-      console.log('logging')
       setEditEnabled(!editEnabled)
    }
 

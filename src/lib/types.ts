@@ -33,6 +33,11 @@ export type TierType = {
 export type TierListContextType = {
    tierList: TierType[]
    updateTierList: (tier: string, ship: TierShipType) => void
+   updatePosition: (
+      ship: TierShipType,
+      tier: string,
+      position: 'left' | 'right',
+   ) => void
 }
 
 export type SettingsContextType = {

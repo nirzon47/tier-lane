@@ -37,8 +37,6 @@ const Tier = ({
 
       return dropTargetForElements({
          element: el,
-         onDragEnter: () => console.log('dragged over'),
-         onDragLeave: () => console.log('dragged out'),
          onDrop: ({ source }) => {
             updateTierList(tier.name, source.data as TierShipType)
          },
@@ -59,7 +57,7 @@ const Tier = ({
             </div>
             <div className='flex flex-wrap items-center gap-3'>
                {tier.ships.map((ship) => (
-                  <Ship key={ship.name} ship={ship} />
+                  <Ship key={ship.name} ship={ship} tier={tier} />
                ))}
             </div>
          </div>
@@ -67,8 +65,9 @@ const Tier = ({
    )
 }
 
-const Ship = ({ ship }: { ship: TierShipType }) => {
+const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const editEnabled = useContext(SettingsContext)?.editEnabled
+   const updatePosition = useContext(TierListContext)?.updatePosition!
 
    return (
       <div className='relative'>
@@ -88,10 +87,10 @@ const Ship = ({ ship }: { ship: TierShipType }) => {
             )}
          >
             <div className='flex w-full items-center justify-between'>
-               <button>
+               <button onClick={() => updatePosition(ship, tier.name, 'left')}>
                   <ChevronLeft />
                </button>
-               <button>
+               <button onClick={() => updatePosition(ship, tier.name, 'right')}>
                   <ChevronRight />
                </button>
             </div>

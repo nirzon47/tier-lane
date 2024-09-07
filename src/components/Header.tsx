@@ -80,26 +80,23 @@ const Header = () => {
             <section className='flex gap-2'>
                {/* Reset tier list button */}
                <Tooltip>
-                  <TooltipTrigger>
-                     <button
-                        className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
-                        onClick={resetTierList}
-                     >
-                        <Eraser />
-                     </button>
+                  <TooltipTrigger
+                     className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+                     onClick={resetTierList}
+                  >
+                     <Eraser />
                   </TooltipTrigger>
                   <TooltipContent>Reset tier list</TooltipContent>
                </Tooltip>
 
                {/* Export as JSON button */}
                <Tooltip>
-                  <TooltipTrigger>
-                     <button
-                        className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
-                        onClick={exportTierList}
-                     >
-                        <Download />
-                     </button>
+                  <TooltipTrigger
+                     className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+                     onClick={exportTierList}
+                  >
+                     <Download />
+
                      <TooltipContent>Export as JSON</TooltipContent>
                   </TooltipTrigger>
                </Tooltip>
@@ -116,13 +113,11 @@ const Header = () => {
 
                {/* Screenshot button */}
                <Tooltip>
-                  <TooltipTrigger>
-                     <button
-                        className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
-                        onClick={getScreenshot}
-                     >
-                        <Camera />
-                     </button>
+                  <TooltipTrigger
+                     className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+                     onClick={getScreenshot}
+                  >
+                     <Camera />
                   </TooltipTrigger>
                   <TooltipContent>Capture screenshot</TooltipContent>
                </Tooltip>

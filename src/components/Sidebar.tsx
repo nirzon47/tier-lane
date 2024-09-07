@@ -68,13 +68,11 @@ const Sidebar = () => {
             {/* Reset filters button */}
             <TooltipProvider>
                <Tooltip>
-                  <TooltipTrigger>
-                     <button
-                        className='bg-black/20 px-2 py-1 duration-150 hover:bg-black/30'
-                        onClick={() => filterContext?.resetFilters()}
-                     >
-                        <RotateCcw />
-                     </button>
+                  <TooltipTrigger
+                     className='bg-black/20 px-2 py-1 duration-150 hover:bg-black/30'
+                     onClick={() => filterContext?.resetFilters()}
+                  >
+                     <RotateCcw />
                   </TooltipTrigger>
                   <TooltipContent>Reset filters</TooltipContent>
                </Tooltip>

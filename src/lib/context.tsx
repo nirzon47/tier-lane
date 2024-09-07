@@ -173,6 +173,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
          return t
       })
 
+      localStorage.setItem('tierList', JSON.stringify(updatedTierList))
       setTierList(updatedTierList)
    }
 

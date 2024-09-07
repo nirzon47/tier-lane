@@ -112,8 +112,8 @@ const HullFilter = ({ name }: { name: string }) => {
          className={cn(
             'w-24 bg-cover bg-center py-1 font-zhun text-sm duration-150 hover:backdrop-brightness-50',
             filterContext?.filter.hull.includes(name)
-               ? "bg-[url('src/assets/images/button-on.webp')]"
-               : "bg-[url('src/assets/images/button-off.webp')]",
+               ? "bg-[url('./assets/images/button-on.webp')]"
+               : "bg-[url('./assets/images/button-off.webp')]",
          )}
          onClick={handleHullFilterClick}
       >
@@ -155,8 +155,8 @@ const FactionFilter = ({ name }: { name: string }) => {
          className={cn(
             'h-[34px] w-24 bg-cover bg-center px-1 py-px font-zhun text-xs duration-150 hover:backdrop-brightness-50',
             filterContext?.filter.faction.includes(name)
-               ? "bg-[url('src/assets/images/button-on.webp')]"
-               : "bg-[url('src/assets/images/button-off.webp')]",
+               ? "bg-[url('./assets/images/button-on.webp')]"
+               : "bg-[url('./assets/images/button-off.webp')]",
          )}
          onClick={handleFactionFilterClick}
       >
@@ -198,8 +198,8 @@ const RarityFilter = ({ name }: { name: string }) => {
          className={cn(
             'w-24 bg-cover bg-center py-1 font-zhun text-sm duration-150 hover:backdrop-brightness-50',
             filterContext?.filter.rarity.includes(name)
-               ? "bg-[url('src/assets/images/button-on.webp')]"
-               : "bg-[url('src/assets/images/button-off.webp')]",
+               ? "bg-[url('./assets/images/button-on.webp')]"
+               : "bg-[url('./assets/images/button-off.webp')]",
          )}
          onClick={handleRarityFilterClick}
       >

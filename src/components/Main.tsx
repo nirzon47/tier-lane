@@ -68,6 +68,7 @@ const Tier = ({
 const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const updatePosition = useContext(TierListContext)?.updatePosition!
+   const removeFromTierList = useContext(TierListContext)?.removeFromTierList!
 
    return (
       <div className='relative'>
@@ -78,7 +79,7 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
             </p>
          </div>
 
-         {/* Edit Overlay */}
+         {/* Edit Overlays */}
          <div
             className={cn(
                editEnabled
@@ -100,7 +101,10 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
                editEnabled ? 'absolute -right-2 -top-2 z-20' : 'hidden',
             )}
          >
-            <button className='rounded-full bg-red-800 p-0.5'>
+            <button
+               className='rounded-full bg-red-800 p-0.5'
+               onClick={() => removeFromTierList(tier.name, ship)}
+            >
                <X className='h-4 w-4' />
             </button>
          </div>

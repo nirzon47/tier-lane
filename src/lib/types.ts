@@ -38,6 +38,7 @@ export type TierListContextType = {
       tier: string,
       position: 'left' | 'right',
    ) => void
+   removeFromTierList: (tier: string, ship: TierShipType) => void
 }
 
 export type SettingsContextType = {

@@ -145,12 +145,38 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       setTierList(updatedTierList)
    }
 
+   const removeFromTierList = (tier: string, ship: TierShipType) => {
+      const currentTier = tierList.find((t) => t.name === tier)
+
+      if (!currentTier) {
+         return
+      }
+
+      const index = currentTier.ships.findIndex((s) => s.name === ship.name)
+
+      if (index === -1) {
+         return
+      }
+
+      currentTier.ships.splice(index, 1)
+
+      const updatedTierList = tierList.map((t) => {
+         if (t.name === tier) {
+            return currentTier
+         }
+         return t
+      })
+
+      setTierList(updatedTierList)
+   }
+
    return (
       <TierListContext.Provider
          value={{
             tierList,
             updateTierList,
             updatePosition,
+            removeFromTierList,
          }}
       >
          {children}

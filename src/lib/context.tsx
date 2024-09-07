@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import {
    FilterContextType,
    FilterType,
@@ -9,6 +9,7 @@ import {
    TierType,
 } from './types'
 import shipList from '@/assets/shiplist.json'
+import { isTierListArray } from '@/utils/type-validator'
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined)
 
@@ -77,39 +78,36 @@ const TierListContext = createContext<TierListContextType | undefined>(
 )
 
 const TierListProvider = ({ children }: { children: React.ReactNode }) => {
-   const [tierList, setTierList] = useState<TierType[]>(
-      localStorage.getItem('tierList')
-         ? JSON.parse(localStorage.getItem('tierList')!)
-         : [
-              { name: 'S', ships: [] },
-              { name: 'A', ships: [] },
-              { name: 'B', ships: [] },
-              { name: 'C', ships: [] },
-              { name: 'D', ships: [] },
-           ],
-   )
+   const [tierList, setTierList] = useState<TierType[]>([
+      { name: 'S', ships: [] },
+      { name: 'A', ships: [] },
+      { name: 'B', ships: [] },
+      { name: 'C', ships: [] },
+      { name: 'D', ships: [] },
+   ])
+
+   useEffect(() => {
+      if (localStorage.getItem('tierList') && isTierListArray(tierList)) {
+         setTierList(JSON.parse(localStorage.getItem('tierList')!))
+      }
+   }, [])
 
    const updateTierList = (tier: string, ship: TierShipType) => {
       const currentTier = tierList.find((t) => t.name === tier)
 
-      if (!currentTier) {
-         return
-      }
-      if (currentTier.ships.find((s) => s.name === ship.name)) {
+      if (!currentTier || currentTier.ships.find((s) => s.name === ship.name)) {
          return
       }
 
-      currentTier.ships.push(ship)
+      const updatedTierShips = [...currentTier.ships, ship]
+      const updatedTier = { ...currentTier, ships: updatedTierShips }
 
-      const updatedTierList = tierList.map((t) => {
-         if (t.name === tier) {
-            return currentTier
-         }
-         return t
-      })
+      const updatedTierList = tierList.map((t) =>
+         t.name === tier ? updatedTier : t,
+      )
 
-      localStorage.setItem('tierList', JSON.stringify(updatedTierList))
       setTierList(updatedTierList)
+      localStorage.setItem('tierList', JSON.stringify(updatedTierList))
    }
 
    const updatePosition = (
@@ -193,13 +191,16 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
    const resetTierList = () => {
       localStorage.removeItem('tierList')
 
-      setTierList([
+      const emptyTierList: TierType[] = [
          { name: 'S', ships: [] },
          { name: 'A', ships: [] },
          { name: 'B', ships: [] },
          { name: 'C', ships: [] },
          { name: 'D', ships: [] },
-      ])
+      ]
+
+      setTierList(emptyTierList)
+      console.log(tierList)
    }
 
    return (

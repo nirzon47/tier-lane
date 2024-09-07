@@ -64,13 +64,17 @@ const TierListContext = createContext<TierListContextType | undefined>(
 )
 
 const TierListProvider = ({ children }: { children: React.ReactNode }) => {
-   const [tierList, setTierList] = useState<TierType[]>([
-      { name: 'S', ships: [] },
-      { name: 'A', ships: [] },
-      { name: 'B', ships: [] },
-      { name: 'C', ships: [] },
-      { name: 'D', ships: [] },
-   ])
+   const [tierList, setTierList] = useState<TierType[]>(
+      localStorage.getItem('tierList')
+         ? JSON.parse(localStorage.getItem('tierList')!)
+         : [
+              { name: 'S', ships: [] },
+              { name: 'A', ships: [] },
+              { name: 'B', ships: [] },
+              { name: 'C', ships: [] },
+              { name: 'D', ships: [] },
+           ],
+   )
 
    const updateTierList = (tier: string, ship: TierShipType) => {
       const currentTier = tierList.find((t) => t.name === tier)
@@ -91,6 +95,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
          return t
       })
 
+      localStorage.setItem('tierList', JSON.stringify(updatedTierList))
       setTierList(updatedTierList)
    }
 
@@ -142,6 +147,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
          return t
       })
 
+      localStorage.setItem('tierList', JSON.stringify(updatedTierList))
       setTierList(updatedTierList)
    }
 

@@ -4,6 +4,8 @@ import { FilterContext } from '@/lib/context'
 import { ShipType } from '@/lib/types'
 import { draggable } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
 import invariant from 'tiny-invariant'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const hullTypes = [
    { id: 1, name: 'DD' },
@@ -266,12 +268,15 @@ const Ship = ({ ship }: { ship: ShipType }) => {
          )}
          ref={ref}
       >
-         <img
+         <LazyLoadImage
             src={`https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/${ship.images[image]}`}
             alt={ship.name}
             onClick={cycleImage}
             className='w-16'
             draggable='false'
+            effect='blur'
+            width={56}
+            height={56}
          />
          <p className='truncate text-center font-zhun text-[0.625rem]'>
             {ship.name}

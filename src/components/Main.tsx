@@ -41,7 +41,7 @@ const Tier = ({
             updateTierList(tier.name, source.data as TierShipType)
          },
       })
-   }, [])
+   }, [tier])
 
    return (
       <section

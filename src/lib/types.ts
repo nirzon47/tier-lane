@@ -41,6 +41,7 @@ export type TierListContextType = {
    ) => void
    removeFromTierList: (tier: string, ship: TierShipType) => void
    resetTierList: () => void
+   importTierList: (newTierList: TierType[]) => void
 }
 
 export type SettingsContextType = {

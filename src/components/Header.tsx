@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/tooltip'
 import domToImage from 'dom-to-image'
 import { Camera, Download, Eraser, Upload } from 'lucide-react'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import {
    Dialog,
    DialogContent,
@@ -18,11 +18,45 @@ import {
    DialogTrigger,
 } from './ui/dialog'
 import { Textarea } from './ui/textarea'
+import { isTierListArray } from '@/utils/type-validator'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const resetTierList = useContext(TierListContext)?.resetTierList
+   const importTierList = useContext(TierListContext)?.importTierList
+
+   const [JSONTextArea, setJSONTextArea] = useState<string>('')
+   const [importDialogOpen, setImportDialogOpen] = useState<boolean>(false)
+   const [validJSONShape, setValidJSONShape] = useState<boolean>(false)
+
+   const handleJSONImport = () => {
+      try {
+         const tierList = JSON.parse(JSONTextArea)
+         if (!isTierListArray(tierList)) {
+            throw new Error('Invalid JSON')
+         }
+
+         if (importTierList) {
+            importTierList(tierList)
+            setJSONTextArea('')
+            setImportDialogOpen(false)
+         }
+      } catch (e) {}
+   }
+
+   const handleImportTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setJSONTextArea(e.target.value)
+      try {
+         const tierList = JSON.parse(e.target.value)
+
+         if (isTierListArray(tierList)) {
+            setValidJSONShape(true)
+         }
+      } catch (error) {
+         setValidJSONShape(false)
+      }
+   }
 
    const exportTierList = () => {
       const tierList = localStorage.getItem('tierList')
@@ -98,22 +132,45 @@ const Header = () => {
                </Tooltip>
 
                {/* Import JSON button */}
-               <Dialog>
-                  <DialogTrigger>
-                     <Tooltip>
-                        <TooltipTrigger className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'>
-                           <Upload />
-                        </TooltipTrigger>
-                        <TooltipContent>Import JSON</TooltipContent>
-                     </Tooltip>
+               <Dialog
+                  open={importDialogOpen}
+                  onOpenChange={setImportDialogOpen}
+               >
+                  <DialogTrigger asChild>
+                     <div>
+                        <Tooltip>
+                           <TooltipTrigger className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'>
+                              <Upload />
+                           </TooltipTrigger>
+                           <TooltipContent>Import JSON</TooltipContent>
+                        </Tooltip>
+                     </div>
                   </DialogTrigger>
                   <DialogContent>
                      <DialogTitle className='font-zhun'>
                         Import JSON
                      </DialogTitle>
                      <DialogDescription className='grid gap-2'>
-                        <Textarea placeholder='Paste JSON here' />
-                        <button className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'>
+                        <Textarea
+                           placeholder='Paste JSON here'
+                           onChange={handleImportTextarea}
+                        />
+
+                        <span
+                           className={cn(
+                              'text-sm',
+                              validJSONShape
+                                 ? 'text-green-400'
+                                 : 'text-red-400',
+                           )}
+                        >
+                           {validJSONShape ? 'Valid Format' : 'Invalid Format'}
+                        </span>
+
+                        <button
+                           className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'
+                           onClick={handleJSONImport}
+                        >
                            Import
                         </button>
                      </DialogDescription>

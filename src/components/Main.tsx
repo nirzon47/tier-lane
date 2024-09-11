@@ -30,6 +30,7 @@ const Tier = ({
    updateTierList: (name: string, ship: TierShipType) => void
 }) => {
    const ref = useRef(null)
+   const tierList = useContext(TierListContext)?.tierList!
 
    useEffect(() => {
       const el = ref.current
@@ -41,7 +42,7 @@ const Tier = ({
             updateTierList(tier.name, source.data as TierShipType)
          },
       })
-   }, [tier])
+   }, [tierList])
 
    return (
       <section

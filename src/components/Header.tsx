@@ -8,8 +8,16 @@ import {
    TooltipTrigger,
 } from '@/components/ui/tooltip'
 import domToImage from 'dom-to-image'
-import { Camera, Download, Eraser } from 'lucide-react'
+import { Camera, Download, Eraser, Upload } from 'lucide-react'
 import { useContext } from 'react'
+import {
+   Dialog,
+   DialogContent,
+   DialogDescription,
+   DialogTitle,
+   DialogTrigger,
+} from './ui/dialog'
+import { Textarea } from './ui/textarea'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
@@ -81,7 +89,7 @@ const Header = () => {
                {/* Reset tier list button */}
                <Tooltip>
                   <TooltipTrigger
-                     className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+                     className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'
                      onClick={resetTierList}
                   >
                      <Eraser />
@@ -89,27 +97,53 @@ const Header = () => {
                   <TooltipContent>Reset tier list</TooltipContent>
                </Tooltip>
 
+               {/* Import JSON button */}
+               <Dialog>
+                  <DialogTrigger>
+                     <Tooltip>
+                        <TooltipTrigger className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'>
+                           <Upload />
+                        </TooltipTrigger>
+                        <TooltipContent>Import JSON</TooltipContent>
+                     </Tooltip>
+                  </DialogTrigger>
+                  <DialogContent>
+                     <DialogTitle className='font-zhun'>
+                        Import JSON
+                     </DialogTitle>
+                     <DialogDescription className='grid gap-2'>
+                        <Textarea placeholder='Paste JSON here' />
+                        <button className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'>
+                           Import
+                        </button>
+                     </DialogDescription>
+                  </DialogContent>
+               </Dialog>
+
                {/* Export as JSON button */}
                <Tooltip>
                   <TooltipTrigger
-                     className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+                     className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'
                      onClick={exportTierList}
                   >
                      <Download />
-
                      <TooltipContent>Export as JSON</TooltipContent>
                   </TooltipTrigger>
                </Tooltip>
 
-               <button
-                  className={cn(
-                     'bg-white/10 px-4 py-2 font-zhun text-white duration-150',
-                     editEnabled ? 'bg-white/40' : 'bg-white/10',
-                  )}
-                  onClick={toggleEdit}
-               >
-                  {editEnabled ? 'Edit: On' : 'Edit: Off'}
-               </button>
+               {/* Toggle edit mode */}
+               <Tooltip>
+                  <TooltipTrigger
+                     className={cn(
+                        'bg-white/10 px-4 py-2 font-zhun text-white duration-150',
+                        editEnabled ? 'bg-white/40' : 'bg-white/10',
+                     )}
+                     onClick={toggleEdit}
+                  >
+                     {editEnabled ? 'Edit: On' : 'Edit: Off'}
+                  </TooltipTrigger>
+                  <TooltipContent>Toggle edit mode</TooltipContent>
+               </Tooltip>
 
                {/* Screenshot button */}
                <Tooltip>

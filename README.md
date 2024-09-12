@@ -16,25 +16,27 @@ In case you want to contribute or I develop [dementia](https://www.youtube.com/w
 
 1. Head over to the [assets repo](https://github.com/nirzon47/projects-assets/tree/main/azur-lane).
 2. Install the dependencies from the root folder.
-3. Copy new assets and move them to the `scrambled` folder, skip already existing assets.
-4. Get the new assets, copy them to the `PNGs` folder. Hint: sort the files by modified.
-5. Get the `groupInFolders.js` script from `utils` folder and drop it in `PNGs` folder.
-6. Run the script you just copied.
-7. Do a manual checkup for the operation you performed.
-8. I am a bit confused right now since we didn't rename the CN names into EN names yet. It might be a manual step. Time to bring forth the //TODO: Good luck.
-9. Yeah I will update the rest when I get more clarity. Been a while since I started the project. Also consider keeping CN names in JSON.
+3. Copy new assets ([more on this below](#get-the-new-assets)) and move them to the `scrambled` folder, skip already existing assets by sorting by date.
+4. Do a manual checkup for the operations you perform. It's needed.
+5. Get the new assets, copy them to a new temporary folder.
+6. Get the `groupInFolders.js` script from `utils` folder and drop it in temporary folder.
+7. Run the script you just copied.
+8. Repeat the process with `renameFolders.js` script in `utils` folder.
+9. Copy the script `generateJSON.js` and run it. It will ask for many things, make sure to fill them correctly. Abbreviations and short forms are in the code if you want to make things fast.
+10.   After you have run it, you will have a new JSON file, copy the old `shiplist.json` in the same directory.
+11.   After having both the JSON files, run the script `mergeShiplists.js` to merge them. !! RUN ONLY ONCE !! or there will be duplication.
 
-## Future Plans
+## Get the new assets
 
--  Reformat JSON: Include CN name for better update cycle.
--  Automate the updating assets part, takes way too long.
+As of 12th September 2024, after the Amagnii event, the new assets are in `Android/data/com.YoStarEn.AzurLane`
+
+-  Inside `files`, you will find the `AssetBundles` folder.
+-  You will find many folders there but according to the scope of the project, we are only concerned with `squareicon` folder.
+-  Copy the files, now you will notice that you cannot access the files. To do that, we need to download this [tool](https://github.com/Perfare/AssetStudio)
+-  Load the folder in which you have copied the files and then export filtered assets and you are done.
 
 ## Why are so many commits unverified?
 
 I switch device very often and sometimes I reset them too.
 
 And I don't backup my GPG keys because I never think I would end up switching devices or resetting them.
-
-## TODO (Personal tracker for steps)
-
-1. Find a good drag and drop solution

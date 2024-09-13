@@ -4,6 +4,7 @@ import { TierShipType, TierType } from '@/lib/types'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import invariant from 'tiny-invariant'
 
 const Main = () => {
@@ -74,7 +75,15 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    return (
       <div className='relative'>
          <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
-            <img src={ship.image} />
+            <LazyLoadImage
+               src={ship.image}
+               alt={ship.name}
+               draggable='false'
+               effect='blur'
+               className='w-16'
+               width={64}
+               height={64}
+            />
             <p className='h-full truncate text-center font-zhun text-xs'>
                {ship.name.length > 12 ? ship.name.split(' ').pop() : ship.name}
             </p>

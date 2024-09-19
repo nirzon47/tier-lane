@@ -1,6 +1,7 @@
 import { cn } from '@/lib/cn'
 import { SettingsContext, TierListContext } from '@/lib/context'
 import { TierShipType, TierType } from '@/lib/types'
+import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
@@ -32,6 +33,15 @@ const Tier = ({
 }) => {
    const ref = useRef(null)
    const tierList = useContext(TierListContext)?.tierList!
+   const editEnabled = useContext(SettingsContext)?.editEnabled
+   const updateTierListName = useContext(TierListContext)?.updateTierListName!
+
+   const handleTierNameInput = debounce(
+      (e: React.ChangeEvent<HTMLInputElement>, tierName: string) => {
+         updateTierListName(e.target.innerText, tierName)
+      },
+      600,
+   )
 
    useEffect(() => {
       const el = ref.current
@@ -55,7 +65,14 @@ const Tier = ({
       >
          <div className='flex gap-6'>
             <div className='grid min-w-12 place-content-center'>
-               <h3 className='font-zhun text-3xl'>{tier.name}</h3>
+               <h3
+                  className='font-zhun text-3xl focus:outline-none'
+                  contentEditable={editEnabled}
+                  suppressContentEditableWarning
+                  onInput={(e) => handleTierNameInput(e as any, tier.name)}
+               >
+                  {tier.name}
+               </h3>
             </div>
             <div className='flex flex-wrap items-center gap-3'>
                {tier.ships.map((ship) => (

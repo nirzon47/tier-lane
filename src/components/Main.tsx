@@ -15,7 +15,7 @@ const Main = () => {
    return (
       <main
          id='tier-list'
-         className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] gap-2 overflow-y-auto'
+         className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] content-start gap-3 overflow-y-auto pb-2'
       >
          {tierList.map((tier) => (
             <Tier key={tier.name} tier={tier} updateTierList={updateTierList} />
@@ -59,7 +59,7 @@ const Tier = ({
       <section
          className={cn(
             'grid gap-4 bg-white/10 p-2',
-            tier.ships.length > 0 ? 'h-fit' : 'h-28',
+            tier.ships.length > 0 ? 'h-fit' : 'h-[6.75rem]',
          )}
          ref={ref}
       >

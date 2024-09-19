@@ -84,6 +84,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       { name: 'B', ships: [] },
       { name: 'C', ships: [] },
       { name: 'D', ships: [] },
+      { name: 'E', ships: [] },
    ])
 
    useEffect(() => {
@@ -191,6 +192,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
          { name: 'B', ships: [] },
          { name: 'C', ships: [] },
          { name: 'D', ships: [] },
+         { name: 'E', ships: [] },
       ]
 
       setTierList(emptyTierList)

@@ -239,7 +239,7 @@ const SearchResults = () => {
 
    return (
       <div className='flex flex-1 flex-wrap gap-2 pr-8'>
-         {ships?.map((ship) => <Ship key={ship.name} ship={ship} />)}
+         {ships?.map((ship) => <Ship key={ship.id} ship={ship} />)}
       </div>
    )
 }

@@ -74,7 +74,7 @@ const Tier = ({
                   {tier.name}
                </h3>
             </div>
-            <div className='flex flex-wrap items-center gap-3'>
+            <div className='flex flex-wrap gap-3'>
                {tier.ships.map((ship) => (
                   <Ship key={ship.name} ship={ship} tier={tier} />
                ))}
@@ -101,8 +101,8 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
                width={64}
                height={64}
             />
-            <p className='h-full truncate text-center font-zhun text-xs'>
-               {ship.name.length > 12 ? ship.name.split(' ').pop() : ship.name}
+            <p className='h-full truncate text-wrap text-center font-zhun text-[0.7rem]'>
+               {ship.name}
             </p>
          </div>
 

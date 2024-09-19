@@ -1,7 +1,7 @@
 import { TierShipType, TierType } from '@/lib/types'
 
 export const isTierListArray = (value: any): value is TierType[] => {
-   if (!Array.isArray(value) || value.length !== 5) return false
+   if (!Array.isArray(value)) return false
 
    return value.every(
       (tier) =>

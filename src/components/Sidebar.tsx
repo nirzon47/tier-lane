@@ -237,14 +237,6 @@ const SearchResults = () => {
       )
    }
 
-   if (ships && ships.length > 100) {
-      return (
-         <div className='grid h-full items-center px-4'>
-            <p className='font-zhun'>Apply filters to see results...</p>
-         </div>
-      )
-   }
-
    return (
       <div className='flex flex-1 flex-wrap gap-2 pr-8'>
          {ships?.map((ship) => <Ship key={ship.name} ship={ship} />)}

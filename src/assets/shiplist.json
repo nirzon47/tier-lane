@@ -3421,7 +3421,7 @@
       "images": ["kasumi_DOA/kasumi_DOA.png", "kasumi_DOA/kasumi_DOA_2.png"]
    },
    {
-      "id": "M008",
+      "id": "M036",
       "name": "Kasumi META",
       "hull": "DD",
       "rarity": "Elite",
@@ -4086,7 +4086,7 @@
       "images": ["_children/renown_younv.png"]
    },
    {
-      "id": "586",
+      "id": "568",
       "name": "Little Spee",
       "hull": "CA",
       "rarity": "Elite",

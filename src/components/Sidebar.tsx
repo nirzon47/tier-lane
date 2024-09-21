@@ -32,7 +32,8 @@ const factionTypes = [
    { id: 8, name: 'Iris Libre' },
    { id: 9, name: 'Vichya Dominion' },
    { id: 10, name: 'Tempesta' },
-   { id: 11, name: 'Misc' },
+   { id: 11, name: 'META' },
+   { id: 12, name: 'Misc' },
 ]
 
 const rarityTypes = [

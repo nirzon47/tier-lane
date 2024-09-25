@@ -3,7 +3,7 @@ import { SettingsContext, TierListContext } from '@/lib/context'
 import { TierShipType, TierType } from '@/lib/types'
 import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import invariant from 'tiny-invariant'
@@ -11,6 +11,8 @@ import invariant from 'tiny-invariant'
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList!
    const updateTierList = useContext(TierListContext)?.updateTierList!
+   const editEnabled = useContext(SettingsContext)?.editEnabled
+   const addTier = useContext(TierListContext)?.addTier!
 
    return (
       <main
@@ -20,6 +22,16 @@ const Main = () => {
          {tierList.map((tier) => (
             <Tier key={tier.name} tier={tier} updateTierList={updateTierList} />
          ))}
+         <div
+            className={cn(
+               !editEnabled
+                  ? 'hidden'
+                  : 'grid cursor-pointer place-content-center bg-white/10 p-4 duration-150 hover:bg-white/20',
+            )}
+            onClick={addTier}
+         >
+            <PlusIcon />
+         </div>
       </main>
    )
 }

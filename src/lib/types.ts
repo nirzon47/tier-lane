@@ -43,6 +43,7 @@ export type TierListContextType = {
    resetTierList: () => void
    importTierList: (newTierList: TierType[]) => void
    updateTierListName: (name: string, tierName: string) => void
+   addTier: () => void
 }
 
 export type SettingsContextType = {

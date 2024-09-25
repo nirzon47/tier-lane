@@ -212,6 +212,16 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
    }
 
+   const addTier = () => {
+      const newTier: TierType = {
+         name: `T${tierList.length + 1}`,
+         ships: [],
+      }
+
+      setTierList([...tierList, newTier])
+      localStorage.setItem('tierList', JSON.stringify([...tierList, newTier]))
+   }
+
    return (
       <TierListContext.Provider
          value={{
@@ -222,6 +232,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
             resetTierList,
             importTierList,
             updateTierListName,
+            addTier,
          }}
       >
          {children}

@@ -44,6 +44,7 @@ export type TierListContextType = {
    importTierList: (newTierList: TierType[]) => void
    updateTierListName: (name: string, tierName: string) => void
    addTier: () => void
+   removeTier: (name: string) => void
 }
 
 export type SettingsContextType = {

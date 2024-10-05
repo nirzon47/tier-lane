@@ -47,6 +47,7 @@ const Tier = ({
    const tierList = useContext(TierListContext)?.tierList!
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const updateTierListName = useContext(TierListContext)?.updateTierListName!
+   const removeTier = useContext(TierListContext)?.removeTier!
 
    const handleTierNameInput = debounce(
       (e: React.ChangeEvent<HTMLInputElement>, tierName: string) => {
@@ -70,7 +71,7 @@ const Tier = ({
    return (
       <section
          className={cn(
-            'grid gap-4 bg-white/10 p-2',
+            'relative grid gap-4 bg-white/10 p-2',
             tier.ships.length > 0 ? 'h-fit' : 'h-[6.75rem]',
          )}
          ref={ref}
@@ -91,6 +92,16 @@ const Tier = ({
                   <Ship key={ship.name} ship={ship} tier={tier} />
                ))}
             </div>
+         </div>
+         <div
+            className={cn(
+               !editEnabled
+                  ? 'hidden'
+                  : 'absolute right-0 grid h-full cursor-pointer place-content-center bg-red-800 px-4 duration-150 hover:bg-red-900',
+            )}
+            onClick={() => removeTier(tier.name)}
+         >
+            <X className='h-4 w-4' />
          </div>
       </section>
    )

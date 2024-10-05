@@ -31,7 +31,7 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
 
          if (newFilter.name) {
             matches =
-               matches && ship.name.toLowerCase().startsWith(newFilter.name)
+               matches && ship.name.toLowerCase().includes(newFilter.name)
          }
 
          if (newFilter.rarity.length > 0) {

@@ -1,6 +1,7 @@
 import Content from '@/components/Content'
 import Header from '@/components/Header'
-import { SettingsProvider, TierListProvider } from '@/lib/context'
+import { TierListProvider } from '@/contexts/TierListContext'
+import { SettingsProvider } from '@/lib/context'
 
 const App = () => {
    return (

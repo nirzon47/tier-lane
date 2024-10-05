@@ -1,5 +1,6 @@
 import { cn } from '@/utils/cn'
-import { SettingsContext, TierListContext } from '@/lib/context'
+import { TierListContext } from '@/contexts/TierListContext'
+import { SettingsContext } from '@/lib/context'
 import { TierShipType, TierType } from '@/utils/types'
 import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
@@ -19,7 +20,7 @@ const Main = () => {
          id='tier-list'
          className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] content-start gap-3 overflow-y-auto pb-2'
       >
-         {tierList.map((tier) => (
+         {tierList?.map((tier) => (
             <Tier key={tier.name} tier={tier} updateTierList={updateTierList} />
          ))}
          <div

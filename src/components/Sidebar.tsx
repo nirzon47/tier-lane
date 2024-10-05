@@ -267,6 +267,8 @@ const Ship = ({ ship }: { ship: ShipType }) => {
          onDragStart: () => setDragging(true),
          onDrop: () => setDragging(false),
       })
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [image])
 
    return (

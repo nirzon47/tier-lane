@@ -43,7 +43,9 @@ const Header = () => {
             setJSONTextArea('')
             setImportDialogOpen(false)
          }
-      } catch (e) {}
+      } catch (e) {
+         console.error(e)
+      }
    }
 
    const handleImportTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

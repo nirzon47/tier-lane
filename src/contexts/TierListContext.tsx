@@ -20,6 +20,8 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       if (localStorage.getItem('tierList') && isTierListArray(tierList)) {
          setTierList(JSON.parse(localStorage.getItem('tierList')!))
       }
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
 
    const updateTierList = (tier: string, ship: TierShipType) => {

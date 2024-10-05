@@ -21,7 +21,11 @@ const Main = () => {
          className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] content-start gap-3 overflow-y-auto pb-2'
       >
          {tierList?.map((tier) => (
-            <Tier key={tier.name} tier={tier} updateTierList={updateTierList} />
+            <Tier
+               key={tier.name}
+               tier={tier}
+               updateTierList={updateTierList!}
+            />
          ))}
          <div
             className={cn(
@@ -52,7 +56,7 @@ const Tier = ({
 
    const handleTierNameInput = debounce(
       (e: React.ChangeEvent<HTMLInputElement>, tierName: string) => {
-         updateTierListName(e.target.innerText, tierName)
+         updateTierListName?.(e.target.innerText, tierName)
       },
       600,
    )
@@ -67,6 +71,8 @@ const Tier = ({
             updateTierList(tier.name, source.data as TierShipType)
          },
       })
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [tierList])
 
    return (
@@ -83,7 +89,12 @@ const Tier = ({
                   className='font-zhun text-3xl focus:outline-none'
                   contentEditable={editEnabled}
                   suppressContentEditableWarning
-                  onInput={(e) => handleTierNameInput(e as any, tier.name)}
+                  onInput={(e) =>
+                     handleTierNameInput(
+                        e as React.ChangeEvent<HTMLInputElement>,
+                        tier.name,
+                     )
+                  }
                >
                   {tier.name}
                </h3>
@@ -100,7 +111,7 @@ const Tier = ({
                   ? 'hidden'
                   : 'absolute right-0 grid h-full cursor-pointer place-content-center bg-red-800 px-4 duration-150 hover:bg-red-900',
             )}
-            onClick={() => removeTier(tier.name)}
+            onClick={() => removeTier?.(tier.name)}
          >
             <X className='h-4 w-4' />
          </div>
@@ -139,10 +150,14 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
             )}
          >
             <div className='flex w-full items-center justify-between'>
-               <button onClick={() => updatePosition(ship, tier.name, 'left')}>
+               <button
+                  onClick={() => updatePosition?.(ship, tier.name, 'left')}
+               >
                   <ChevronLeft />
                </button>
-               <button onClick={() => updatePosition(ship, tier.name, 'right')}>
+               <button
+                  onClick={() => updatePosition?.(ship, tier.name, 'right')}
+               >
                   <ChevronRight />
                </button>
             </div>
@@ -154,7 +169,7 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
          >
             <button
                className='rounded-full bg-red-800 p-0.5'
-               onClick={() => removeFromTierList(tier.name, ship)}
+               onClick={() => removeFromTierList?.(tier.name, ship)}
             >
                <X className='h-4 w-4' />
             </button>

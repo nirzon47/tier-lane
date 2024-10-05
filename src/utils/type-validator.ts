@@ -1,5 +1,6 @@
 import { TierShipType, TierType } from '@/utils/types'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isTierListArray = (value: any): value is TierType[] => {
    if (!Array.isArray(value)) return false
 

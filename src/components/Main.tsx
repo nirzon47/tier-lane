@@ -9,10 +9,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import invariant from 'tiny-invariant'
 
 const Main = () => {
-   const tierList = useContext(TierListContext)?.tierList!
-   const updateTierList = useContext(TierListContext)?.updateTierList!
+   const tierList = useContext(TierListContext)?.tierList
+   const updateTierList = useContext(TierListContext)?.updateTierList
    const editEnabled = useContext(SettingsContext)?.editEnabled
-   const addTier = useContext(TierListContext)?.addTier!
+   const addTier = useContext(TierListContext)?.addTier
 
    return (
       <main
@@ -44,10 +44,10 @@ const Tier = ({
    updateTierList: (name: string, ship: TierShipType) => void
 }) => {
    const ref = useRef(null)
-   const tierList = useContext(TierListContext)?.tierList!
+   const tierList = useContext(TierListContext)?.tierList
    const editEnabled = useContext(SettingsContext)?.editEnabled
-   const updateTierListName = useContext(TierListContext)?.updateTierListName!
-   const removeTier = useContext(TierListContext)?.removeTier!
+   const updateTierListName = useContext(TierListContext)?.updateTierListName
+   const removeTier = useContext(TierListContext)?.removeTier
 
    const handleTierNameInput = debounce(
       (e: React.ChangeEvent<HTMLInputElement>, tierName: string) => {
@@ -109,8 +109,8 @@ const Tier = ({
 
 const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const editEnabled = useContext(SettingsContext)?.editEnabled
-   const updatePosition = useContext(TierListContext)?.updatePosition!
-   const removeFromTierList = useContext(TierListContext)?.removeFromTierList!
+   const updatePosition = useContext(TierListContext)?.updatePosition
+   const removeFromTierList = useContext(TierListContext)?.removeFromTierList
 
    return (
       <div className='relative'>

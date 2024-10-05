@@ -1,4 +1,4 @@
-import { FilterProvider } from '@/lib/context'
+import { FilterProvider } from '@/contexts/FilterContext'
 import Main from './Main'
 import Sidebar from './Sidebar'
 

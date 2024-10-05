@@ -1,14 +1,14 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { cn } from '@/utils/cn'
-import { FilterContext } from '@/lib/context'
+import { FilterContext } from '@/contexts/FilterContext'
 import { ShipType } from '@/utils/types'
 import { draggable } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
-import invariant from 'tiny-invariant'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
 import { RotateCcw } from 'lucide-react'
 import { TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip'
 import { Tooltip } from '@radix-ui/react-tooltip'
+import invariant from 'tiny-invariant'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const hullTypes = [
    { id: 1, name: 'DD' },

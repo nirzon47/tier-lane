@@ -1,7 +1,7 @@
 import logo from '@/assets/images/logo.webp'
 import { cn } from '@/utils/cn'
 import { TierListContext } from '@/contexts/TierListContext'
-import { SettingsContext } from '@/lib/context'
+import { SettingsContext } from '@/contexts/SettingsContext'
 import {
    Tooltip,
    TooltipContent,

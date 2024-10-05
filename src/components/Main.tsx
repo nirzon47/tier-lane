@@ -1,6 +1,6 @@
 import { cn } from '@/utils/cn'
 import { TierListContext } from '@/contexts/TierListContext'
-import { SettingsContext } from '@/lib/context'
+import { SettingsContext } from '@/contexts/SettingsContext'
 import { TierShipType, TierType } from '@/utils/types'
 import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'

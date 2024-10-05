@@ -1,4 +1,4 @@
-import { TierShipType, TierType } from '@/lib/types'
+import { TierShipType, TierType } from '@/utils/types'
 
 export const isTierListArray = (value: any): value is TierType[] => {
    if (!Array.isArray(value)) return false

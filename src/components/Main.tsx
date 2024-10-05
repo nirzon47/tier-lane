@@ -1,6 +1,6 @@
-import { cn } from '@/lib/cn'
+import { cn } from '@/utils/cn'
 import { SettingsContext, TierListContext } from '@/lib/context'
-import { TierShipType, TierType } from '@/lib/types'
+import { TierShipType, TierType } from '@/utils/types'
 import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
 import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'

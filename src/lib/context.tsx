@@ -7,7 +7,7 @@ import {
    TierListContextType,
    TierShipType,
    TierType,
-} from './types'
+} from '../utils/types'
 import shipList from '@/assets/shiplist.json'
 import { isTierListArray } from '@/utils/type-validator'
 

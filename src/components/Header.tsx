@@ -1,5 +1,5 @@
 import logo from '@/assets/images/logo.webp'
-import { cn } from '@/lib/cn'
+import { cn } from '@/utils/cn'
 import { SettingsContext, TierListContext } from '@/lib/context'
 import {
    Tooltip,

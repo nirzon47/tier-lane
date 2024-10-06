@@ -45,6 +45,8 @@ const Header = () => {
          }
       } catch (e) {
          console.error(e)
+      } finally {
+         setValidJSONShape(false)
       }
    }
 
@@ -171,7 +173,8 @@ const Header = () => {
                         </span>
 
                         <button
-                           className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'
+                           className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20 disabled:cursor-not-allowed disabled:hover:bg-white/10'
+                           disabled={!validJSONShape}
                            onClick={handleJSONImport}
                         >
                            Import

@@ -1,6 +1,6 @@
 import { cn } from '@/utils/cn'
 import { DialogContent, DialogDescription, DialogTitle } from '../ui/Dialog'
-import { Textarea } from '../ui/textarea'
+import { Textarea } from '../ui/Textarea'
 import { useContext, useState } from 'react'
 import { isTierListArray } from '@/utils/type-validator'
 import { TierListContext } from '@/contexts/TierListContext'

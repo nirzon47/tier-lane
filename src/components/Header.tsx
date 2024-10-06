@@ -9,10 +9,9 @@ import {
    TooltipTrigger,
 } from '@/components/ui/tooltip'
 import domToImage from 'dom-to-image'
-import { Camera, Download, Eraser, Upload } from 'lucide-react'
+import { Camera, Download, Eraser, HelpCircle, Upload } from 'lucide-react'
 import { useContext, useState } from 'react'
 import { Dialog, DialogTrigger } from './ui/dialog'
-
 import ImportJsonDialog from './dialogs/ImportJsonDialog'
 
 const Header = () => {
@@ -84,6 +83,20 @@ const Header = () => {
                </div>
             </section>
             <section className='flex gap-2'>
+               {/* Help button */}
+               <Dialog>
+                  <DialogTrigger asChild>
+                     <div>
+                        <Tooltip>
+                           <TooltipTrigger className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'>
+                              <HelpCircle />
+                           </TooltipTrigger>
+                           <TooltipContent>Help</TooltipContent>
+                        </Tooltip>
+                     </div>
+                  </DialogTrigger>
+               </Dialog>
+
                {/* Reset tier list button */}
                <Tooltip>
                   <TooltipTrigger

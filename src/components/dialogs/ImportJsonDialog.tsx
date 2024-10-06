@@ -1,5 +1,5 @@
 import { cn } from '@/utils/cn'
-import { DialogContent, DialogDescription, DialogTitle } from '../ui/dialog'
+import { DialogContent, DialogDescription, DialogTitle } from '../ui/Dialog'
 import { Textarea } from '../ui/textarea'
 import { useContext, useState } from 'react'
 import { isTierListArray } from '@/utils/type-validator'

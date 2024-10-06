@@ -7,12 +7,13 @@ import {
    TooltipContent,
    TooltipProvider,
    TooltipTrigger,
-} from '@/components/ui/tooltip'
+} from '@/components/ui/Tooltip'
 import domToImage from 'dom-to-image'
 import { Camera, Download, Eraser, HelpCircle, Upload } from 'lucide-react'
 import { useContext, useState } from 'react'
-import { Dialog, DialogTrigger } from './ui/dialog'
+import { Dialog, DialogTrigger } from './ui/Dialog'
 import ImportJsonDialog from './dialogs/ImportJsonDialog'
+import HelpDialog from './dialogs/HelpDialog'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
@@ -95,6 +96,7 @@ const Header = () => {
                         </Tooltip>
                      </div>
                   </DialogTrigger>
+                  <HelpDialog />
                </Dialog>
 
                {/* Reset tier list button */}

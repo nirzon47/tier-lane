@@ -889,7 +889,8 @@
       "images": [
          "bismarck/bismarck.png",
          "bismarck/bismarck_2.png",
-         "bismarck/bismarck_3.png"
+         "bismarck/bismarck_3.png",
+         "bismarck/bismarck_h.png"
       ]
    },
    {
@@ -2077,7 +2078,8 @@
          "fusou/fusou.png",
          "fusou/fusou_2.png",
          "fusou/fusou_3.png",
-         "fusou/fusou_g.png"
+         "fusou/fusou_g.png",
+         "fusou/fusou_h.png"
       ]
    },
    {
@@ -2377,7 +2379,8 @@
       "images": [
          "hakuryuu/hakuryuu.png",
          "hakuryuu/hakuryuu_2.png",
-         "hakuryuu/hakuryuu_3.png"
+         "hakuryuu/hakuryuu_3.png",
+         "hakuryuu/hakuryuu_4.png"
       ]
    },
    {
@@ -2784,6 +2787,14 @@
       "rarity": "Elite",
       "faction": "Sakura Empire",
       "images": ["houshou/houshou.png", "houshou/houshou_2.png"]
+   },
+   {
+      "id": "M039",
+      "name": "Houshou META",
+      "hull": "CV",
+      "rarity": "Elite",
+      "faction": "META",
+      "images": ["_meta/houshou_alter.png"]
    },
    {
       "id": "43",
@@ -6070,7 +6081,8 @@
       "images": [
          "shoukaku/shoukaku.png",
          "shoukaku/shoukaku_2.png",
-         "shoukaku/shoukaku_3.png"
+         "shoukaku/shoukaku_3.png",
+         "shoukaku/shoukaku_h.png"
       ]
    },
    {
@@ -6282,7 +6294,11 @@
       "hull": "CA",
       "rarity": "Elite",
       "faction": "Iris Libre",
-      "images": ["suffren/suffren.png", "suffren/suffren_2.png"]
+      "images": [
+         "suffren/suffren.png",
+         "suffren/suffren_2.png",
+         "suffren/suffren_3.png"
+      ]
    },
    {
       "id": "350",

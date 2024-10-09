@@ -1,0 +1,210 @@
+[
+   {
+      "name": "S",
+      "ships": [
+         {
+            "name": "Plymouth",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/plymouth/plymouth_2.png"
+         },
+         {
+            "name": "Eldridge",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/eldridge/eldridge_g.png"
+         },
+         {
+            "name": "Hindenburg",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hindenburg/hindenburg_2.png"
+         },
+         {
+            "name": "Unzen",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/unzen/unzen_2.png"
+         },
+         {
+            "name": "Laffey II",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/laffey_II/laffey_II_n.png"
+         },
+         {
+            "name": "Mogador",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/mogador/mogador.png"
+         },
+         {
+            "name": "San Diego",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/san_diego/san_diego_h.png"
+         },
+         {
+            "name": "Kazagumo",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/kazagumo/kazagumo_4.png"
+         },
+         {
+            "name": "Ägir",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ägir/ägir_3.png"
+         },
+         {
+            "name": "Guam",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/guam/guam.png"
+         },
+         {
+            "name": "Helena",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/helena/helena_g.png"
+         },
+         {
+            "name": "Aurora",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/aurora/aurora_h.png"
+         },
+         {
+            "name": "Tai Yuan",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/tai_yuan/tai_yuan_g.png"
+         }
+      ]
+   },
+   {
+      "name": "A",
+      "ships": [
+         {
+            "name": "Avrora",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/avrora/avrora_3.png"
+         },
+         {
+            "name": "Shimakaze",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shimakaze/shimakaze_5.png"
+         },
+         {
+            "name": "Ibuki",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ibuki/ibuki_5.png"
+         },
+         {
+            "name": "Sirius",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/sirius/sirius_5.png"
+         },
+         {
+            "name": "Shimanto",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shimanto/shimanto.png"
+         },
+         {
+            "name": "Anchorage",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/anchorage/anchorage_h.png"
+         },
+         {
+            "name": "Kronshtadt",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/kronshtadt/kronshtadt_2.png"
+         },
+         {
+            "name": "Bayard",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/bayard/bayard.png"
+         },
+         {
+            "name": "Brest",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/brest/brest.png"
+         },
+         {
+            "name": "Yat Sen",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/yat_sen/yat_sen_2.png"
+         },
+         {
+            "name": "An shan",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/an_shan/an_shan_g.png"
+         },
+         {
+            "name": "Chang Chun",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/chang_chun/chang_chun_g.png"
+         },
+         {
+            "name": "Watarase",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/watarase/watarase.png"
+         },
+         {
+            "name": "Cheshire",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/cheshire/cheshire_5.png"
+         }
+      ]
+   },
+   {
+      "name": "B",
+      "ships": [
+         {
+            "name": "Scylla",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/scylla/scylla.png"
+         },
+         {
+            "name": "Harbin",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/harbin/harbin_h.png"
+         },
+         {
+            "name": "Felix Schultz",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/felix_schultz/felix_schultz.png"
+         },
+         {
+            "name": "Emden",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/emden/emden_3.png"
+         },
+         {
+            "name": "Marseillaise",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/marseillaise/marseillaise_2.png"
+         },
+         {
+            "name": "Noshiro μ",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_idol/noshiro_idol.png"
+         },
+         {
+            "name": "Jeanne D'Arc",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/jeanne_d'Arc/jeanne_d'Arc.png"
+         },
+         {
+            "name": "Friedrich Carl",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/friedrich_carl/friedrich_carl_2.png"
+         },
+         {
+            "name": "Azuma",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/azuma/azuma_h.png"
+         },
+         {
+            "name": "Voroshilov",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/voroshilov/voroshilov.png"
+         },
+         {
+            "name": "Kawakaze",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/kawakaze/kawakaze_h.png"
+         },
+         {
+            "name": "L'Audacieux",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/l'Audacieux/l'Audacieux.png"
+         },
+         {
+            "name": "Jervis",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/jervis/jervis.png"
+         },
+         {
+            "name": "Hatsuzuki",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hatsuzuki/hatsuzuki.png"
+         },
+         {
+            "name": "Golden Hind",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/golden_hind/golden_hind.png"
+         }
+      ]
+   },
+   {
+      "name": "TBD",
+      "ships": [
+         {
+            "name": "Napoli",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/napoli/napoli.png"
+         },
+         {
+            "name": "Jintsuu META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/jintsuu_alter.png"
+         },
+         {
+            "name": "Wichita META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/wichita_alter.png"
+         },
+         {
+            "name": "Fargo",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/fargo/fargo.png"
+         },
+         {
+            "name": "Hammann II",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hammann_II/hammann_II_2.png"
+         }
+      ]
+   }
+]

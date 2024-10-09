@@ -1,0 +1,150 @@
+[
+   {
+      "name": "S",
+      "ships": [
+         {
+            "name": "Unicorn",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/unicorn/unicorn_10.png"
+         },
+         {
+            "name": "Admiral Nakhimov",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/admiral_nakhimov/admiral_nakhimov.png"
+         },
+         {
+            "name": "Shinano",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shinano/shinano_4.png"
+         },
+         {
+            "name": "Amagi CV",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/amagi_CV/amagi_CV.png"
+         },
+         {
+            "name": "Yorktown II",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/yorktown_II/yorktown_II.png"
+         },
+         {
+            "name": "Independence",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/independence/independence_3.png"
+         },
+         {
+            "name": "Implacable",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/implacable/implacable.png"
+         },
+         {
+            "name": "Hakuryuu",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hakuryuu/hakuryuu_3.png"
+         },
+         {
+            "name": "Ranger",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ranger/ranger_g.png"
+         }
+      ]
+   },
+   {
+      "name": "A",
+      "ships": [
+         {
+            "name": "Aquila",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/aquila/aquila_3.png"
+         },
+         {
+            "name": "Enterprise",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/enterprise/enterprise_7.png"
+         },
+         {
+            "name": "Shangri-La",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shangri-La/shangri-La_3.png"
+         },
+         {
+            "name": "Chkalov",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/chkalov/chkalov_2.png"
+         },
+         {
+            "name": "August von Parseval",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/august_von_parseval/august_von_parseval_2.png"
+         },
+         {
+            "name": "Volga",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/volga/volga_2.png"
+         },
+         {
+            "name": "Zuihou",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/zuihou/zuihou.png"
+         }
+      ]
+   },
+   {
+      "name": "B",
+      "ships": [
+         {
+            "name": "Saratoga",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/saratoga/saratoga_10.png"
+         },
+         {
+            "name": "Souryuu META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/souryuu_alter.png"
+         },
+         {
+            "name": "Ark Royal",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ark_royal/ark_royal_6.png"
+         },
+         {
+            "name": "Illustrious",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/illustrious/illustrious_7.png"
+         },
+         {
+            "name": "Albion",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/albion/albion_3.png"
+         },
+         {
+            "name": "Taihou",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/taihou/taihou_6.png"
+         },
+         {
+            "name": "Peter Strasser",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/peter_strasser/peter_strasser_3.png"
+         },
+         {
+            "name": "Ryuuhou",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ryuuhou/ryuuhou.png"
+         }
+      ]
+   },
+   {
+      "name": "D",
+      "ships": [
+         {
+            "name": "Klaudia Valentz",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/klaudia_valentz/klaudia_valentz.png"
+         },
+         {
+            "name": "Béarn META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/béarn_alter.png"
+         },
+         {
+            "name": "Centaur",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/centaur/centaur.png"
+         },
+         {
+            "name": "Yumi",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/yumi_SK/yumi_SK.png"
+         },
+         {
+            "name": "Asukagawa Chise",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/asukagawa_chise/asukagawa_chise_3.png"
+         },
+         {
+            "name": "Impero",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/impero/impero.png"
+         },
+         {
+            "name": "Akagi μ",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_idol/akagi_idol.png"
+         },
+         {
+            "name": "Luna",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/luna_DOA/luna_DOA_2_doa.png"
+         }
+      ]
+   }
+]

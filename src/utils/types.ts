@@ -27,7 +27,7 @@ export type TierShipType = {
 }
 
 export type TierType = {
-   id: string
+   id?: string
    name: string
    ships: TierShipType[]
 }

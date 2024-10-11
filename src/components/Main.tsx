@@ -64,7 +64,7 @@ const Tier = ({
       return dropTargetForElements({
          element: el,
          onDrop: ({ source }) => {
-            updateTierList(tier.id, source.data as TierShipType)
+            updateTierList(tier.id!, source.data as TierShipType)
          },
       })
 
@@ -107,7 +107,7 @@ const Tier = ({
                   ? 'hidden'
                   : 'absolute right-0 grid h-full cursor-pointer place-content-center bg-red-800 px-4 duration-150 hover:bg-red-900',
             )}
-            onClick={() => removeTier?.(tier.id)}
+            onClick={() => removeTier?.(tier.id!)}
          >
             <X className='h-4 w-4' />
          </div>
@@ -146,10 +146,12 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
             )}
          >
             <div className='flex w-full items-center justify-between'>
-               <button onClick={() => updatePosition?.(ship, tier.id, 'left')}>
+               <button onClick={() => updatePosition?.(ship, tier.id!, 'left')}>
                   <ChevronLeft />
                </button>
-               <button onClick={() => updatePosition?.(ship, tier.id, 'right')}>
+               <button
+                  onClick={() => updatePosition?.(ship, tier.id!, 'right')}
+               >
                   <ChevronRight />
                </button>
             </div>
@@ -161,7 +163,7 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
          >
             <button
                className='rounded-full bg-red-800 p-0.5'
-               onClick={() => removeFromTierList?.(tier.id, ship)}
+               onClick={() => removeFromTierList?.(tier.id!, ship)}
             >
                <X className='h-4 w-4' />
             </button>

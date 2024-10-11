@@ -14,6 +14,7 @@ import { useContext, useState } from 'react'
 import { Dialog, DialogTrigger } from './ui/Dialog'
 import ImportJsonDialog from './dialogs/ImportJsonDialog'
 import HelpDialog from './dialogs/HelpDialog'
+import { TierType } from '@/utils/types'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
@@ -28,8 +29,11 @@ const Header = () => {
          return
       }
 
+      const updatedTierList = JSON.parse(tierList)
+      updatedTierList.forEach((tier: TierType) => delete tier.id)
+
       const jsonString = `data:text/json;charset=utf-8,${encodeURIComponent(
-         tierList,
+         JSON.stringify(updatedTierList),
       )}`
 
       const link = document.createElement('a')

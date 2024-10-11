@@ -4,6 +4,7 @@ import { Textarea } from '../ui/Textarea'
 import { useContext, useState } from 'react'
 import { isTierListArray } from '@/utils/type-validator'
 import { TierListContext } from '@/contexts/TierListContext'
+import { nanoid } from 'nanoid'
 
 const ImportJsonDialog = ({
    setImportDialogOpen,
@@ -21,6 +22,8 @@ const ImportJsonDialog = ({
          if (!isTierListArray(tierList)) {
             throw new Error('Invalid JSON')
          }
+
+         tierList.forEach((tier) => (tier.id = nanoid()))
 
          if (importTierList) {
             importTierList(tierList)

@@ -21,11 +21,7 @@ const Main = () => {
          className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] content-start gap-3 overflow-y-auto pb-2'
       >
          {tierList?.map((tier) => (
-            <Tier
-               key={tier.name}
-               tier={tier}
-               updateTierList={updateTierList!}
-            />
+            <Tier key={tier.id} tier={tier} updateTierList={updateTierList!} />
          ))}
          <div
             className={cn(
@@ -84,7 +80,7 @@ const Tier = ({
          ref={ref}
       >
          <div className='flex gap-6'>
-            <div className='grid min-w-12 place-content-center'>
+            <div className='grid min-w-12 place-content-center px-4'>
                <h3
                   className='font-zhun text-3xl focus:outline-none'
                   contentEditable={editEnabled}
@@ -99,7 +95,7 @@ const Tier = ({
                   {tier.name}
                </h3>
             </div>
-            <div className='flex flex-wrap gap-3'>
+            <div className='flex flex-wrap gap-x-2 gap-y-1'>
                {tier.ships.map((ship) => (
                   <Ship key={ship.name} ship={ship} tier={tier} />
                ))}

@@ -25,8 +25,8 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
 
-   const updateTierList = (tier: string, ship: TierShipType) => {
-      const currentTier = tierList.find((t) => t.name === tier)
+   const updateTierList = (id: string, ship: TierShipType) => {
+      const currentTier = tierList.find((t) => t.id === id)
 
       if (!currentTier || currentTier.ships.find((s) => s.name === ship.name)) {
          return
@@ -36,7 +36,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       const updatedTier = { ...currentTier, ships: updatedTierShips }
 
       const updatedTierList = tierList.map((t) =>
-         t.name === tier ? updatedTier : t,
+         t.id === id ? updatedTier : t,
       )
 
       setTierList(updatedTierList)
@@ -45,10 +45,10 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
 
    const updatePosition = (
       ship: TierShipType,
-      tier: string,
+      id: string,
       position: 'left' | 'right',
    ) => {
-      const tierIndex = tierList.findIndex((t) => tier === t.name)
+      const tierIndex = tierList.findIndex((t) => id === t.id)
 
       if (tierIndex === -1) {
          return
@@ -85,15 +85,16 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       }
 
       const updatedTierList = tierList.map((t) =>
-         t.name === tier ? currentTier : t,
+         t.id === id ? currentTier : t,
       )
 
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
       setTierList(updatedTierList)
    }
 
-   const removeFromTierList = (tier: string, ship: TierShipType) => {
-      const currentTier = tierList.find((t) => t.name === tier)
+   const removeFromTierList = (id: string, ship: TierShipType) => {
+      const currentTier = tierList.find((t) => t.id === id)
+      console.log(currentTier)
 
       if (!currentTier) {
          return
@@ -108,7 +109,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       currentTier.ships.splice(index, 1)
 
       const updatedTierList = tierList.map((t) =>
-         t.name === tier ? currentTier : t,
+         t.id === id ? currentTier : t,
       )
 
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
@@ -135,9 +136,9 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem('tierList', JSON.stringify(newTierList))
    }
 
-   const updateTierListName = (name: string, tierName: string) => {
+   const updateTierListName = (name: string, id: string) => {
       const updatedTierList = tierList.map((t) =>
-         t.name === tierName ? { ...t, name } : t,
+         t.id === id ? { ...t, name } : t,
       )
 
       setTierList(updatedTierList)
@@ -155,8 +156,8 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem('tierList', JSON.stringify([...tierList, newTier]))
    }
 
-   const removeTier = (name: string) => {
-      const updatedTierList = tierList.filter((t) => t.name !== name)
+   const removeTier = (id: string) => {
+      const updatedTierList = tierList.filter((t) => t.id !== id)
 
       setTierList(updatedTierList)
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))

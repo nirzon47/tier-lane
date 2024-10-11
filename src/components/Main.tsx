@@ -51,8 +51,8 @@ const Tier = ({
    const removeTier = useContext(TierListContext)?.removeTier
 
    const handleTierNameInput = debounce(
-      (e: React.ChangeEvent<HTMLInputElement>, tierName: string) => {
-         updateTierListName?.(e.target.innerText, tierName)
+      (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
+         updateTierListName?.(e.target.innerText, id)
       },
       600,
    )
@@ -64,7 +64,7 @@ const Tier = ({
       return dropTargetForElements({
          element: el,
          onDrop: ({ source }) => {
-            updateTierList(tier.name, source.data as TierShipType)
+            updateTierList(tier.id, source.data as TierShipType)
          },
       })
 
@@ -88,7 +88,7 @@ const Tier = ({
                   onInput={(e) =>
                      handleTierNameInput(
                         e as React.ChangeEvent<HTMLInputElement>,
-                        tier.name,
+                        tier.id,
                      )
                   }
                >
@@ -107,7 +107,7 @@ const Tier = ({
                   ? 'hidden'
                   : 'absolute right-0 grid h-full cursor-pointer place-content-center bg-red-800 px-4 duration-150 hover:bg-red-900',
             )}
-            onClick={() => removeTier?.(tier.name)}
+            onClick={() => removeTier?.(tier.id)}
          >
             <X className='h-4 w-4' />
          </div>
@@ -146,14 +146,10 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
             )}
          >
             <div className='flex w-full items-center justify-between'>
-               <button
-                  onClick={() => updatePosition?.(ship, tier.name, 'left')}
-               >
+               <button onClick={() => updatePosition?.(ship, tier.id, 'left')}>
                   <ChevronLeft />
                </button>
-               <button
-                  onClick={() => updatePosition?.(ship, tier.name, 'right')}
-               >
+               <button onClick={() => updatePosition?.(ship, tier.id, 'right')}>
                   <ChevronRight />
                </button>
             </div>
@@ -165,7 +161,7 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
          >
             <button
                className='rounded-full bg-red-800 p-0.5'
-               onClick={() => removeFromTierList?.(tier.name, ship)}
+               onClick={() => removeFromTierList?.(tier.id, ship)}
             >
                <X className='h-4 w-4' />
             </button>

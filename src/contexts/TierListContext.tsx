@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { TierListContextType, TierShipType, TierType } from '@/utils/types'
 import { isTierListArray } from '@/utils/type-validator'
+import { nanoid } from 'nanoid'
 
 const TierListContext = createContext<TierListContextType | undefined>(
    undefined,
@@ -8,12 +9,12 @@ const TierListContext = createContext<TierListContextType | undefined>(
 
 const TierListProvider = ({ children }: { children: React.ReactNode }) => {
    const [tierList, setTierList] = useState<TierType[]>([
-      { name: 'S', ships: [] },
-      { name: 'A', ships: [] },
-      { name: 'B', ships: [] },
-      { name: 'C', ships: [] },
-      { name: 'D', ships: [] },
-      { name: 'E', ships: [] },
+      { id: 'tier_1', name: 'S', ships: [] },
+      { id: 'tier_2', name: 'A', ships: [] },
+      { id: 'tier_3', name: 'B', ships: [] },
+      { id: 'tier_4', name: 'C', ships: [] },
+      { id: 'tier_5', name: 'D', ships: [] },
+      { id: 'tier_6', name: 'E', ships: [] },
    ])
 
    useEffect(() => {
@@ -118,12 +119,12 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.removeItem('tierList')
 
       const emptyTierList: TierType[] = [
-         { name: 'S', ships: [] },
-         { name: 'A', ships: [] },
-         { name: 'B', ships: [] },
-         { name: 'C', ships: [] },
-         { name: 'D', ships: [] },
-         { name: 'E', ships: [] },
+         { id: 'tier_1', name: 'S', ships: [] },
+         { id: 'tier_2', name: 'A', ships: [] },
+         { id: 'tier_3', name: 'B', ships: [] },
+         { id: 'tier_4', name: 'C', ships: [] },
+         { id: 'tier_5', name: 'D', ships: [] },
+         { id: 'tier_6', name: 'E', ships: [] },
       ]
 
       setTierList(emptyTierList)
@@ -145,6 +146,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
 
    const addTier = () => {
       const newTier: TierType = {
+         id: nanoid(),
          name: `T${tierList.length + 1}`,
          ships: [],
       }

@@ -7,6 +7,7 @@ import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element
 import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { createSwapy, Swapy } from 'swapy'
 
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList
@@ -62,8 +63,22 @@ const Tier = ({
          return
       }
 
+      const swap = document.getElementById(tier.id!)
+      let swapper: Swapy
+
+      setTimeout(() => {
+         swapper = createSwapy(swap, {
+            swapMode: 'hover',
+         })
+
+         swapper.onSwapEnd(({ data }) => {
+            console.log(data)
+         })
+      })
+
       return dropTargetForElements({
          element: el,
+
          onDrop: ({ source }) => {
             updateTierList(tier.id!, source.data as TierShipType)
          },
@@ -96,10 +111,19 @@ const Tier = ({
                   {tier.name}
                </h3>
             </div>
-            <div className='flex flex-wrap gap-x-2 gap-y-1'>
+            <div className='flex flex-wrap gap-x-2 gap-y-1' id={tier.id}>
                {tier.ships.map((ship) => (
-                  <Ship key={ship.name} ship={ship} tier={tier} />
+                  <div key={ship.name} data-swapy-slot={ship.name}>
+                     <Ship key={ship.name} ship={ship} tier={tier} />
+                  </div>
                ))}
+
+               {/* Empty slot to mute errors */}
+               {tier.ships.length === 0 && (
+                  <div data-swapy-slot={`empty ${tier.id}`}>
+                     <div data-swapy-item={`empty ${tier.id}`}></div>
+                  </div>
+               )}
             </div>
          </div>
          <div
@@ -122,7 +146,7 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const removeFromTierList = useContext(TierListContext)?.removeFromTierList
 
    return (
-      <div className='relative'>
+      <div className='relative' data-swapy-item={ship.name}>
          <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
             <LazyLoadImage
                src={ship.image}

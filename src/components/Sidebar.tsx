@@ -7,7 +7,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { RotateCcw } from 'lucide-react'
 import { TooltipContent, TooltipProvider, TooltipTrigger } from './ui/Tooltip'
 import { Tooltip } from '@radix-ui/react-tooltip'
-import invariant from 'tiny-invariant'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const hullTypes = [
@@ -256,7 +255,9 @@ const Ship = ({ ship }: { ship: ShipType }) => {
 
    useEffect(() => {
       const el = ref.current
-      invariant(el)
+      if (!el) {
+         return
+      }
 
       return draggable({
          element: el,

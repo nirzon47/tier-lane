@@ -7,7 +7,6 @@ import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element
 import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import invariant from 'tiny-invariant'
 
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList
@@ -59,7 +58,9 @@ const Tier = ({
 
    useEffect(() => {
       const el = ref.current
-      invariant(el)
+      if (!el) {
+         return
+      }
 
       return dropTargetForElements({
          element: el,

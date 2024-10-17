@@ -43,15 +43,30 @@ const ImportJsonDialog = ({
    const importJimmyTierList = (type: string) => {
       switch (type) {
          case 'battleships':
-            importTierList?.(BattleshipsTierList)
+            importTierList?.(
+               BattleshipsTierList.map((tier) => ({
+                  ...tier,
+                  id: nanoid(),
+               })),
+            )
             break
 
          case 'carriers':
-            importTierList?.(CarriersTierList)
+            importTierList?.(
+               CarriersTierList.map((tier) => ({
+                  ...tier,
+                  id: nanoid(),
+               })),
+            )
             break
 
          case 'vanguards':
-            importTierList?.(VanguardsTierList)
+            importTierList?.(
+               VanguardsTierList.map((tier) => ({
+                  ...tier,
+                  id: nanoid(),
+               })),
+            )
             break
       }
 

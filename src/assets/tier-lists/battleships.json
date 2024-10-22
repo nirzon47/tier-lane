@@ -49,12 +49,8 @@
       "name": "A\n",
       "ships": [
          {
-            "name": "Daisen",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/daisen/daisen.png"
-         },
-         {
-            "name": "Flandre",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/flandre/flandre_2.png"
+            "name": "Rodney META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/rodney_alter.png"
          },
          {
             "name": "Izumo",
@@ -65,6 +61,22 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/duke_of_york/duke_of_york_4.png"
          },
          {
+            "name": "Daisen",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/daisen/daisen.png"
+         },
+         {
+            "name": "Owari",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/owari/owari.png"
+         },
+         {
+            "name": "Flandre",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/flandre/flandre_2.png"
+         },
+         {
+            "name": "Tamaki",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/tamaki_DOA/tamaki_DOA_2_doa.png"
+         },
+         {
             "name": "Odin",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/odin/odin.png"
          },
@@ -73,20 +85,12 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hood/hood_5.png"
          },
          {
-            "name": "Gascogne",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/gascogne/gascogne_2.png"
-         },
-         {
-            "name": "Nagato META",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/nagato_alter.png"
+            "name": "Constellation",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/constellation/constellation_2.png"
          },
          {
             "name": "Seydlitz",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/seydlitz/seydlitz_4.png"
-         },
-         {
-            "name": "Owari",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/owari/owari.png"
          }
       ]
    },
@@ -108,11 +112,23 @@
       ]
    },
    {
-      "name": "A\n",
+      "name": "B\n",
       "ships": [
          {
-            "name": "Tamaki",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/tamaki_DOA/tamaki_DOA_2_doa.png"
+            "name": "Alvitr",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/alvitr/alvitr.png"
+         },
+         {
+            "name": "Patricia Abelheim",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/patricia_abelheim/patricia_abelheim.png"
+         },
+         {
+            "name": "Indiana",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/indiana/indiana.png"
+         },
+         {
+            "name": "Shinjou Akane",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shinjou_akane/shinjou_akane_3.png"
          },
          {
             "name": "Marco Polo",
@@ -123,12 +139,24 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/prinz_rupprecht/prinz_rupprecht_3.png"
          },
          {
+            "name": "Nagato META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/nagato_alter.png"
+         },
+         {
             "name": "Queen Elizabeth META",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/queen_elizabeth_alter.png"
          },
          {
+            "name": "Gascogne",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/gascogne/gascogne_2.png"
+         },
+         {
             "name": "Monarch",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/monarch/monarch_4.png"
+         },
+         {
+            "name": "Hiei META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/hiei_alter.png"
          },
          {
             "name": "Bismarck",
@@ -146,10 +174,6 @@
          {
             "name": "Maryland",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/maryland/maryland_g.png"
-         },
-         {
-            "name": "Colorado",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/colorado/colorado_3.png"
          }
       ]
    },

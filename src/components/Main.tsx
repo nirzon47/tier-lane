@@ -49,6 +49,7 @@ const Tier = ({
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const updateTierListName = useContext(TierListContext)?.updateTierListName
    const removeTier = useContext(TierListContext)?.removeTier
+   const swapyRef = useRef<HTMLDivElement | null>(null)
 
    const handleTierNameInput = debounce(
       (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
@@ -63,22 +64,8 @@ const Tier = ({
          return
       }
 
-      const swap = document.getElementById(tier.id!)
-      let swapper: Swapy
-
-      setTimeout(() => {
-         swapper = createSwapy(swap, {
-            swapMode: 'hover',
-         })
-
-         swapper.onSwapEnd(({ data }) => {
-            console.log(data)
-         })
-      })
-
       return dropTargetForElements({
          element: el,
-
          onDrop: ({ source }) => {
             updateTierList(tier.id!, source.data as TierShipType)
          },
@@ -86,6 +73,23 @@ const Tier = ({
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [tierList])
+
+   useEffect(() => {
+      const swap = swapyRef.current
+      if (!swap) {
+         return
+      }
+
+      const swapper: Swapy = createSwapy(swap, {
+         swapMode: 'hover',
+      })
+
+      swapper.onSwapEnd(({ data }) => {
+         console.log(data)
+      })
+
+      return () => swapper.destroy()
+   }, [])
 
    return (
       <section
@@ -111,7 +115,7 @@ const Tier = ({
                   {tier.name}
                </h3>
             </div>
-            <div className='flex flex-wrap gap-x-2 gap-y-1' id={tier.id}>
+            <div className='flex flex-wrap gap-x-2 gap-y-1' ref={swapyRef}>
                {tier.ships.map((ship) => (
                   <div key={ship.name} data-swapy-slot={ship.name}>
                      <Ship key={ship.name} ship={ship} tier={tier} />
@@ -119,11 +123,11 @@ const Tier = ({
                ))}
 
                {/* Empty slot to mute errors */}
-               {tier.ships.length === 0 && (
+               {tier.ships.length === 0 ? (
                   <div data-swapy-slot={`empty ${tier.id}`}>
                      <div data-swapy-item={`empty ${tier.id}`}></div>
                   </div>
-               )}
+               ) : null}
             </div>
          </div>
          <div

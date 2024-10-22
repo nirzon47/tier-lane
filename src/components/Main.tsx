@@ -4,7 +4,7 @@ import { SettingsContext } from '@/contexts/SettingsContext'
 import { TierShipType, TierType } from '@/utils/types'
 import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
-import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'
+import { PlusIcon, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { createSwapy, Swapy } from 'swapy'
@@ -89,7 +89,7 @@ const Tier = ({
       })
 
       return () => swapper.destroy()
-   }, [])
+   }, [tierList])
 
    return (
       <section
@@ -146,7 +146,6 @@ const Tier = ({
 
 const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const editEnabled = useContext(SettingsContext)?.editEnabled
-   const updatePosition = useContext(TierListContext)?.updatePosition
    const removeFromTierList = useContext(TierListContext)?.removeFromTierList
 
    return (
@@ -167,24 +166,6 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
          </div>
 
          {/* Edit Overlays */}
-         <div
-            className={cn(
-               editEnabled
-                  ? 'absolute inset-0 z-10 grid items-center bg-black/40'
-                  : 'hidden',
-            )}
-         >
-            <div className='flex w-full items-center justify-between'>
-               <button onClick={() => updatePosition?.(ship, tier.id!, 'left')}>
-                  <ChevronLeft />
-               </button>
-               <button
-                  onClick={() => updatePosition?.(ship, tier.id!, 'right')}
-               >
-                  <ChevronRight />
-               </button>
-            </div>
-         </div>
          <div
             className={cn(
                editEnabled ? 'absolute -right-2 -top-2 z-20' : 'hidden',

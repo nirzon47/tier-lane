@@ -32,7 +32,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
          return
       }
 
-      const updatedTierShips = [...currentTier.ships, ship]
+      const updatedTierShips = [...currentTier.ships, { id: nanoid(), ...ship }]
       const updatedTier = { ...currentTier, ships: updatedTierShips }
 
       const updatedTierList = tierList.map((t) =>

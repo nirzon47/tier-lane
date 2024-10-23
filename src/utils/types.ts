@@ -22,6 +22,7 @@ export type ShipType = {
 }
 
 export type TierShipType = {
+   id?: string
    name: string
    image: string
 }

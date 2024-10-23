@@ -14,7 +14,7 @@ import { useContext, useState } from 'react'
 import { Dialog, DialogTrigger } from './ui/Dialog'
 import ImportJsonDialog from './dialogs/ImportJsonDialog'
 import HelpDialog from './dialogs/HelpDialog'
-import { TierType } from '@/utils/types'
+import { TierShipType, TierType } from '@/utils/types'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
@@ -30,7 +30,13 @@ const Header = () => {
       }
 
       const updatedTierList = JSON.parse(tierList)
-      updatedTierList.forEach((tier: TierType) => delete tier.id)
+      updatedTierList.forEach((tier: TierType) => {
+         delete tier.id
+
+         tier.ships.forEach((ship: TierShipType) => {
+            delete ship.id
+         })
+      })
 
       const jsonString = `data:text/json;charset=utf-8,${encodeURIComponent(
          JSON.stringify(updatedTierList),

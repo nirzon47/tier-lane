@@ -26,7 +26,13 @@ const ImportJsonDialog = ({
             throw new Error('Invalid JSON')
          }
 
-         tierList.forEach((tier) => (tier.id = nanoid()))
+         tierList.forEach((tier) => {
+            tier.id = nanoid()
+
+            tier.ships.forEach((ship) => {
+               ship.id = nanoid()
+            })
+         })
 
          if (importTierList) {
             importTierList(tierList)
@@ -47,6 +53,10 @@ const ImportJsonDialog = ({
                BattleshipsTierList.map((tier) => ({
                   ...tier,
                   id: nanoid(),
+                  ships: tier.ships.map((ship) => ({
+                     ...ship,
+                     id: nanoid(),
+                  })),
                })),
             )
             break
@@ -56,6 +66,10 @@ const ImportJsonDialog = ({
                CarriersTierList.map((tier) => ({
                   ...tier,
                   id: nanoid(),
+                  ships: tier.ships.map((ship) => ({
+                     ...ship,
+                     id: nanoid(),
+                  })),
                })),
             )
             break
@@ -65,6 +79,10 @@ const ImportJsonDialog = ({
                VanguardsTierList.map((tier) => ({
                   ...tier,
                   id: nanoid(),
+                  ships: tier.ships.map((ship) => ({
+                     ...ship,
+                     id: nanoid(),
+                  })),
                })),
             )
             break

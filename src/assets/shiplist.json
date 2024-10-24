@@ -363,6 +363,14 @@
       ]
    },
    {
+      "id": "666",
+      "name": "Amity",
+      "hull": "Misc",
+      "rarity": "Super Rare",
+      "faction": "Tempesta",
+      "images": ["amity/amity.png", "amity/amity_2.png"]
+   },
+   {
       "id": "253",
       "name": "An shan",
       "hull": "DD",
@@ -610,7 +618,8 @@
          "atago/atago_3.png",
          "atago/atago_4.png",
          "atago/atago_5.png",
-         "atago/atago_h.png"
+         "atago/atago_h.png",
+         "atago/atago_6.png"
       ]
    },
    {
@@ -1037,7 +1046,11 @@
       "hull": "DD",
       "rarity": "Super Rare",
       "faction": "Eagle Union",
-      "images": ["bristol/bristol.png", "bristol/bristol_2.png"]
+      "images": [
+         "bristol/bristol.png",
+         "bristol/bristol_2.png",
+         "bristol/bristol_3.png"
+      ]
    },
    {
       "id": "31",
@@ -1566,6 +1579,14 @@
       "images": ["_idol/dido_idol.png"]
    },
    {
+      "id": "668",
+      "name": "Dolphin",
+      "hull": "Misc",
+      "rarity": "Elite",
+      "faction": "Tempesta",
+      "images": ["dolphin/dolphin.png", "dolphin/dolphin_2.png"]
+   },
+   {
       "id": "124",
       "name": "Dorsetshire",
       "hull": "CA",
@@ -1832,6 +1853,14 @@
          "exeter/exeter_2.png",
          "exeter/exeter_g.png"
       ]
+   },
+   {
+      "id": "665",
+      "name": "Fancy",
+      "hull": "Misc",
+      "rarity": "Super Rare",
+      "faction": "Tempesta",
+      "images": ["fancy/fancy.png", "fancy/fancy_2.png"]
    },
    {
       "id": "657",
@@ -2124,6 +2153,17 @@
          "gangut/gangut.png",
          "gangut/gangut_2.png",
          "gangut/gangut_3.png"
+      ]
+   },
+   {
+      "id": "664",
+      "name": "Ganj-i-Sawai",
+      "hull": "Misc",
+      "rarity": "Super Rare",
+      "faction": "Tempesta",
+      "images": [
+         "ganj-i-Sawai/ganj-i-Sawai.png",
+         "ganj-i-Sawai/ganj-i-Sawai_2.png"
       ]
    },
    {
@@ -5160,7 +5200,7 @@
       "hull": "BB",
       "rarity": "Super Rare",
       "faction": "Sakura Empire",
-      "images": ["owari/owari.png", "owari/owari_2.png"]
+      "images": ["owari/owari.png", "owari/owari_2.png", "owari/owari_3.png"]
    },
    {
       "id": "178",
@@ -5351,6 +5391,17 @@
          "portland/portland.png",
          "portland/portland_2.png",
          "portland/portland_g.png"
+      ]
+   },
+   {
+      "id": "667",
+      "name": "Portsmouth Adventure",
+      "hull": "Misc",
+      "rarity": "Elite",
+      "faction": "Tempesta",
+      "images": [
+         "portsmouth_adventure/portsmouth_adventure.png",
+         "portsmouth_adventure/portsmouth_adventure_2.png"
       ]
    },
    {
@@ -6550,7 +6601,7 @@
    {
       "id": "C088",
       "name": "The 2nd",
-      "hull": "CV",
+      "hull": "BB",
       "rarity": "Super Rare",
       "faction": "Misc",
       "images": ["the_2nd/the_2nd.png", "the_2nd/the_2nd_2.png"]

@@ -1,0 +1,54 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+   push:
+      branches:
+         - main
+
+jobs:
+   build-and-deploy:
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout repository
+           uses: actions/checkout@v4
+
+         - name: Setup Node.js
+           uses: actions/setup-node@v4
+           with:
+              node-version: '20'
+
+         - name: Install dependencies
+           run: npm install
+
+         - name: Build
+           run: npm run build
+
+         - name: Checkout pre-production branch
+           run: |
+              git fetch
+              git checkout pre-production
+              git pull origin pre-production
+
+         - name: Clean pre-production branch
+           run: |
+              git rm -rf .
+              git clean -fxd
+
+         - name: Copy dist contents
+           run: |
+              cp -r ../dist/* .
+              git add .
+
+         - name: Commit and push to pre-production
+           run: |
+              git config --local user.email "github-actions[bot]@users.noreply.github.com"
+              git config --local user.name "github-actions[bot]"
+              git commit -m "Update pre-production with latest build"
+              git push origin pre-production
+
+         - name: Deploy to GitHub Pages
+           uses: JamesIves/github-pages-deploy-action@v4
+           with:
+              branch: gh-pages
+              folder: dist
+              clean: true

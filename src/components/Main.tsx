@@ -48,6 +48,7 @@ const Tier = ({
    const tierList = useContext(TierListContext)?.tierList
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const updateTierListName = useContext(TierListContext)?.updateTierListName
+   const updateTier = useContext(TierListContext)?.updateTier
    const removeTier = useContext(TierListContext)?.removeTier
    const swapyRef = useRef<HTMLDivElement | null>(null)
 
@@ -85,11 +86,21 @@ const Tier = ({
       })
 
       swapper.onSwapEnd(({ data }) => {
-         console.log(data)
+         const idToItem = Object.fromEntries(
+            tier.ships.map((item) => [item.id, item]),
+         )
+
+         const newShips: TierShipType[] = data.array.map(
+            (slot) => idToItem[slot.itemId!],
+         )
+         const newTier = { ...tier, ships: newShips }
+
+         // @ts-expect-error type error
+         updateTier(tier.id!, newTier)
       })
 
       return () => swapper.destroy()
-   }, [tierList])
+   }, [tierList, tier, updateTier])
 
    return (
       <section

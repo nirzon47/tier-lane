@@ -117,8 +117,8 @@ const Tier = ({
             </div>
             <div className='flex flex-wrap gap-x-2 gap-y-1' ref={swapyRef}>
                {tier.ships.map((ship) => (
-                  <div key={ship.name} data-swapy-slot={ship.name}>
-                     <Ship key={ship.name} ship={ship} tier={tier} />
+                  <div key={ship.id} data-swapy-slot={ship.id}>
+                     <Ship ship={ship} tier={tier} />
                   </div>
                ))}
 
@@ -149,7 +149,7 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const removeFromTierList = useContext(TierListContext)?.removeFromTierList
 
    return (
-      <div className='relative' data-swapy-item={ship.name}>
+      <div className='relative' data-swapy-item={ship.id}>
          <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
             <LazyLoadImage
                src={ship.image}

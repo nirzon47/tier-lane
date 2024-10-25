@@ -19,7 +19,21 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
 
    useEffect(() => {
       if (localStorage.getItem('tierList') && isTierListArray(tierList)) {
-         setTierList(JSON.parse(localStorage.getItem('tierList')!))
+         const tierList = JSON.parse(localStorage.getItem('tierList')!)
+
+         tierList.forEach((tier: TierType) => {
+            if (!tier.id) {
+               tier.id = nanoid()
+            }
+
+            tier.ships.forEach((ship: TierShipType) => {
+               if (!ship.id) {
+                  ship.id = nanoid()
+               }
+            })
+         })
+
+         setTierList(tierList)
       }
 
       // eslint-disable-next-line react-hooks/exhaustive-deps

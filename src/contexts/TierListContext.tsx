@@ -43,6 +43,55 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
    }
 
+   const updatePosition = (
+      ship: TierShipType,
+      id: string,
+      position: 'left' | 'right',
+   ) => {
+      const tierIndex = tierList.findIndex((t) => id === t.id)
+
+      if (tierIndex === -1) {
+         return
+      }
+
+      const currentTier = tierList[tierIndex]
+
+      const index = tierList[tierIndex].ships.findIndex(
+         (s) => s.name === ship.name,
+      )
+
+      if (
+         index === -1 ||
+         (position === 'left' && index === 0) ||
+         (position === 'right' && index === tierList.length - 1)
+      ) {
+         return
+      }
+
+      if (position === 'left') {
+         currentTier.ships.splice(
+            index - 1,
+            0,
+            currentTier.ships.splice(index, 1)[0],
+         )
+      }
+
+      if (position === 'right') {
+         currentTier.ships.splice(
+            index + 1,
+            0,
+            currentTier.ships.splice(index, 1)[0],
+         )
+      }
+
+      const updatedTierList = tierList.map((t) =>
+         t.id === id ? currentTier : t,
+      )
+
+      localStorage.setItem('tierList', JSON.stringify(updatedTierList))
+      setTierList(updatedTierList)
+   }
+
    const removeFromTierList = (id: string, ship: TierShipType) => {
       const currentTier = tierList.find((t) => t.id === id)
 
@@ -113,24 +162,18 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
    }
 
-   const updateTier = (id: string, tier: TierType) => {
-      const updatedTierList = tierList.map((t) => (t.id === id ? tier : t))
-
-      localStorage.setItem('tierList', JSON.stringify(updatedTierList))
-   }
-
    return (
       <TierListContext.Provider
          value={{
             tierList,
             updateTierList,
+            updatePosition,
             removeFromTierList,
             resetTierList,
             importTierList,
             updateTierListName,
             addTier,
             removeTier,
-            updateTier,
          }}
       >
          {children}

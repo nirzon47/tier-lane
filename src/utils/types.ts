@@ -42,7 +42,11 @@ export type TierListContextType = {
    updateTierListName: (name: string, tierName: string) => void
    addTier: () => void
    removeTier: (name: string) => void
-   updateTier: (id: string, tier: TierType) => void
+   updatePosition: (
+      ship: TierShipType,
+      id: string,
+      position: 'left' | 'right',
+   ) => void
 }
 
 export type SettingsContextType = {

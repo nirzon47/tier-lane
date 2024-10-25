@@ -4,10 +4,9 @@ import { SettingsContext } from '@/contexts/SettingsContext'
 import { TierShipType, TierType } from '@/utils/types'
 import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
-import { PlusIcon, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { createSwapy, Swapy } from 'swapy'
 
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList
@@ -48,9 +47,7 @@ const Tier = ({
    const tierList = useContext(TierListContext)?.tierList
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const updateTierListName = useContext(TierListContext)?.updateTierListName
-   const updateTier = useContext(TierListContext)?.updateTier
    const removeTier = useContext(TierListContext)?.removeTier
-   const swapyRef = useRef<HTMLDivElement | null>(null)
 
    const handleTierNameInput = debounce(
       (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
@@ -74,33 +71,6 @@ const Tier = ({
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [tierList])
-
-   useEffect(() => {
-      const swap = swapyRef.current
-      if (!swap) {
-         return
-      }
-
-      const swapper: Swapy = createSwapy(swap, {
-         swapMode: 'hover',
-      })
-
-      swapper.onSwapEnd(({ data }) => {
-         const idToItem = Object.fromEntries(
-            tier.ships.map((item) => [item.id, item]),
-         )
-
-         const newShips: TierShipType[] = data.array.map(
-            (slot) => idToItem[slot.itemId!],
-         )
-         const newTier = { ...tier, ships: newShips }
-
-         // @ts-expect-error type error
-         updateTier(tier.id!, newTier)
-      })
-
-      return () => swapper.destroy()
-   }, [tierList, tier, updateTier])
 
    return (
       <section
@@ -126,19 +96,10 @@ const Tier = ({
                   {tier.name}
                </h3>
             </div>
-            <div className='flex flex-wrap gap-x-2 gap-y-1' ref={swapyRef}>
+            <div className='flex flex-wrap gap-x-2 gap-y-1'>
                {tier.ships.map((ship) => (
-                  <div key={ship.id} data-swapy-slot={ship.id}>
-                     <Ship ship={ship} tier={tier} />
-                  </div>
+                  <Ship key={ship.id} ship={ship} tier={tier} />
                ))}
-
-               {/* Empty slot to mute errors */}
-               {tier.ships.length === 0 ? (
-                  <div data-swapy-slot={`empty ${tier.id}`}>
-                     <div data-swapy-item={`empty ${tier.id}`}></div>
-                  </div>
-               ) : null}
             </div>
          </div>
          <div
@@ -157,10 +118,11 @@ const Tier = ({
 
 const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const editEnabled = useContext(SettingsContext)?.editEnabled
+   const updatePosition = useContext(TierListContext)?.updatePosition
    const removeFromTierList = useContext(TierListContext)?.removeFromTierList
 
    return (
-      <div className='relative' data-swapy-item={ship.id}>
+      <div className='relative'>
          <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
             <LazyLoadImage
                src={ship.image}
@@ -177,6 +139,24 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
          </div>
 
          {/* Edit Overlays */}
+         <div
+            className={cn(
+               editEnabled
+                  ? 'absolute inset-0 z-10 grid items-center bg-black/40'
+                  : 'hidden',
+            )}
+         >
+            <div className='flex w-full items-center justify-between'>
+               <button onClick={() => updatePosition?.(ship, tier.id!, 'left')}>
+                  <ChevronLeft />
+               </button>
+               <button
+                  onClick={() => updatePosition?.(ship, tier.id!, 'right')}
+               >
+                  <ChevronRight />
+               </button>
+            </div>
+         </div>
          <div
             className={cn(
                editEnabled ? 'absolute -right-2 -top-2 z-20' : 'hidden',

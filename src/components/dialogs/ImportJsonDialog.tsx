@@ -40,7 +40,7 @@ const ImportJsonDialog = ({
             setImportDialogOpen(false)
          }
       } catch (e) {
-         console.error(e)
+         console.error('Importing JSON failed:', e)
       } finally {
          setValidJSONShape(false)
       }

@@ -45,7 +45,6 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
 
    const removeFromTierList = (id: string, ship: TierShipType) => {
       const currentTier = tierList.find((t) => t.id === id)
-      console.log(currentTier)
 
       if (!currentTier) {
          return

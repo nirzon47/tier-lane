@@ -7,6 +7,8 @@ import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element
 import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'
 import { useContext, useEffect, useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useDragAndDrop } from '@formkit/drag-and-drop/react'
+import { animations, state } from '@formkit/drag-and-drop'
 
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList
@@ -49,6 +51,21 @@ const Tier = ({
    const updateTierListName = useContext(TierListContext)?.updateTierListName
    const removeTier = useContext(TierListContext)?.removeTier
 
+   const [parent, list] = useDragAndDrop(tier.ships, {
+      plugins: [animations()],
+   })
+
+   state.on('dragEnded', () => {
+      const newTierList = tierList?.map((t) => {
+         if (t.id === tier.id) {
+            return { ...t, ships: list }
+         }
+         return t
+      })
+
+      localStorage.setItem('tierList', JSON.stringify(newTierList))
+   })
+
    const handleTierNameInput = debounce(
       (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
          updateTierListName?.(e.target.innerText, id)
@@ -78,7 +95,6 @@ const Tier = ({
             'relative grid gap-4 bg-white/10 p-2',
             tier.ships.length > 0 ? 'h-fit' : 'h-[6.75rem]',
          )}
-         ref={ref}
       >
          <div className='flex gap-6'>
             <div className='grid min-w-12 place-content-center px-4'>
@@ -96,8 +112,9 @@ const Tier = ({
                   {tier.name}
                </h3>
             </div>
-            <div className='flex flex-wrap gap-x-2 gap-y-1'>
-               {tier.ships.map((ship) => (
+            {/* @ts-expect-error legacy type usage */}
+            <div className='flex flex-wrap gap-x-2 gap-y-1' ref={parent}>
+               {list.map((ship) => (
                   <Ship key={ship.id} ship={ship} tier={tier} />
                ))}
             </div>

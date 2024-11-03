@@ -40,21 +40,32 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
    }, [])
 
    const updateTierList = (id: string, ship: TierShipType) => {
-      const currentTier = tierList.find((t) => t.id === id)
+      let newTierList: TierType[] = tierList
+      const localTierList: TierType[] = JSON.parse(
+         localStorage.getItem('tierList')!,
+      )
+
+      if (localTierList) {
+         newTierList = localTierList
+      }
+
+      const currentTier = newTierList.find((t) => t.id === id)
 
       if (!currentTier || currentTier.ships.find((s) => s.name === ship.name)) {
-         return
+         return undefined
       }
 
       const updatedTierShips = [...currentTier.ships, { id: nanoid(), ...ship }]
       const updatedTier = { ...currentTier, ships: updatedTierShips }
 
-      const updatedTierList = tierList.map((t) =>
+      const updatedTierList = newTierList.map((t) =>
          t.id === id ? updatedTier : t,
       )
 
       setTierList(updatedTierList)
       localStorage.setItem('tierList', JSON.stringify(updatedTierList))
+
+      return updatedTierList
    }
 
    const updatePosition = (

@@ -43,7 +43,7 @@ const Tier = ({
    updateTierList,
 }: {
    tier: TierType
-   updateTierList: (name: string, ship: TierShipType) => void
+   updateTierList: (name: string, ship: TierShipType) => TierType[] | undefined
 }) => {
    const ref = useRef(null)
    const tierList = useContext(TierListContext)?.tierList
@@ -51,7 +51,7 @@ const Tier = ({
    const updateTierListName = useContext(TierListContext)?.updateTierListName
    const removeTier = useContext(TierListContext)?.removeTier
 
-   const [parent, list] = useDragAndDrop(tier.ships, {
+   const [parent, list, setList] = useDragAndDrop([] as TierShipType[], {
       plugins: [animations()],
    })
 
@@ -74,6 +74,8 @@ const Tier = ({
    )
 
    useEffect(() => {
+      setList(tier.ships)
+
       const el = ref.current
       if (!el) {
          return
@@ -82,19 +84,31 @@ const Tier = ({
       return dropTargetForElements({
          element: el,
          onDrop: ({ source }) => {
-            updateTierList(tier.id!, source.data as TierShipType)
+            const updatedList = updateTierList(
+               tier.id!,
+               source.data as TierShipType,
+            )
+
+            if (!updatedList) {
+               return
+            }
+
+            const updatedTier = updatedList.find((t) => t.id === tier.id)
+            if (updatedTier) {
+               setList(updatedTier.ships)
+            }
          },
       })
-
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [tierList])
 
    return (
       <section
          className={cn(
-            'relative grid gap-4 bg-white/10 p-2',
+            'relative grid min-h-[6.75rem] gap-4 bg-white/10 p-2',
             tier.ships.length > 0 ? 'h-fit' : 'h-[6.75rem]',
          )}
+         ref={ref}
       >
          <div className='flex gap-6'>
             <div className='grid min-w-12 place-content-center px-4'>

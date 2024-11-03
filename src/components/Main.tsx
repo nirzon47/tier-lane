@@ -105,8 +105,8 @@ const Tier = ({
    return (
       <section
          className={cn(
-            'relative grid min-h-[6.75rem] gap-4 bg-white/10 p-2',
-            tier.ships.length > 0 ? 'h-fit' : 'h-[6.75rem]',
+            'relative grid gap-4 bg-white/10 p-2',
+            list.length > 0 ? 'h-fit' : 'h-[6.75rem]',
          )}
          ref={ref}
       >

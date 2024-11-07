@@ -51,7 +51,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
 
       const currentTier = newTierList.find((t) => t.id === id)
 
-      if (!currentTier || currentTier.ships.find((s) => s.name === ship.name)) {
+      if (!currentTier) {
          return undefined
       }
 

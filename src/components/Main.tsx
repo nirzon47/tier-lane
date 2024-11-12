@@ -9,6 +9,12 @@ import { useContext, useEffect, useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { animations, state } from '@formkit/drag-and-drop'
+import {
+   ContextMenu,
+   ContextMenuContent,
+   ContextMenuItem,
+   ContextMenuTrigger,
+} from './ui/Context'
 
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList
@@ -153,54 +159,65 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const removeFromTierList = useContext(TierListContext)?.removeFromTierList
 
    return (
-      <div className='relative'>
-         <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
-            <LazyLoadImage
-               src={ship.image}
-               alt={ship.name}
-               draggable='false'
-               effect='blur'
-               className='w-16'
-               width={64}
-               height={64}
-            />
-            <p className='h-full truncate text-wrap text-center font-zhun text-[0.7rem]'>
-               {ship.name}
-            </p>
-         </div>
+      <ContextMenu>
+         <ContextMenuTrigger>
+            <div className='relative'>
+               <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
+                  <LazyLoadImage
+                     src={ship.image}
+                     alt={ship.name}
+                     draggable='false'
+                     effect='blur'
+                     className='w-16'
+                     width={64}
+                     height={64}
+                  />
+                  <p className='h-full truncate text-wrap text-center font-zhun text-[0.7rem]'>
+                     {ship.name}
+                  </p>
+               </div>
 
-         {/* Edit Overlays */}
-         <div
-            className={cn(
-               editEnabled
-                  ? 'absolute inset-0 z-10 grid items-center bg-black/40'
-                  : 'hidden',
-            )}
-         >
-            <div className='flex w-full items-center justify-between'>
-               <button onClick={() => updatePosition?.(ship, tier.id!, 'left')}>
-                  <ChevronLeft />
-               </button>
-               <button
-                  onClick={() => updatePosition?.(ship, tier.id!, 'right')}
+               {/* Edit Overlays */}
+               <div
+                  className={cn(
+                     editEnabled
+                        ? 'absolute inset-0 z-10 grid items-center bg-black/40'
+                        : 'hidden',
+                  )}
                >
-                  <ChevronRight />
-               </button>
+                  <div className='flex w-full items-center justify-between'>
+                     <button
+                        onClick={() => updatePosition?.(ship, tier.id!, 'left')}
+                     >
+                        <ChevronLeft />
+                     </button>
+                     <button
+                        onClick={() =>
+                           updatePosition?.(ship, tier.id!, 'right')
+                        }
+                     >
+                        <ChevronRight />
+                     </button>
+                  </div>
+               </div>
+               <div
+                  className={cn(
+                     editEnabled ? 'absolute -right-2 -top-2 z-20' : 'hidden',
+                  )}
+               >
+                  <button
+                     className='rounded-full bg-red-800 p-0.5'
+                     onClick={() => removeFromTierList?.(tier.id!, ship)}
+                  >
+                     <X className='h-4 w-4' />
+                  </button>
+               </div>
             </div>
-         </div>
-         <div
-            className={cn(
-               editEnabled ? 'absolute -right-2 -top-2 z-20' : 'hidden',
-            )}
-         >
-            <button
-               className='rounded-full bg-red-800 p-0.5'
-               onClick={() => removeFromTierList?.(tier.id!, ship)}
-            >
-               <X className='h-4 w-4' />
-            </button>
-         </div>
-      </div>
+         </ContextMenuTrigger>
+         <ContextMenuContent>
+            <ContextMenuItem>Test</ContextMenuItem>
+         </ContextMenuContent>
+      </ContextMenu>
    )
 }
 

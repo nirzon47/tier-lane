@@ -650,7 +650,8 @@
       "faction": "Iron Blood",
       "images": [
          "august_von_parseval/august_von_parseval.png",
-         "august_von_parseval/august_von_parseval_2.png"
+         "august_von_parseval/august_von_parseval_2.png",
+         "august_von_parseval/august_von_parseval_3.png"
       ]
    },
    {
@@ -2208,6 +2209,14 @@
       ]
    },
    {
+      "id": "M040",
+      "name": "Giulio Cesare META",
+      "hull": "BB",
+      "rarity": "Elite",
+      "faction": "META",
+      "images": ["_meta/giulio_cesare_alter.png"]
+   },
+   {
       "id": "559",
       "name": "Giuseppe Garibaldi",
       "hull": "CL",
@@ -2273,6 +2282,17 @@
       "rarity": "Super Rare",
       "faction": "META",
       "images": ["_meta/gneisenau_alter.png"]
+   },
+   {
+      "id": "C114",
+      "name": "Golden Darkness",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": [
+         "golden_darkness_tolove/golden_darkness_tolove_2.png",
+         "golden_darkness_tolove/golden_darkness_tolove.png"
+      ]
    },
    {
       "id": "610",
@@ -2523,6 +2543,17 @@
          "haruna/haruna_2.png",
          "haruna/haruna_3.png",
          "haruna/haruna_4.png"
+      ]
+   },
+   {
+      "id": "C115",
+      "name": "Haruna Sairenji",
+      "hull": "BB",
+      "rarity": "Elite",
+      "faction": "Misc",
+      "images": [
+         "haruna_sairenji_tolove/haruna_sairenji_tolove_2.png",
+         "haruna_sairenji_tolove/haruna_sairenji_tolove.png"
       ]
    },
    {
@@ -3907,6 +3938,17 @@
       ]
    },
    {
+      "id": "C111",
+      "name": "Lala Satalin Deviluke",
+      "hull": "CA",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": [
+         "lala_satalin_deviluke_tolove/lala_satalin_deviluke_tolove_2.png",
+         "lala_satalin_deviluke_tolove/lala_satalin_deviluke_tolove.png"
+      ]
+   },
+   {
       "id": "72",
       "name": "Langley",
       "hull": "CV",
@@ -4596,6 +4638,17 @@
       "images": ["mogami/mogami.png", "mogami/mogami_g.png"]
    },
    {
+      "id": "C113",
+      "name": "Momo Belia Deviluke",
+      "hull": "CL",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": [
+         "momo_belia_deviluke_tolove/momo_belia_deviluke_tolove_2.png",
+         "momo_belia_deviluke_tolove/momo_belia_deviluke_tolove.png"
+      ]
+   },
+   {
       "id": "P002",
       "name": "Monarch",
       "hull": "BB",
@@ -4832,6 +4885,17 @@
       "rarity": "Elite",
       "faction": "Misc",
       "images": ["namiko/namiko.png", "namiko/namiko_2.png"]
+   },
+   {
+      "id": "C112",
+      "name": "Nana Astar Deviluke",
+      "hull": "DD",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": [
+         "nana_astar_deviluke/nana_astar_deviluke_tolove_2.png.png",
+         "nana_astar_deviluke/nana_astar_deviluke_tolove.png"
+      ]
    },
    {
       "id": "P035",
@@ -6866,7 +6930,8 @@
       "images": [
          "ulrich_von_hutten/ulrich_von_hutten.png",
          "ulrich_von_hutten/ulrich_von_hutten_2.png",
-         "ulrich_von_hutten/ulrich_von_hutten_3.png"
+         "ulrich_von_hutten/ulrich_von_hutten_3.png",
+         "ulrich_von_hutten/ulrich_von_hutten_4.png"
       ]
    },
    {
@@ -7173,7 +7238,8 @@
          "weser/weser.png",
          "weser/weser_2.png",
          "weser/weser_3.png",
-         "weser/weser_4.png"
+         "weser/weser_4.png",
+         "weser/weser_5.png"
       ]
    },
    {
@@ -7346,6 +7412,17 @@
       "rarity": "Ultra Rare",
       "faction": "Eagle Union",
       "images": ["yorktown_II/yorktown_II.png", "yorktown_II/yorktown_II_2.png"]
+   },
+   {
+      "id": "C116",
+      "name": "Yui Kotegawa",
+      "hull": "CV",
+      "rarity": "Elite",
+      "faction": "Misc",
+      "images": [
+         "yui_kotegawa_tolove/yui_kotegawa_tolove_2.png",
+         "yui_kotegawa_tolove/yui_kotegawa_tolove.png"
+      ]
    },
    {
       "id": "166",

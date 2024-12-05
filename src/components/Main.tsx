@@ -215,7 +215,13 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
             </div>
          </ContextMenuTrigger>
          <ContextMenuContent>
-            <ContextMenuItem>Test</ContextMenuItem>
+            <ContextMenuItem
+               onClick={() => removeFromTierList?.(tier.id!, ship)}
+            >
+               <span className='text-red-600 duration-150 hover:text-red-800'>
+                  Remove
+               </span>
+            </ContextMenuItem>
          </ContextMenuContent>
       </ContextMenu>
    )

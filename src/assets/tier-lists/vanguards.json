@@ -80,6 +80,10 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shimanto/shimanto.png"
          },
          {
+            "name": "Jintsuu META",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/jintsuu_alter.png"
+         },
+         {
             "name": "Anchorage",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/anchorage/anchorage_h.png"
          },
@@ -110,6 +114,10 @@
          {
             "name": "Watarase",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/watarase/watarase.png"
+         },
+         {
+            "name": "Lala Satalin Deviluke",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/lala_satalin_deviluke_tolove/lala_satalin_deviluke_tolove.png"
          },
          {
             "name": "Cheshire",
@@ -149,6 +157,14 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/jeanne_d'Arc/jeanne_d'Arc.png"
          },
          {
+            "name": "Saint Louis",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/saint_louis/saint_louis.png"
+         },
+         {
+            "name": "Roon",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/roon/roon_2.png"
+         },
+         {
             "name": "Friedrich Carl",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/friedrich_carl/friedrich_carl_2.png"
          },
@@ -177,8 +193,12 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hatsuzuki/hatsuzuki.png"
          },
          {
-            "name": "Golden Hind",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/golden_hind/golden_hind.png"
+            "name": "Fancy",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/fancy/fancy.png"
+         },
+         {
+            "name": "Neptune",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/neptune/neptune_3.png"
          }
       ]
    },
@@ -188,10 +208,6 @@
          {
             "name": "Napoli",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/napoli/napoli.png"
-         },
-         {
-            "name": "Jintsuu META",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/jintsuu_alter.png"
          },
          {
             "name": "Wichita META",

@@ -84,6 +84,14 @@
       ]
    },
    {
+      "id": "M042",
+      "name": "Admiral Hipper META",
+      "hull": "CA",
+      "rarity": "Super Rare",
+      "faction": "META",
+      "images": ["_meta/admiral_hipper_alter.png"]
+   },
+   {
       "id": "422",
       "name": "Admiral Hipper μ",
       "hull": "CA",
@@ -129,7 +137,12 @@
       "hull": "CA",
       "rarity": "Ultra Rare",
       "faction": "Iron Blood",
-      "images": ["ägir/ägir.png", "ägir/ägir_2.png", "ägir/ägir_3.png"]
+      "images": [
+         "ägir/ägir.png",
+         "ägir/ägir_2.png",
+         "ägir/ägir_3.png",
+         "ägir/ägir_4.png"
+      ]
    },
    {
       "id": "106",
@@ -900,7 +913,8 @@
          "bismarck/bismarck.png",
          "bismarck/bismarck_2.png",
          "bismarck/bismarck_3.png",
-         "bismarck/bismarck_h.png"
+         "bismarck/bismarck_h.png",
+         "bismarck/bismarck_4.png"
       ]
    },
    {
@@ -1627,6 +1641,14 @@
       ]
    },
    {
+      "id": "671",
+      "name": "Duisburg",
+      "hull": "CL",
+      "rarity": "Super Rare",
+      "faction": "Iron Blood",
+      "images": ["duisburg/duisburg.png", "duisburg/duisburg_2.png"]
+   },
+   {
       "id": "136",
       "name": "Duke Of York",
       "hull": "BB",
@@ -1979,7 +2001,8 @@
          "formidable/formidable.png",
          "formidable/formidable_2.png",
          "formidable/formidable_3.png",
-         "formidable/formidable_4.png"
+         "formidable/formidable_4.png",
+         "formidable/formidable_5.png"
       ]
    },
    {
@@ -2041,6 +2064,14 @@
          "friedrich_der_große/friedrich_der_große_3.png",
          "friedrich_der_große/friedrich_der_große_h.png"
       ]
+   },
+   {
+      "id": "669",
+      "name": "Fritz Rumey",
+      "hull": "CV",
+      "rarity": "Ultra Rare",
+      "faction": "Iron Blood",
+      "images": ["fritz_rumey/fritz_rumey.png", "fritz_rumey/fritz_rumey_2.png"]
    },
    {
       "id": "254",
@@ -3241,7 +3272,8 @@
          "janus/janus.png",
          "janus/janus_3.png",
          "janus/janus_4.png",
-         "janus/janus_5.png"
+         "janus/janus_5.png",
+         "janus/janus_6.png"
       ]
    },
    {
@@ -6530,6 +6562,14 @@
       ]
    },
    {
+      "id": "M041",
+      "name": "Taihou META",
+      "hull": "CV",
+      "rarity": "Super Rare",
+      "faction": "META",
+      "images": ["_meta/taihou_alter.png"]
+   },
+   {
       "id": "474",
       "name": "Taihou μ",
       "hull": "CV",
@@ -7510,6 +7550,14 @@
       "images": ["z1/z1.png", "z1/z1_2.png", "z1/z1_g.png"]
    },
    {
+      "id": "673",
+      "name": "Z11",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Iron Blood",
+      "images": ["z11/z11.png", "z11/z11_2.png"]
+   },
+   {
       "id": "564",
       "name": "Z16",
       "hull": "DD",
@@ -7669,6 +7717,22 @@
       "rarity": "Super Rare",
       "faction": "Iron Blood",
       "images": ["z47/z47.png", "z47/z47_2.png"]
+   },
+   {
+      "id": "670",
+      "name": "Z52",
+      "hull": "DD",
+      "rarity": "Ultra Rare",
+      "faction": "Iron Blood",
+      "images": ["z52/z52.png", "z52/z52_2.png"]
+   },
+   {
+      "id": "672",
+      "name": "Z9",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Iron Blood",
+      "images": ["z9/z9.png", "z9/z9_2.png"]
    },
    {
       "id": "413",

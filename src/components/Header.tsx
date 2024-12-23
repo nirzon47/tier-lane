@@ -9,7 +9,7 @@ import {
    TooltipTrigger,
 } from '@/components/ui/Tooltip'
 import domToImage from 'dom-to-image'
-import { Camera, Download, Eraser, HelpCircle, Upload } from 'lucide-react'
+import { Camera, Eraser, HelpCircle, Import, Forward } from 'lucide-react'
 import { useContext, useState } from 'react'
 import { Dialog, DialogTrigger } from './ui/Dialog'
 import ImportJsonDialog from './dialogs/ImportJsonDialog'
@@ -129,7 +129,7 @@ const Header = () => {
                      <div>
                         <Tooltip>
                            <TooltipTrigger className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'>
-                              <Upload />
+                              <Import />
                            </TooltipTrigger>
                            <TooltipContent>Import JSON</TooltipContent>
                         </Tooltip>
@@ -144,7 +144,7 @@ const Header = () => {
                      className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'
                      onClick={exportTierList}
                   >
-                     <Download />
+                     <Forward />
                      <TooltipContent>Export as JSON</TooltipContent>
                   </TooltipTrigger>
                </Tooltip>

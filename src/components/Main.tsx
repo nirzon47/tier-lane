@@ -53,6 +53,7 @@ const Tier = ({
 }) => {
    const ref = useRef(null)
    const tierList = useContext(TierListContext)?.tierList
+   const setTierList = useContext(TierListContext)?.setTierList
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const updateTierListName = useContext(TierListContext)?.updateTierListName
    const removeTier = useContext(TierListContext)?.removeTier
@@ -70,6 +71,10 @@ const Tier = ({
       })
 
       localStorage.setItem('tierList', JSON.stringify(newTierList))
+
+      if (newTierList && setTierList) {
+         setTierList(newTierList)
+      }
    })
 
    const handleTierNameInput = debounce(

@@ -7,16 +7,24 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/unicorn/unicorn_10.png"
          },
          {
-            "name": "Admiral Nakhimov",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/admiral_nakhimov/admiral_nakhimov.png"
-         },
-         {
             "name": "Shinano",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shinano/shinano_4.png"
          },
          {
             "name": "Amagi CV",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/amagi_CV/amagi_CV.png"
+         },
+         {
+            "name": "Implacable",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/implacable/implacable.png"
+         },
+         {
+            "name": "Admiral Nakhimov",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/admiral_nakhimov/admiral_nakhimov.png"
+         },
+         {
+            "name": "Fritz Rumey",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/fritz_rumey/fritz_rumey.png"
          },
          {
             "name": "Yorktown II",
@@ -27,16 +35,8 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/independence/independence_3.png"
          },
          {
-            "name": "Implacable",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/implacable/implacable.png"
-         },
-         {
             "name": "Hakuryuu",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hakuryuu/hakuryuu_3.png"
-         },
-         {
-            "name": "Fritz Rumey",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/fritz_rumey/fritz_rumey.png"
          }
       ]
    },
@@ -60,6 +60,10 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/august_von_parseval/august_von_parseval_2.png"
          },
          {
+            "name": "Ark Royal",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ark_royal/ark_royal_6.png"
+         },
+         {
             "name": "Chkalov",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/chkalov/chkalov_2.png"
          },
@@ -70,10 +74,6 @@
          {
             "name": "Zuihou",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/zuihou/zuihou.png"
-         },
-         {
-            "name": "Ark Royal",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ark_royal/ark_royal_6.png"
          }
       ]
    },
@@ -103,7 +103,7 @@
       ]
    },
    {
-      "name": "TBD\n",
+      "name": "TBD",
       "ships": [
          {
             "name": "Klaudia Valentz",

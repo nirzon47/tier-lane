@@ -52,4 +52,6 @@ export type TierListContextType = {
 export type SettingsContextType = {
    editEnabled: boolean
    toggleEdit: () => void
+   isHighlightMode: boolean
+   toggleHighlightMode: () => void
 }

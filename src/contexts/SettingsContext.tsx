@@ -7,13 +7,25 @@ const SettingsContext = createContext<SettingsContextType | undefined>(
 
 const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
    const [editEnabled, setEditEnabled] = useState<boolean>(false)
+   const [isHighlightMode, setIsHighlightMode] = useState<boolean>(false)
 
    const toggleEdit = () => {
       setEditEnabled(!editEnabled)
    }
 
+   const toggleHighlightMode = () => {
+      setIsHighlightMode(!isHighlightMode)
+   }
+
    return (
-      <SettingsContext.Provider value={{ editEnabled, toggleEdit }}>
+      <SettingsContext.Provider
+         value={{
+            editEnabled,
+            toggleEdit,
+            isHighlightMode,
+            toggleHighlightMode,
+         }}
+      >
          {children}
       </SettingsContext.Provider>
    )

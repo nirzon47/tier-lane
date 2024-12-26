@@ -9,7 +9,14 @@ import {
    TooltipTrigger,
 } from '@/components/ui/Tooltip'
 import domToImage from 'dom-to-image'
-import { Camera, Eraser, HelpCircle, Import, Forward } from 'lucide-react'
+import {
+   Camera,
+   Eraser,
+   HelpCircle,
+   Import,
+   Forward,
+   Highlighter,
+} from 'lucide-react'
 import { useContext, useState } from 'react'
 import { Dialog, DialogTrigger } from './ui/Dialog'
 import ImportJsonDialog from './dialogs/ImportJsonDialog'
@@ -20,6 +27,7 @@ const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const resetTierList = useContext(TierListContext)?.resetTierList
+   const toggleHighlightMode = useContext(SettingsContext)?.toggleHighlightMode
 
    const [importDialogOpen, setImportDialogOpen] = useState<boolean>(false)
 
@@ -172,6 +180,17 @@ const Header = () => {
                      <Camera />
                   </TooltipTrigger>
                   <TooltipContent>Capture screenshot</TooltipContent>
+               </Tooltip>
+
+               {/* Highlight mode */}
+               <Tooltip>
+                  <TooltipTrigger
+                     className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+                     onClick={toggleHighlightMode}
+                  >
+                     <Highlighter />
+                  </TooltipTrigger>
+                  <TooltipContent>Toggle highlight mode</TooltipContent>
                </Tooltip>
             </section>
          </header>

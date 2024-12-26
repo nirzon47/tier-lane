@@ -35,6 +35,7 @@ export type TierType = {
 
 export type TierListContextType = {
    tierList: TierType[]
+   setTierList: React.Dispatch<React.SetStateAction<TierType[]>>
    updateTierList: (tier: string, ship: TierShipType) => TierType[] | undefined
    removeFromTierList: (tier: string, ship: TierShipType) => void
    resetTierList: () => void

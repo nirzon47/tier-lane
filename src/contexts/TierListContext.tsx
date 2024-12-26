@@ -191,6 +191,7 @@ const TierListProvider = ({ children }: { children: React.ReactNode }) => {
       <TierListContext.Provider
          value={{
             tierList,
+            setTierList,
             updateTierList,
             updatePosition,
             removeFromTierList,

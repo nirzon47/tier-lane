@@ -35,8 +35,8 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/hakuryuu/hakuryuu_3.png"
          },
          {
-            "name": "Ranger",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ranger/ranger_g.png"
+            "name": "Fritz Rumey",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/fritz_rumey/fritz_rumey.png"
          }
       ]
    },
@@ -56,12 +56,12 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shangri-La/shangri-La_3.png"
          },
          {
-            "name": "Chkalov",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/chkalov/chkalov_2.png"
-         },
-         {
             "name": "August von Parseval",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/august_von_parseval/august_von_parseval_2.png"
+         },
+         {
+            "name": "Chkalov",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/chkalov/chkalov_2.png"
          },
          {
             "name": "Volga",
@@ -70,6 +70,10 @@
          {
             "name": "Zuihou",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/zuihou/zuihou.png"
+         },
+         {
+            "name": "Ark Royal",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ark_royal/ark_royal_6.png"
          }
       ]
    },
@@ -85,10 +89,6 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/_meta/souryuu_alter.png"
          },
          {
-            "name": "Ark Royal",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ark_royal/ark_royal_6.png"
-         },
-         {
             "name": "Illustrious",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/illustrious/illustrious_7.png"
          },
@@ -99,14 +99,6 @@
          {
             "name": "Taihou",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/taihou/taihou_6.png"
-         },
-         {
-            "name": "Peter Strasser",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/peter_strasser/peter_strasser_3.png"
-         },
-         {
-            "name": "Ryuuhou",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ryuuhou/ryuuhou.png"
          }
       ]
    },

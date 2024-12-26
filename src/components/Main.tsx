@@ -5,7 +5,7 @@ import { TierShipType, TierType } from '@/utils/types'
 import { debounce } from '@/utils/debounce'
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter'
 import { ChevronLeft, ChevronRight, PlusIcon, X } from 'lucide-react'
-import { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { animations, state } from '@formkit/drag-and-drop'
@@ -157,12 +157,32 @@ const Ship = ({ ship, tier }: { ship: TierShipType; tier: TierType }) => {
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const updatePosition = useContext(TierListContext)?.updatePosition
    const removeFromTierList = useContext(TierListContext)?.removeFromTierList
+   const isHighlightMode = useContext(SettingsContext)?.isHighlightMode
+
+   const [isHighlighted, setIsHighlighted] = useState<boolean>(false)
+
+   // Reset highlight when highlight mode is disabled
+   useEffect(() => {
+      if (!isHighlightMode) {
+         setIsHighlighted(false)
+      }
+   }, [isHighlightMode])
 
    return (
       <ContextMenu>
          <ContextMenuTrigger>
             <div className='relative'>
-               <div className='flex w-[4.5rem] flex-col items-center gap-1 p-1'>
+               <div
+                  onClick={() => setIsHighlighted(!isHighlighted)}
+                  className={cn(
+                     'flex w-[4.5rem] flex-col items-center gap-1 p-1',
+                     isHighlightMode && {
+                        'cursor-pointer': true,
+                        'opacity-100 brightness-100': isHighlighted,
+                        'opacity-50 brightness-75': !isHighlighted,
+                     },
+                  )}
+               >
                   <LazyLoadImage
                      src={ship.image}
                      alt={ship.name}

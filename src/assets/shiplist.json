@@ -105,7 +105,10 @@
       "hull": "CV",
       "rarity": "Ultra Rare",
       "faction": "Northern Parliament",
-      "images": ["admiral_nakhimov/admiral_nakhimov.png"]
+      "images": [
+         "admiral_nakhimov/admiral_nakhimov.png",
+         "admiral_nakhimov/admiral_nakhimov_2.png"
+      ]
    },
    {
       "id": "612",
@@ -808,7 +811,7 @@
       "hull": "CL",
       "rarity": "Super Rare",
       "faction": "Iris Libre",
-      "images": ["bayard/bayard.png"]
+      "images": ["bayard/bayard.png", "bayard/bayard_2.png"]
    },
    {
       "id": "86",
@@ -1304,7 +1307,7 @@
       "hull": "CA",
       "rarity": "Super Rare",
       "faction": "Sakura Empire",
-      "images": ["chikuma/chikuma.png"]
+      "images": ["chikuma/chikuma.png", "chikuma/chikuma_2.png"]
    },
    {
       "id": "470",
@@ -1537,7 +1540,7 @@
       "hull": "BB",
       "rarity": "Super Rare",
       "faction": "Sakura Empire",
-      "images": ["daisen/daisen.png"]
+      "images": ["daisen/daisen.png", "daisen/daisen_2.png"]
    },
    {
       "id": "330",
@@ -2480,7 +2483,7 @@
       "hull": "DD",
       "rarity": "Super Rare",
       "faction": "Eagle Union",
-      "images": ["halford/halford.png"]
+      "images": ["halford/halford.png", "halford/halford_2.png"]
    },
    {
       "id": "427",
@@ -4935,7 +4938,7 @@
       "hull": "CA",
       "rarity": "Ultra Rare",
       "faction": "Sardegna Empire",
-      "images": ["napoli/napoli.png"]
+      "images": ["napoli/napoli.png", "napoli/napoli_2.png"]
    },
    {
       "id": "184",
@@ -5682,7 +5685,11 @@
       "hull": "CL",
       "rarity": "Super Rare",
       "faction": "Iron Blood",
-      "images": ["regensburg/regensburg.png", "regensburg/regensburg_2.png"]
+      "images": [
+         "regensburg/regensburg.png",
+         "regensburg/regensburg_2.png",
+         "regensburg/regensburg_3.png"
+      ]
    },
    {
       "id": "C091",
@@ -6145,7 +6152,8 @@
          "shinano/shinano.png",
          "shinano/shinano_2.png",
          "shinano/shinano_3.png",
-         "shinano/shinano_4.png"
+         "shinano/shinano_4.png",
+         "shinano/shinano_5.png"
       ]
    },
    {

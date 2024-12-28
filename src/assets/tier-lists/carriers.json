@@ -48,18 +48,6 @@
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/aquila/aquila_3.png"
          },
          {
-            "name": "Enterprise",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/enterprise/enterprise_7.png"
-         },
-         {
-            "name": "Shangri-La",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shangri-La/shangri-La_3.png"
-         },
-         {
-            "name": "August von Parseval",
-            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/august_von_parseval/august_von_parseval_2.png"
-         },
-         {
             "name": "Ark Royal",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/ark_royal/ark_royal_6.png"
          },
@@ -70,6 +58,18 @@
          {
             "name": "Volga",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/volga/volga_2.png"
+         },
+         {
+            "name": "Enterprise",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/enterprise/enterprise_7.png"
+         },
+         {
+            "name": "Shangri-La",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/shangri-La/shangri-La_3.png"
+         },
+         {
+            "name": "August von Parseval",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/august_von_parseval/august_von_parseval_2.png"
          },
          {
             "name": "Zuihou",

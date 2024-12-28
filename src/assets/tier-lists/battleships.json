@@ -72,6 +72,10 @@
          {
             "name": "Richelieu",
             "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/richelieu/richelieu_2.png"
+         },
+         {
+            "name": "Nagato",
+            "image": "https://raw.githubusercontent.com/niko-993/azur-lane-assets/main/PNG/nagato/nagato_3.png"
          }
       ]
    },

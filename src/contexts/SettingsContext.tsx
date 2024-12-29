@@ -8,6 +8,11 @@ const SettingsContext = createContext<SettingsContextType | undefined>(
 const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
    const [editEnabled, setEditEnabled] = useState<boolean>(false)
    const [isHighlightMode, setIsHighlightMode] = useState<boolean>(false)
+   const [isCollapsed, setIsCollapsed] = useState<boolean>(false)
+
+   const toggleCollapsed = () => {
+      setIsCollapsed(!isCollapsed)
+   }
 
    const toggleEdit = () => {
       setEditEnabled(!editEnabled)
@@ -24,6 +29,8 @@ const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
             toggleEdit,
             isHighlightMode,
             toggleHighlightMode,
+            isCollapsed,
+            toggleCollapsed,
          }}
       >
          {children}

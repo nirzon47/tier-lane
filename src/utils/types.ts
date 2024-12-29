@@ -55,4 +55,6 @@ export type SettingsContextType = {
    toggleEdit: () => void
    isHighlightMode: boolean
    toggleHighlightMode: () => void
+   isCollapsed: boolean
+   toggleCollapsed: () => void
 }

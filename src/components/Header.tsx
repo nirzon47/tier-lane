@@ -16,18 +16,23 @@ import {
    Import,
    Forward,
    Highlighter,
+   ArrowRightFromLine,
+   ArrowLeftFromLine,
 } from 'lucide-react'
 import { useContext, useState } from 'react'
 import { Dialog, DialogTrigger } from './ui/Dialog'
 import ImportJsonDialog from './dialogs/ImportJsonDialog'
 import HelpDialog from './dialogs/HelpDialog'
 import { TierShipType, TierType } from '@/utils/types'
+import { AnimatePresence, motion } from 'motion/react'
 
 const Header = () => {
    const toggleEdit = useContext(SettingsContext)?.toggleEdit
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const resetTierList = useContext(TierListContext)?.resetTierList
    const toggleHighlightMode = useContext(SettingsContext)?.toggleHighlightMode
+   const isCollapsed = useContext(SettingsContext)?.isCollapsed
+   const toggleCollapsed = useContext(SettingsContext)?.toggleCollapsed
 
    const [importDialogOpen, setImportDialogOpen] = useState<boolean>(false)
 
@@ -191,6 +196,32 @@ const Header = () => {
                      <Highlighter />
                   </TooltipTrigger>
                   <TooltipContent>Toggle highlight mode</TooltipContent>
+               </Tooltip>
+
+               {/* Collapse/Expand sidebar */}
+               <Tooltip>
+                  <TooltipTrigger
+                     className='bg-white/10 px-4 py-2 font-zhun text-white duration-150 hover:bg-white/20'
+                     onClick={toggleCollapsed}
+                  >
+                     <AnimatePresence>
+                        <motion.div
+                           initial={{ rotate: 0 }}
+                           animate={{
+                              rotate: isCollapsed ? 0 : 360,
+                           }}
+                        >
+                           {isCollapsed ? (
+                              <ArrowRightFromLine />
+                           ) : (
+                              <ArrowLeftFromLine />
+                           )}
+                        </motion.div>
+                     </AnimatePresence>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                     {isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                  </TooltipContent>
                </Tooltip>
             </section>
          </header>

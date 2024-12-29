@@ -15,17 +15,42 @@ import {
    ContextMenuItem,
    ContextMenuTrigger,
 } from './ui/Context'
+import { motion } from 'motion/react'
 
 const Main = () => {
    const tierList = useContext(TierListContext)?.tierList
    const updateTierList = useContext(TierListContext)?.updateTierList
    const editEnabled = useContext(SettingsContext)?.editEnabled
    const addTier = useContext(TierListContext)?.addTier
+   const isCollapsed = useContext(SettingsContext)?.isCollapsed
+
+   const [sidebarExited, setSidebarExited] = useState<boolean>(false)
+
+   useEffect(() => {
+      if (isCollapsed) {
+         setTimeout(() => setSidebarExited(true), 150)
+      } else {
+         setSidebarExited(false)
+      }
+   }, [isCollapsed])
 
    return (
-      <main
+      <motion.main
          id='tier-list'
-         className='no-scrollbar col-span-4 grid h-[calc(100vh-88px)] content-start gap-3 overflow-y-auto pb-2'
+         layout
+         transition={{
+            layout: {
+               duration: 0.15,
+            },
+         }}
+         className={cn(
+            'no-scrollbar grid h-[calc(100vh-88px)] content-start gap-3 overflow-y-auto pb-2',
+            isCollapsed
+               ? sidebarExited
+                  ? 'col-span-6'
+                  : 'col-span-4'
+               : 'col-span-4',
+         )}
       >
          {tierList?.map((tier) => (
             <Tier key={tier.id} tier={tier} updateTierList={updateTierList!} />
@@ -40,7 +65,7 @@ const Main = () => {
          >
             <PlusIcon />
          </div>
-      </main>
+      </motion.main>
    )
 }
 

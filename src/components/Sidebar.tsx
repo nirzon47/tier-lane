@@ -8,6 +8,8 @@ import { RotateCcw } from 'lucide-react'
 import { TooltipContent, TooltipProvider, TooltipTrigger } from './ui/Tooltip'
 import { Tooltip } from '@radix-ui/react-tooltip'
 import 'react-lazy-load-image-component/src/effects/blur.css'
+import { SettingsContext } from '@/contexts/SettingsContext'
+import { motion, AnimatePresence } from 'motion/react'
 
 const hullTypes = [
    { id: 1, name: 'DD' },
@@ -45,6 +47,7 @@ const rarityTypes = [
 
 const Sidebar = () => {
    const filterContext = useContext(FilterContext)
+   const isCollapsed = useContext(SettingsContext)?.isCollapsed
 
    const handleNameFilterChange = (
       event: React.ChangeEvent<HTMLInputElement>,
@@ -53,47 +56,57 @@ const Sidebar = () => {
    }
 
    return (
-      <aside className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto'>
-         <section className='flex gap-4'>
-            <input
-               type='text'
-               name='search'
-               id='search'
-               className='max-w-xs flex-1 bg-black/20 px-4 py-1 focus:outline-none'
-               placeholder='Search by name'
-               value={filterContext?.filter.name}
-               onChange={handleNameFilterChange}
-            />
+      <AnimatePresence>
+         {!isCollapsed && (
+            <motion.aside
+               initial={{ x: -300, opacity: 0 }}
+               animate={{ x: 0, opacity: 1 }}
+               exit={{ x: -300, opacity: 0 }}
+               transition={{ duration: 0.15 }}
+               className='no-scrollbar col-span-2 flex h-[calc(100vh-88px)] flex-col gap-3 overflow-y-auto'
+            >
+               <section className='flex gap-4'>
+                  <input
+                     type='text'
+                     name='search'
+                     id='search'
+                     className='max-w-xs flex-1 bg-black/20 px-4 py-1 focus:outline-none'
+                     placeholder='Search by name'
+                     value={filterContext?.filter.name}
+                     onChange={handleNameFilterChange}
+                  />
 
-            {/* Reset filters button */}
-            <TooltipProvider>
-               <Tooltip>
-                  <TooltipTrigger
-                     className='bg-black/20 px-2 py-1 duration-150 hover:bg-black/30'
-                     onClick={() => filterContext?.resetFilters()}
-                  >
-                     <RotateCcw />
-                  </TooltipTrigger>
-                  <TooltipContent>Reset filters</TooltipContent>
-               </Tooltip>
-            </TooltipProvider>
-         </section>
-         <section className='grid gap-2'>
-            <label className='pl-1 text-sm opacity-75'>Index</label>
-            <HullFilters />
-         </section>
-         <section className='grid gap-2'>
-            <label className='pl-1 text-sm opacity-75'>Faction</label>
-            <FactionFilters />
-         </section>
-         <section className='grid gap-2'>
-            <label className='pl-1 text-sm opacity-75'>Rarity</label>
-            <RarityFilters />
-         </section>
-         <section className='flex-1'>
-            <SearchResults />
-         </section>
-      </aside>
+                  {/* Reset filters button */}
+                  <TooltipProvider>
+                     <Tooltip>
+                        <TooltipTrigger
+                           className='bg-black/20 px-2 py-1 duration-150 hover:bg-black/30'
+                           onClick={() => filterContext?.resetFilters()}
+                        >
+                           <RotateCcw />
+                        </TooltipTrigger>
+                        <TooltipContent>Reset filters</TooltipContent>
+                     </Tooltip>
+                  </TooltipProvider>
+               </section>
+               <section className='grid gap-2'>
+                  <label className='pl-1 text-sm opacity-75'>Index</label>
+                  <HullFilters />
+               </section>
+               <section className='grid gap-2'>
+                  <label className='pl-1 text-sm opacity-75'>Faction</label>
+                  <FactionFilters />
+               </section>
+               <section className='grid gap-2'>
+                  <label className='pl-1 text-sm opacity-75'>Rarity</label>
+                  <RarityFilters />
+               </section>
+               <section className='flex-1'>
+                  <SearchResults />
+               </section>
+            </motion.aside>
+         )}
+      </AnimatePresence>
    )
 }
 

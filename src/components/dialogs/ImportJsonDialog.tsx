@@ -5,9 +5,7 @@ import { useContext, useState } from 'react'
 import { isTierListArray } from '@/utils/type-validator'
 import { TierListContext } from '@/contexts/TierListContext'
 import { nanoid } from 'nanoid'
-import BattleshipsTierList from '@/assets/tier-lists/battleships.json'
-import CarriersTierList from '@/assets/tier-lists/carriers.json'
-import VanguardsTierList from '@/assets/tier-lists/vanguards.json'
+import { TierType } from '@/utils/types'
 
 const ImportJsonDialog = ({
    setImportDialogOpen,
@@ -48,22 +46,13 @@ const ImportJsonDialog = ({
 
    const importJimmyTierList = (type: string) => {
       switch (type) {
-         case 'battleships':
-            importTierList?.(
-               BattleshipsTierList.map((tier) => ({
-                  ...tier,
-                  id: nanoid(),
-                  ships: tier.ships.map((ship) => ({
-                     ...ship,
-                     id: nanoid(),
-                  })),
-               })),
+         case 'battleships': {
+            const battleshipsTierList: TierType[] = JSON.parse(
+               localStorage.getItem('battleships')!,
             )
-            break
 
-         case 'carriers':
             importTierList?.(
-               CarriersTierList.map((tier) => ({
+               battleshipsTierList.map((tier) => ({
                   ...tier,
                   id: nanoid(),
                   ships: tier.ships.map((ship) => ({
@@ -73,10 +62,15 @@ const ImportJsonDialog = ({
                })),
             )
             break
+         }
 
-         case 'vanguards':
+         case 'carriers': {
+            const carriersTierList: TierType[] = JSON.parse(
+               localStorage.getItem('carriers')!,
+            )
+
             importTierList?.(
-               VanguardsTierList.map((tier) => ({
+               carriersTierList.map((tier) => ({
                   ...tier,
                   id: nanoid(),
                   ships: tier.ships.map((ship) => ({
@@ -86,6 +80,25 @@ const ImportJsonDialog = ({
                })),
             )
             break
+         }
+
+         case 'vanguards': {
+            const vanguardsTierList: TierType[] = JSON.parse(
+               localStorage.getItem('vanguards')!,
+            )
+
+            importTierList?.(
+               vanguardsTierList.map((tier) => ({
+                  ...tier,
+                  id: nanoid(),
+                  ships: tier.ships.map((ship) => ({
+                     ...ship,
+                     id: nanoid(),
+                  })),
+               })),
+            )
+            break
+         }
       }
 
       setJSONTextArea('')

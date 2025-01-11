@@ -516,7 +516,7 @@
       "id": "M017",
       "name": "Arizona META",
       "hull": "BB",
-      "rarity": "Elite",
+      "rarity": "Super Rare",
       "faction": "META",
       "images": ["_meta/arizona_alter.png"]
    },
@@ -541,7 +541,7 @@
       "id": "M002",
       "name": "Ark Royal META",
       "hull": "CV",
-      "rarity": "Elite",
+      "rarity": "Super Rare",
       "faction": "META",
       "images": ["_meta/ark_royal_alter.png"]
    },
@@ -2032,7 +2032,7 @@
       "id": "M016",
       "name": "Fortune META",
       "hull": "DD",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/fortune_alter.png"]
    },
@@ -2150,7 +2150,7 @@
       "id": "M005",
       "name": "Fusou META",
       "hull": "BB",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/fusou_alter.png"]
    },
@@ -2618,7 +2618,7 @@
       "id": "M024",
       "name": "Hatakaze META",
       "hull": "DD",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/hatakaze_alter.png"]
    },
@@ -2804,7 +2804,7 @@
       "id": "M006",
       "name": "Hiyou META",
       "hull": "CV",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/hiyou_alter.png"]
    },
@@ -2958,7 +2958,7 @@
       "id": "M015",
       "name": "Hunter META",
       "hull": "DD",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/hunter_alter.png"]
    },
@@ -3413,7 +3413,7 @@
       "id": "M008",
       "name": "Junyou META",
       "hull": "CV",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/junyou_alter.png"]
    },
@@ -3638,7 +3638,7 @@
       "id": "M029",
       "name": "Kimberly META",
       "hull": "DD",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/kimberly_alter.png"]
    },
@@ -4515,7 +4515,7 @@
       "id": "M011",
       "name": "Memphis META",
       "hull": "CL",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/memphis_alter.png"]
    },
@@ -6640,8 +6640,8 @@
       "rarity": "Super Rare",
       "faction": "Misc",
       "images": [
-         "tamaki_DOA/tamaki_DOA_2_doa.png",
-         "tamaki_DOA/tamaki_DOA_doa.png"
+         "tamaki_DOA/tamaki_DOA_doa.png",
+         "tamaki_DOA/tamaki_DOA_2_doa.png"
       ]
    },
    {
@@ -6811,7 +6811,7 @@
       "id": "M013",
       "name": "Trento META",
       "hull": "CA",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/trento_alter.png"]
    },
@@ -7372,7 +7372,7 @@
       "id": "M010",
       "name": "Yamashiro META",
       "hull": "BB",
-      "rarity": "Rare",
+      "rarity": "Elite",
       "faction": "META",
       "images": ["_meta/yamashiro_alter.png"]
    },

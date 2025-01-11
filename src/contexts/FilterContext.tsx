@@ -22,7 +22,16 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
 
          if (newFilter.name) {
             matches =
-               matches && ship.name.toLowerCase().includes(newFilter.name)
+               matches &&
+               ship.name
+                  .toLowerCase()
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')
+                  .includes(
+                     newFilter.name
+                        .normalize('NFD')
+                        .replace(/[\u0300-\u036f]/g, ''),
+                  )
          }
 
          if (newFilter.rarity.length > 0) {

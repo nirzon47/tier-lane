@@ -1027,6 +1027,14 @@
       ]
    },
    {
+      "id": "M043",
+      "name": "Bolzano META",
+      "hull": "CA",
+      "rarity": "Elite",
+      "faction": "META",
+      "images": ["_meta/bolzano_alter.png"]
+   },
+   {
       "id": "443",
       "name": "Bremerton",
       "hull": "CA",
@@ -1056,7 +1064,7 @@
       "hull": "CA",
       "rarity": "Ultra Rare",
       "faction": "Iris Libre",
-      "images": ["brest/brest.png", "brest/brest_2.png"]
+      "images": ["brest/brest.png", "brest/brest_2.png", "brest/brest_3.png"]
    },
    {
       "id": "533",
@@ -1196,6 +1204,14 @@
       ]
    },
    {
+      "id": "676",
+      "name": "Chang Feng",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Dragon Empery",
+      "images": ["chang_feng/chang_feng.png", "chang_feng/chang_feng_2.png"]
+   },
+   {
       "id": "494",
       "name": "Chao Ho",
       "hull": "CL",
@@ -1300,6 +1316,18 @@
       "rarity": "Rare",
       "faction": "Eagle Union",
       "images": ["chicago/chicago.png"]
+   },
+   {
+      "id": "674",
+      "name": "Chien Wu",
+      "hull": "CA",
+      "rarity": "Super Rare",
+      "faction": "Dragon Empery",
+      "images": [
+         "chien_wu/chien_wu.png",
+         "chien_wu/chien_wu_2.png",
+         "chien_wu/chien_wu_3.png"
+      ]
    },
    {
       "id": "195",
@@ -2077,12 +2105,24 @@
       "images": ["fritz_rumey/fritz_rumey.png", "fritz_rumey/fritz_rumey_2.png"]
    },
    {
+      "id": "677",
+      "name": "Fu Po",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Dragon Empery",
+      "images": ["fu_po/fu_po.png", "fu_po/fu_po_2.png"]
+   },
+   {
       "id": "254",
       "name": "Fu shun",
       "hull": "DD",
       "rarity": "Elite",
       "faction": "Dragon Empery",
-      "images": ["fu_shun/fu_shun.png", "fu_shun/fu_shun_2.png"]
+      "images": [
+         "fu_shun/fu_shun.png",
+         "fu_shun/fu_shun_2.png",
+         "fu_shun/fu_shun_g.png"
+      ]
    },
    {
       "id": "151",
@@ -2463,6 +2503,14 @@
          "hai_tien/hai_tien_h.png",
          "hai_tien/hai_tien_5.png"
       ]
+   },
+   {
+      "id": "675",
+      "name": "Hai Yung",
+      "hull": "CL",
+      "rarity": "Elite",
+      "faction": "Dragon Empery",
+      "images": ["hai_yung/hai_yung.png", "hai_yung/hai_yung_2.png"]
    },
    {
       "id": "P019",
@@ -2968,7 +3016,11 @@
       "hull": "CV",
       "rarity": "Elite",
       "faction": "Dragon Empery",
-      "images": ["hwah_jah/hwah_jah.png", "hwah_jah/hwah_jah_2.png"]
+      "images": [
+         "hwah_jah/hwah_jah.png",
+         "hwah_jah/hwah_jah_2.png",
+         "hwah_jah/hwah_jah_g.png"
+      ]
    },
    {
       "id": "211",
@@ -2991,7 +3043,7 @@
       "name": "I168",
       "hull": "SS",
       "rarity": "Super Rare",
-      "faction": "IJIN",
+      "faction": "Sakura Empire",
       "images": ["i168/i168.png", "i168/i168_2.png"]
    },
    {
@@ -3215,7 +3267,7 @@
       "name": "Isokaze",
       "hull": "DD",
       "rarity": "Rare",
-      "faction": "IJN'",
+      "faction": "Sakura Empire",
       "images": [
          "isokaze/isokaze.png",
          "isokaze/isokaze_2.png",
@@ -3309,7 +3361,8 @@
          "jean_bart/jean_bart.png",
          "jean_bart/jean_bart_2.png",
          "jean_bart/jean_bart_3.png",
-         "jean_bart/jean_bart_4.png"
+         "jean_bart/jean_bart_4.png",
+         "jean_bart/jean_bart_5.png"
       ]
    },
    {
@@ -3320,7 +3373,8 @@
       "faction": "Iris Libre",
       "images": [
          "jeanne_d'Arc/jeanne_d'Arc.png",
-         "jeanne_d'Arc/jeanne_d'Arc_2.png"
+         "jeanne_d'Arc/jeanne_d'Arc_2.png",
+         "jeanne_d'Arc/jeanne_d'Arc_3.png"
       ]
    },
    {
@@ -3588,7 +3642,11 @@
       "hull": "BB",
       "rarity": "Ultra Rare",
       "faction": "Eagle Union",
-      "images": ["kearsarge/kearsarge.png", "kearsarge/kearsarge_2.png"]
+      "images": [
+         "kearsarge/kearsarge.png",
+         "kearsarge/kearsarge_2.png",
+         "kearsarge/kearsarge_3.png"
+      ]
    },
    {
       "id": "121",
@@ -3691,7 +3749,7 @@
    {
       "id": "435",
       "name": "Kirov",
-      "hull": "CA",
+      "hull": "CL",
       "rarity": "Super Rare",
       "faction": "Northern Parliament",
       "images": [
@@ -3704,7 +3762,7 @@
    {
       "id": "M028",
       "name": "Kirov META",
-      "hull": "CA",
+      "hull": "CL",
       "rarity": "Super Rare",
       "faction": "META",
       "images": ["_meta/kirov_alter.png"]
@@ -4357,7 +4415,7 @@
       "hull": "CL",
       "rarity": "Super Rare",
       "faction": "Iron Blood",
-      "images": ["mainz/mainz.png", "mainz/mainz_2.png"]
+      "images": ["mainz/mainz.png", "mainz/mainz_2.png", "mainz/mainz_3.png"]
    },
    {
       "id": "370",
@@ -4768,7 +4826,11 @@
       "hull": "CL",
       "rarity": "Elite",
       "faction": "Northern Parliament",
-      "images": ["murmansk/murmansk.png", "murmansk/murmansk_2.png"]
+      "images": [
+         "murmansk/murmansk.png",
+         "murmansk/murmansk_2.png",
+         "murmansk/murmansk_3.png"
+      ]
    },
    {
       "id": "217",
@@ -4864,6 +4926,7 @@
          "nagato/nagato_3.png",
          "nagato/nagato_4.png",
          "nagato/nagato_5.png",
+         "nagato/nagato_6.png",
          "nagato/nagato_h.png"
       ]
    },
@@ -5038,6 +5101,7 @@
          "new_jersey/new_jersey.png",
          "new_jersey/new_jersey_2.png",
          "new_jersey/new_jersey_3.png",
+         "new_jersey/new_jersey_4.png",
          "new_jersey/new_jersey_h.png"
       ]
    },
@@ -5738,7 +5802,7 @@
       "hull": "BB",
       "rarity": "Rare",
       "faction": "Royal Navy",
-      "images": ["repulse/repulse.png"]
+      "images": ["repulse/repulse.png", "repulse/repulse_3.png"]
    },
    {
       "id": "M012",
@@ -6205,7 +6269,11 @@
       "hull": "DD",
       "rarity": "Rare",
       "faction": "Sakura Empire",
-      "images": ["shiratsuyu/shiratsuyu.png", "shiratsuyu/shiratsuyu_2.png"]
+      "images": [
+         "shiratsuyu/shiratsuyu.png",
+         "shiratsuyu/shiratsuyu_2.png",
+         "shiratsuyu/shiratsuyu_3.png"
+      ]
    },
    {
       "id": "152",
@@ -6835,7 +6903,8 @@
       "images": [
          "trieste/trieste.png",
          "trieste/trieste_2.png",
-         "trieste/trieste_3.png"
+         "trieste/trieste_3.png",
+         "trieste/trieste_4.png"
       ]
    },
    {

@@ -18,6 +18,7 @@ import {
    Highlighter,
    ArrowRightFromLine,
    ArrowLeftFromLine,
+   Check,
 } from 'lucide-react'
 import { useContext, useState } from 'react'
 import { Dialog, DialogTrigger } from './ui/Dialog'
@@ -35,6 +36,8 @@ const Header = () => {
    const toggleCollapsed = useContext(SettingsContext)?.toggleCollapsed
 
    const [importDialogOpen, setImportDialogOpen] = useState<boolean>(false)
+   const [eraseConfirmationOpen, setEraseConfirmationOpen] =
+      useState<boolean>(false)
 
    const exportTierList = () => {
       const tierList = localStorage.getItem('tierList')
@@ -94,6 +97,19 @@ const Header = () => {
          })
    }
 
+   const handleResetTierList = () => {
+      setEraseConfirmationOpen(true)
+      const timeoutId = setTimeout(() => {
+         setEraseConfirmationOpen(false)
+      }, 3000)
+
+      if (eraseConfirmationOpen) {
+         clearTimeout(timeoutId)
+         resetTierList?.()
+         setEraseConfirmationOpen(false)
+      }
+   }
+
    return (
       <TooltipProvider>
          <header className='flex items-center justify-between'>
@@ -126,11 +142,37 @@ const Header = () => {
                <Tooltip>
                   <TooltipTrigger
                      className='bg-white/10 px-4 py-2 text-white duration-150 hover:bg-white/20'
-                     onClick={resetTierList}
+                     onClick={handleResetTierList}
                   >
-                     <Eraser />
+                     <AnimatePresence mode='wait'>
+                        {eraseConfirmationOpen ? (
+                           <motion.div
+                              key='check'
+                              initial={{ opacity: 0, scale: 0.5 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.5 }}
+                              transition={{ duration: 0.1 }}
+                           >
+                              <Check color='red' />
+                           </motion.div>
+                        ) : (
+                           <motion.div
+                              key='eraser'
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              transition={{ duration: 0.1 }}
+                           >
+                              <Eraser />
+                           </motion.div>
+                        )}
+                     </AnimatePresence>
                   </TooltipTrigger>
-                  <TooltipContent>Reset tier list</TooltipContent>
+                  <TooltipContent>
+                     {eraseConfirmationOpen
+                        ? 'Confirm Reset'
+                        : 'Reset tier list'}
+                  </TooltipContent>
                </Tooltip>
 
                {/* Import JSON button */}

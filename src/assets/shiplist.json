@@ -424,6 +424,14 @@
       ]
    },
    {
+      "id": "M044",
+      "name": "Andrea Doria META",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "META",
+      "images": ["_meta/andrea_doria_alter.png"]
+   },
+   {
       "id": "192",
       "name": "Aoba",
       "hull": "CA",
@@ -796,6 +804,17 @@
       "rarity": "Elite",
       "faction": "Eagle Union",
       "images": ["_idol/baltimore_idol.png"]
+   },
+   {
+      "id": "681",
+      "name": "Bartolomeo Colleoni",
+      "hull": "CL",
+      "rarity": "Elite",
+      "faction": "Sardegna Empire",
+      "images": [
+         "bartolomeo_colleoni/bartolomeo_colleoni.png",
+         "bartolomeo_colleoni/bartolomeo_colleoni_2.png"
+      ]
    },
    {
       "id": "403",
@@ -1307,7 +1326,11 @@
       "hull": "CL",
       "rarity": "Elite",
       "faction": "Dragon Empery",
-      "images": ["chi_an/chi_an.png", "chi_an/chi_an_2.png"]
+      "images": [
+         "chi_an/chi_an.png",
+         "chi_an/chi_an_2.png",
+         "chi_an/chi_an_3.png"
+      ]
    },
    {
       "id": "42",
@@ -2268,6 +2291,17 @@
          "georgia/georgia_2.png",
          "georgia/georgia_4.png",
          "georgia/georgia_6.png"
+      ]
+   },
+   {
+      "id": "680",
+      "name": "Giosuè Carducci",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Sardegna Empire",
+      "images": [
+         "giosuè_carducci/giosuè_carducci.png",
+         "giosuè_carducci/giosuè_carducci_2.png"
       ]
    },
    {
@@ -4398,6 +4432,17 @@
       ]
    },
    {
+      "id": "679",
+      "name": "Maggiore Baracca",
+      "hull": "SS",
+      "rarity": "Super Rare",
+      "faction": "Sardegna Empire",
+      "images": [
+         "maggiore_baracca/maggiore_baracca.png",
+         "maggiore_baracca/maggiore_baracca_2.png"
+      ]
+   },
+   {
       "id": "523",
       "name": "Maillé Brézé",
       "hull": "DD",
@@ -4903,6 +4948,7 @@
          "naganami/naganami_2.png",
          "naganami/naganami_3.png",
          "naganami/naganami_4.png",
+         "naganami/naganami_5.png",
          "naganami/naganami_h.png"
       ]
    },
@@ -5256,7 +5302,11 @@
       "hull": "DD",
       "rarity": "Super Rare",
       "faction": "Royal Navy",
-      "images": ["nubian/nubian.png", "nubian/nubian_2.png"]
+      "images": [
+         "nubian/nubian.png",
+         "nubian/nubian_2.png",
+         "nubian/nubian_3.png"
+      ]
    },
    {
       "id": "486",
@@ -5728,6 +5778,14 @@
       "images": ["radford/radford.png", "radford/radford_3.png"]
    },
    {
+      "id": "678",
+      "name": "Raffaello",
+      "hull": "BB",
+      "rarity": "Ultra Rare",
+      "faction": "Sardegna Empire",
+      "images": ["raffaello/raffaello.png", "raffaello/raffaello_2.png"]
+   },
+   {
       "id": "30",
       "name": "Raleigh",
       "hull": "CL",
@@ -6074,7 +6132,8 @@
       "images": [
          "scylla/scylla.png",
          "scylla/scylla_2.png",
-         "scylla/scylla_3.png"
+         "scylla/scylla_3.png",
+         "scylla/scylla_4.png"
       ]
    },
    {

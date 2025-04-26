@@ -32,9 +32,10 @@ const factionTypes = [
    { id: 7, name: 'Northern Parliament' },
    { id: 8, name: 'Iris Libre' },
    { id: 9, name: 'Vichya Dominion' },
-   { id: 10, name: 'Tempesta' },
-   { id: 11, name: 'META' },
-   { id: 12, name: 'Misc' },
+   { id: 10, name: 'Kingdom of Tulipa' },
+   { id: 11, name: 'Tempesta' },
+   { id: 12, name: 'META' },
+   { id: 13, name: 'Misc' },
 ]
 
 const rarityTypes = [

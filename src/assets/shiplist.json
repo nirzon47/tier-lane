@@ -269,7 +269,8 @@
       "images": [
          "albion/albion.png",
          "albion/albion_2.png",
-         "albion/albion_3.png"
+         "albion/albion_3.png",
+         "albion/albion_4.png"
       ]
    },
    {
@@ -1594,6 +1595,17 @@
       "images": ["daisen/daisen.png", "daisen/daisen_2.png"]
    },
    {
+      "id": "686",
+      "name": "De Zeven Provinciën",
+      "hull": "CA",
+      "rarity": "Super Rare",
+      "faction": "Kingdom of Tulipa",
+      "images": [
+         "de_zeven_provinciën/de_zeven_provinciën.png",
+         "de_zeven_provinciën/de_zeven_provinciën_2.png"
+      ]
+   },
+   {
       "id": "330",
       "name": "Denver",
       "hull": "CL",
@@ -1920,6 +1932,14 @@
       ]
    },
    {
+      "id": "687",
+      "name": "Evertsen",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Kingdom of Tulipa",
+      "images": ["evertsen/evertsen.png", "evertsen/evertsen_2.png"]
+   },
+   {
       "id": "126",
       "name": "Exeter",
       "hull": "CA",
@@ -2094,6 +2114,14 @@
       "rarity": "Common",
       "faction": "Royal Navy",
       "images": ["foxhound/foxhound.png", "foxhound/foxhound_g.png"]
+   },
+   {
+      "id": "682",
+      "name": "Franklin",
+      "hull": "CV",
+      "rarity": "Super Rare",
+      "faction": "Eagle Union",
+      "images": ["franklin/franklin.png", "franklin/franklin_2.png"]
    },
    {
       "id": "640",
@@ -2556,7 +2584,8 @@
          "hakuryuu/hakuryuu.png",
          "hakuryuu/hakuryuu_2.png",
          "hakuryuu/hakuryuu_3.png",
-         "hakuryuu/hakuryuu_4.png"
+         "hakuryuu/hakuryuu_4.png",
+         "hakuryuu/hakuryuu_5.png"
       ]
    },
    {
@@ -2966,6 +2995,14 @@
       "rarity": "Super Rare",
       "faction": "Eagle Union",
       "images": ["hornet_II/hornet_II.png", "hornet_II/hornet_II_2.png"]
+   },
+   {
+      "id": "M045",
+      "name": "Hornet META",
+      "hull": "CV",
+      "rarity": "Super Rare",
+      "faction": "META",
+      "images": ["_meta/hornet_alter.png"]
    },
    {
       "id": "220",
@@ -3671,6 +3708,14 @@
       ]
    },
    {
+      "id": "685",
+      "name": "Kazan",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Northern Parliament",
+      "images": ["kazan/kazan.png", "kazan/kazan_2.png"]
+   },
+   {
       "id": "P028",
       "name": "Kearsarge",
       "hull": "BB",
@@ -4242,6 +4287,14 @@
       ]
    },
    {
+      "id": "693",
+      "name": "Little Anchorage",
+      "hull": "CA",
+      "rarity": "Elite",
+      "faction": "Eagle Union",
+      "images": ["_children/anchorage_younv.png"]
+   },
+   {
       "id": "335",
       "name": "Little Bel",
       "hull": "CL",
@@ -4663,6 +4716,14 @@
       "images": ["mikuma/mikuma.png", "mikuma/mikuma_2.png"]
    },
    {
+      "id": "684",
+      "name": "Miller",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Eagle Union",
+      "images": ["miller/miller.png", "miller/miller_2.png"]
+   },
+   {
       "id": "C083",
       "name": "Minami Yume",
       "hull": "CA",
@@ -4765,7 +4826,11 @@
       "hull": "DD",
       "rarity": "Ultra Rare",
       "faction": "Vichya Dominion",
-      "images": ["mogador/mogador.png", "mogador/mogador_2.png"]
+      "images": [
+         "mogador/mogador.png",
+         "mogador/mogador_2.png",
+         "mogador/mogador_3.png"
+      ]
    },
    {
       "id": "188",
@@ -5138,6 +5203,14 @@
       ]
    },
    {
+      "id": "M046",
+      "name": "Nevada META",
+      "hull": "BB",
+      "rarity": "Elite",
+      "faction": "META",
+      "images": ["_meta/nevada_alter.png"]
+   },
+   {
       "id": "68",
       "name": "New Jersey",
       "hull": "BB",
@@ -5362,6 +5435,14 @@
          "oklahoma/oklahoma_2.png",
          "oklahoma/oklahoma_g.png"
       ]
+   },
+   {
+      "id": "688",
+      "name": "Oleg",
+      "hull": "CL",
+      "rarity": "Elite",
+      "faction": "Northern Parliament",
+      "images": ["oleg/oleg.png", "oleg/oleg_2.png"]
    },
    {
       "id": "29",
@@ -6068,6 +6149,14 @@
       "images": ["san_juan/san_juan.png", "san_juan/san_juan_2.png"]
    },
    {
+      "id": "683",
+      "name": "Santa Fe",
+      "hull": "CL",
+      "rarity": "Super Rare",
+      "faction": "Eagle Union",
+      "images": ["santa_fe/santa_fe.png", "santa_fe/santa_fe_2.png"]
+   },
+   {
       "id": "613",
       "name": "São Martinho",
       "hull": "Misc",
@@ -6560,7 +6649,11 @@
       "hull": "DD",
       "rarity": "Elite",
       "faction": "Northern Parliament",
-      "images": ["stremitelny/stremitelny.png", "stremitelny/stremitelny_2.png"]
+      "images": [
+         "stremitelny/stremitelny.png",
+         "stremitelny/stremitelny_2.png",
+         "stremitelny/stremitelny_4.png"
+      ]
    },
    {
       "id": "122",
@@ -6645,7 +6738,7 @@
       "hull": "CA",
       "rarity": "Elite",
       "faction": "Sakura Empire",
-      "images": ["suzuya/suzuya.png"]
+      "images": ["suzuya/suzuya.png", "suzuya/suzuya_3.png"]
    },
    {
       "id": "627",
@@ -6677,7 +6770,8 @@
       "images": [
          "tai_yuan/tai_yuan.png",
          "tai_yuan/tai_yuan_2.png",
-         "tai_yuan/tai_yuan_g.png"
+         "tai_yuan/tai_yuan_g.png",
+         "tai_yuan/tai_yuan_3.png"
       ]
    },
    {
@@ -7341,7 +7435,11 @@
       "hull": "CL",
       "rarity": "Super Rare",
       "faction": "Northern Parliament",
-      "images": ["voroshilov/voroshilov.png", "voroshilov/voroshilov_2.png"]
+      "images": [
+         "voroshilov/voroshilov.png",
+         "voroshilov/voroshilov_2.png",
+         "voroshilov/voroshilov_3.png"
+      ]
    },
    {
       "id": "173",
@@ -7386,7 +7484,11 @@
       "hull": "BB",
       "rarity": "Super Rare",
       "faction": "Eagle Union",
-      "images": ["washington/washington.png", "washington/washington_2.png"]
+      "images": [
+         "washington/washington.png",
+         "washington/washington_2.png",
+         "washington/washington_3.png"
+      ]
    },
    {
       "id": "79",

@@ -1406,6 +1406,14 @@
       "images": ["clemenceau/clemenceau.png", "clemenceau/clemenceau_2.png"]
    },
    {
+      "id": "690",
+      "name": "Cleopatra",
+      "hull": "CL",
+      "rarity": "Super Rare",
+      "faction": "Royal Navy",
+      "images": ["cleopatra/cleopatra.png", "cleopatra/cleopatra_2.png"]
+   },
+   {
       "id": "391",
       "name": "Clevelad",
       "hull": "CL",
@@ -1597,7 +1605,7 @@
    {
       "id": "686",
       "name": "De Zeven Provinciën",
-      "hull": "CA",
+      "hull": "CL",
       "rarity": "Super Rare",
       "faction": "Kingdom of Tulipa",
       "images": [
@@ -2270,6 +2278,14 @@
       "images": ["galatea/galatea.png"]
    },
    {
+      "id": "691",
+      "name": "Gallant",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Royal Navy",
+      "images": ["gallant/gallant_2.png", "gallant/gallant.png"]
+   },
+   {
       "id": "437",
       "name": "Gangut",
       "hull": "BB",
@@ -2384,6 +2400,14 @@
       ]
    },
    {
+      "id": "M048",
+      "name": "Glorious META",
+      "hull": "CV",
+      "rarity": "Super Rare",
+      "faction": "META",
+      "images": ["_meta/glorious_alter.png"]
+   },
+   {
       "id": "113",
       "name": "Gloucester",
       "hull": "CL",
@@ -2401,7 +2425,11 @@
       "hull": "DD",
       "rarity": "Elite",
       "faction": "Royal Navy",
-      "images": ["glowworm/glowworm.png", "glowworm/glowworm_2.png"]
+      "images": [
+         "glowworm/glowworm.png",
+         "glowworm/glowworm_2.png",
+         "glowworm/glowworm_g.png"
+      ]
    },
    {
       "id": "249",
@@ -3225,6 +3253,7 @@
          "illustrious/illustrious_5.png",
          "illustrious/illustrious_6.png",
          "illustrious/illustrious_7.png",
+         "illustrious/illustrious_8.png",
          "illustrious/illustrious_h.png"
       ]
    },
@@ -4285,6 +4314,14 @@
          "lila_decyrus/lila_decyrus.png",
          "lila_decyrus/lila_decyrus_2.png"
       ]
+   },
+   {
+      "id": "138",
+      "name": "Lion",
+      "hull": "BB",
+      "rarity": "Ultra Rare",
+      "faction": "Royal Navy",
+      "images": ["lion/lion.png", "lion/lion_2.png"]
    },
    {
       "id": "693",
@@ -5528,6 +5565,7 @@
          "pamiat_merkuria/pamiat_merkuria_3.png",
          "pamiat_merkuria/pamiat_merkuria_4.png",
          "pamiat_merkuria/pamiat_merkuria_5.png",
+         "pamiat_merkuria/pamiat_merkuria_6.png",
          "pamiat_merkuria/pamiat_merkuria_g.png"
       ]
    },
@@ -6352,7 +6390,12 @@
       "hull": "CL",
       "rarity": "Super Rare",
       "faction": "Sakura Empire",
-      "images": ["shimanto/shimanto.png", "shimanto/shimanto_2.png"]
+      "images": [
+         "shimanto/shimanto.png",
+         "shimanto/shimanto_2.png",
+         "shimanto/shimanto_3.png",
+         "shimanto/shimanto_4.png"
+      ]
    },
    {
       "id": "231",
@@ -6787,6 +6830,7 @@
          "taihou/taihou_4.png",
          "taihou/taihou_5.png",
          "taihou/taihou_6.png",
+         "taihou/taihou_7.png",
          "taihou/taihou_h.png"
       ]
    },
@@ -7021,6 +7065,14 @@
       "images": ["tosa/tosa.png", "tosa/tosa_2.png", "tosa/tosa_3.png"]
    },
    {
+      "id": "689",
+      "name": "Trafalgar",
+      "hull": "DD",
+      "rarity": "Ultra Rare",
+      "faction": "Royal Navy",
+      "images": ["trafalgar/trafalgar.png", "trafalgar/trafalgar_2.png"]
+   },
+   {
       "id": "414",
       "name": "Trento",
       "hull": "CA",
@@ -7059,6 +7111,14 @@
          "trieste/trieste_3.png",
          "trieste/trieste_4.png"
       ]
+   },
+   {
+      "id": "692",
+      "name": "Trinidad",
+      "hull": "CL",
+      "rarity": "Elite",
+      "faction": "Royal Navy",
+      "images": ["trinidad/trinidad.png", "trinidad/trinidad_2.png"]
    },
    {
       "id": "399",

@@ -44,7 +44,9 @@ const ImportJsonDialog = ({
       }
    }
 
-   const importJimmyTierList = (type: string) => {
+   const importJimmyTierList = (
+      type: 'battleships' | 'carriers' | 'vanguards' | 'seasonal',
+   ) => {
       switch (type) {
          case 'battleships': {
             const battleshipsTierList: TierType[] = JSON.parse(
@@ -89,6 +91,24 @@ const ImportJsonDialog = ({
 
             importTierList?.(
                vanguardsTierList.map((tier) => ({
+                  ...tier,
+                  id: nanoid(),
+                  ships: tier.ships.map((ship) => ({
+                     ...ship,
+                     id: nanoid(),
+                  })),
+               })),
+            )
+            break
+         }
+
+         case 'seasonal': {
+            const seasonalTierList: TierType[] = JSON.parse(
+               localStorage.getItem('seasonal')!,
+            )
+
+            importTierList?.(
+               seasonalTierList.map((tier) => ({
                   ...tier,
                   id: nanoid(),
                   ships: tier.ships.map((ship) => ({
@@ -148,7 +168,7 @@ const ImportJsonDialog = ({
                   <p className='mb-2 font-zhun text-white'>
                      Import Jimmy's tier lists
                   </p>
-                  <div className='grid grid-cols-3 gap-2'>
+                  <div className='grid grid-cols-3 items-center justify-center gap-2'>
                      <button
                         className='bg-white/10 px-4 py-2 font-bold text-white duration-150 hover:bg-white/20'
                         onClick={() => importJimmyTierList('vanguards')}
@@ -166,6 +186,15 @@ const ImportJsonDialog = ({
                         onClick={() => importJimmyTierList('battleships')}
                      >
                         Battleships
+                     </button>
+
+                     <div></div>
+
+                     <button
+                        className='bg-white/10 px-4 py-2 font-bold text-white duration-150 hover:bg-white/20'
+                        onClick={() => importJimmyTierList('seasonal')}
+                     >
+                        Seasonal
                      </button>
                   </div>
                </section>

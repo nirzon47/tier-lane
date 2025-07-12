@@ -107,7 +107,19 @@
       "faction": "Northern Parliament",
       "images": [
          "admiral_nakhimov/admiral_nakhimov.png",
-         "admiral_nakhimov/admiral_nakhimov_2.png"
+         "admiral_nakhimov/admiral_nakhimov_2.png",
+         "admiral_nakhimov/admiral_nakhimov_3.png"
+      ]
+   },
+   {
+      "id": "694",
+      "name": "Admiral Zenker",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Iron Blood",
+      "images": [
+         "admiral_zenker/admiral_zenker.png",
+         "admiral_zenker/admiral_zenker_2.png"
       ]
    },
    {
@@ -760,7 +772,12 @@
       "hull": "CA",
       "rarity": "Ultra Rare",
       "faction": "Sakura Empire",
-      "images": ["azuma/azuma.png", "azuma/azuma_2.png", "azuma/azuma_h.png"]
+      "images": [
+         "azuma/azuma.png",
+         "azuma/azuma_2.png",
+         "azuma/azuma_3.png",
+         "azuma/azuma_h.png"
+      ]
    },
    {
       "id": "407",
@@ -795,7 +812,8 @@
          "baltimore/baltimore_3.png",
          "baltimore/baltimore_4.png",
          "baltimore/baltimore_5.png",
-         "baltimore/baltimore_6.png"
+         "baltimore/baltimore_6.png",
+         "baltimore/baltimore_h.png"
       ]
    },
    {
@@ -974,6 +992,17 @@
          "black_prince/black_prince_3.png",
          "black_prince/black_prince_4.png",
          "black_prince/black_prince_5.png"
+      ]
+   },
+   {
+      "id": "C121",
+      "name": "BLACK★ROCK SHOOTER",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": [
+         "BLACK★ROCK_SHOOTER/BLACK★ROCK_SHOOTER.png",
+         "BLACK★ROCK_SHOOTER/BLACK★ROCK_SHOOTER_2.png"
       ]
    },
    {
@@ -1229,7 +1258,11 @@
       "hull": "DD",
       "rarity": "Elite",
       "faction": "Dragon Empery",
-      "images": ["chang_feng/chang_feng.png", "chang_feng/chang_feng_2.png"]
+      "images": [
+         "chang_feng/chang_feng.png",
+         "chang_feng/chang_feng_2.png",
+         "chang_feng/chang_feng_3.png"
+      ]
    },
    {
       "id": "494",
@@ -1318,7 +1351,8 @@
          "cheshire/cheshire_2.png",
          "cheshire/cheshire_3.png",
          "cheshire/cheshire_4.png",
-         "cheshire/cheshire_5.png"
+         "cheshire/cheshire_5.png",
+         "cheshire/cheshire_h.png"
       ]
    },
    {
@@ -1457,6 +1491,7 @@
          "colorado/colorado.png",
          "colorado/colorado_2.png",
          "colorado/colorado_3.png",
+         "colorado/colorado_4.png",
          "colorado/colorado_g.png"
       ]
    },
@@ -1614,6 +1649,14 @@
       ]
    },
    {
+      "id": "C122",
+      "name": "DEAD MASTER",
+      "hull": "CV",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": ["DEAD_MASTER/DEAD_MASTER.png", "DEAD_MASTER/DEAD_MASTER_2.png"]
+   },
+   {
       "id": "330",
       "name": "Denver",
       "hull": "CL",
@@ -1666,6 +1709,14 @@
       "rarity": "Super Rare",
       "faction": "Royal Navy",
       "images": ["_idol/dido_idol.png"]
+   },
+   {
+      "id": "P041",
+      "name": "Dmitri Donskoi",
+      "hull": "CL",
+      "rarity": "Super Rare",
+      "faction": "Northern Parliament",
+      "images": ["dmitri_donskoi/dmitri_donskoi.png"]
    },
    {
       "id": "668",
@@ -2084,7 +2135,8 @@
          "formidable/formidable_2.png",
          "formidable/formidable_3.png",
          "formidable/formidable_4.png",
-         "formidable/formidable_5.png"
+         "formidable/formidable_5.png",
+         "formidable/formidable_6.png"
       ]
    },
    {
@@ -2139,7 +2191,8 @@
       "faction": "Iron Blood",
       "images": [
          "friedrich_carl/friedrich_carl.png",
-         "friedrich_carl/friedrich_carl_2.png"
+         "friedrich_carl/friedrich_carl_2.png",
+         "friedrich_carl/friedrich_carl_3.png"
       ]
    },
    {
@@ -2475,6 +2528,14 @@
       "images": ["gorizia/gorizia.png", "gorizia/gorizia_2.png"]
    },
    {
+      "id": "P042",
+      "name": "Gouden Leeuw",
+      "hull": "CA",
+      "rarity": "Ultra Rare",
+      "faction": "Kingdom of Tulipa",
+      "images": ["gouden_leeuw/gouden_leeuw.png"]
+   },
+   {
       "id": "252",
       "name": "Graf Zeppelin",
       "hull": "CV",
@@ -2511,6 +2572,14 @@
       "rarity": "Elite",
       "faction": "Royal Navy",
       "images": ["grenville/grenville.png"]
+   },
+   {
+      "id": "M047",
+      "name": "Grenville META",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "META",
+      "images": ["_meta/grenville_alter.png"]
    },
    {
       "id": "7",
@@ -2793,7 +2862,11 @@
       "hull": "DD",
       "rarity": "Super Rare",
       "faction": "Sakura Empire",
-      "images": ["hatsuzuki/hatsuzuki.png", "hatsuzuki/hatsuzuki_2.png"]
+      "images": [
+         "hatsuzuki/hatsuzuki.png",
+         "hatsuzuki/hatsuzuki_2.png",
+         "hatsuzuki/hatsuzuki_3.png"
+      ]
    },
    {
       "id": "365",
@@ -3271,7 +3344,11 @@
       "hull": "CV",
       "rarity": "Super Rare",
       "faction": "Sardegna Empire",
-      "images": ["impero/impero.png", "impero/impero_2.png"]
+      "images": [
+         "impero/impero.png",
+         "impero/impero_2.png",
+         "impero/impero_3.png"
+      ]
    },
    {
       "id": "581",
@@ -3428,7 +3505,8 @@
          "janus/janus_3.png",
          "janus/janus_4.png",
          "janus/janus_5.png",
-         "janus/janus_6.png"
+         "janus/janus_6.png",
+         "janus/janus_h.png"
       ]
    },
    {
@@ -3649,6 +3727,14 @@
       "images": ["kamikaze/kamikaze.png", "kamikaze/kamikaze_g.png"]
    },
    {
+      "id": "P038",
+      "name": "Kansas",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Eagle Union",
+      "images": ["kansas/kansas.png"]
+   },
+   {
       "id": "239",
       "name": "Karlsruhe",
       "hull": "CL",
@@ -3722,6 +3808,14 @@
          "kawakaze/kawakaze_2.png",
          "kawakaze/kawakaze_h.png"
       ]
+   },
+   {
+      "id": "M049",
+      "name": "Kawakaze META",
+      "hull": "DD",
+      "rarity": "Super Rare",
+      "faction": "META",
+      "images": ["_meta/kawakaze_alter.png"]
    },
    {
       "id": "517",
@@ -4324,6 +4418,14 @@
       "images": ["lion/lion.png", "lion/lion_2.png"]
    },
    {
+      "id": "697",
+      "name": "Little Ägir",
+      "hull": "CA",
+      "rarity": "Elite",
+      "faction": "Iron Blood",
+      "images": ["_children/ägir_younv.png"]
+   },
+   {
       "id": "693",
       "name": "Little Anchorage",
       "hull": "CA",
@@ -4637,6 +4739,7 @@
       "images": [
          "maryland/maryland.png",
          "maryland/maryland_2.png",
+         "maryland/maryland_3.png",
          "maryland/maryland_g.png"
       ]
    },
@@ -4690,6 +4793,14 @@
       "rarity": "Common",
       "faction": "Eagle Union",
       "images": ["mcCall/mcCall.png"]
+   },
+   {
+      "id": "P039",
+      "name": "Mecklenburg",
+      "hull": "BB",
+      "rarity": "Ultra Rare",
+      "faction": "Iron Blood",
+      "images": ["mecklenburg/mecklenburg.png"]
    },
    {
       "id": "360",
@@ -4898,7 +5009,8 @@
          "monarch/monarch.png",
          "monarch/monarch_2.png",
          "monarch/monarch_3.png",
-         "monarch/monarch_4.png"
+         "monarch/monarch_4.png",
+         "monarch/monarch_5.png"
       ]
    },
    {
@@ -5216,7 +5328,8 @@
       "images": [
          "neptune/neptune.png",
          "neptune/neptune_2.png",
-         "neptune/neptune_3.png"
+         "neptune/neptune_3.png",
+         "neptune/neptune_4.png"
       ]
    },
    {
@@ -6601,7 +6714,8 @@
       "faction": "Northern Parliament",
       "images": [
          "sovetskaya_belorussiya/sovetskaya_belorussiya.png",
-         "sovetskaya_belorussiya/sovetskaya_belorussiya_2.png"
+         "sovetskaya_belorussiya/sovetskaya_belorussiya_2.png",
+         "sovetskaya_belorussiya/sovetskaya_belorussiya_3.png"
       ]
    },
    {
@@ -7165,7 +7279,7 @@
       "hull": "SS",
       "rarity": "Super Rare",
       "faction": "Iron Blood",
-      "images": ["u-37/u-37.png", "u-37/u-37_2.png"]
+      "images": ["u-37/u-37.png", "u-37/u-37_2.png", "u-37/u-37_3.png"]
    },
    {
       "id": "492",
@@ -7197,6 +7311,14 @@
       "rarity": "Elite",
       "faction": "Iron Blood",
       "images": ["u-522/u-522.png"]
+   },
+   {
+      "id": "695",
+      "name": "U-552",
+      "hull": "SS",
+      "rarity": "Super Rare",
+      "faction": "Iron Blood",
+      "images": ["u-552/u-552.png", "u-552/u-552_2.png"]
    },
    {
       "id": "386",
@@ -7471,6 +7593,14 @@
       ]
    },
    {
+      "id": "P040",
+      "name": "Vittorio Cuniberti",
+      "hull": "DD",
+      "rarity": "Super Rare",
+      "faction": "Sardegna Empire",
+      "images": ["vittorio_cuniberti/vittorio_cuniberti.png"]
+   },
+   {
       "id": "500",
       "name": "Vittorio Veneto",
       "hull": "BB",
@@ -7689,7 +7819,8 @@
       "images": [
          "ying_swei/ying_swei.png",
          "ying_swei/ying_swei_2.png",
-         "ying_swei/ying_swei_3.png"
+         "ying_swei/ying_swei_3.png",
+         "ying_swei/ying_swei_4.png"
       ]
    },
    {
@@ -7854,6 +7985,14 @@
       "rarity": "Elite",
       "faction": "Iron Blood",
       "images": ["z11/z11.png", "z11/z11_2.png"]
+   },
+   {
+      "id": "696",
+      "name": "Z13",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Iron Blood",
+      "images": ["z13/z13.png", "z13/z13_2.png"]
    },
    {
       "id": "564",

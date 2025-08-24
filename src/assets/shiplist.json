@@ -422,6 +422,7 @@
          "anchorage/anchorage.png",
          "anchorage/anchorage_2.png",
          "anchorage/anchorage_3.png",
+         "anchorage/anchorage_4.png",
          "anchorage/anchorage_h.png"
       ]
    },
@@ -1022,7 +1023,8 @@
       "images": [
          "blücher/blücher.png",
          "blücher/blücher_2.png",
-         "blücher/blücher_3.png"
+         "blücher/blücher_3.png",
+         "blücher/blücher_4.png"
       ]
    },
    {
@@ -1040,6 +1042,17 @@
       "rarity": "Common",
       "faction": "Eagle Union",
       "images": ["bogue/bogue.png", "bogue/bogue_g.png"]
+   },
+   {
+      "id": "699",
+      "name": "Bois Belleau",
+      "hull": "CV",
+      "rarity": "Super Rare",
+      "faction": "Iris Libre",
+      "images": [
+         "bois_belleau/bois_belleau.png",
+         "bois_belleau/bois_belleau_2.png"
+      ]
    },
    {
       "id": "514",
@@ -1273,7 +1286,8 @@
       "images": [
          "chao_ho/chao_ho.png",
          "chao_ho/chao_ho_2.png",
-         "chao_ho/chao_ho_3.png"
+         "chao_ho/chao_ho_3.png",
+         "chao_ho/chao_ho_4.png"
       ]
    },
    {
@@ -1662,7 +1676,7 @@
       "hull": "CL",
       "rarity": "Elite",
       "faction": "Eagle Union",
-      "images": ["denver/denver.png"]
+      "images": ["denver/denver.png", "denver/denver_2.png"]
    },
    {
       "id": "245",
@@ -1766,6 +1780,17 @@
       ]
    },
    {
+      "id": "702",
+      "name": "Duguay-Trouin",
+      "hull": "CL",
+      "rarity": "Elite",
+      "faction": "Iris Libre",
+      "images": [
+         "duguay-Trouin/duguay-Trouin.png",
+         "duguay-Trouin/duguay-Trouin_2.png"
+      ]
+   },
+   {
       "id": "671",
       "name": "Duisburg",
       "hull": "CL",
@@ -1805,6 +1830,14 @@
       "rarity": "Elite",
       "faction": "Vichya Dominion",
       "images": ["dupleix/dupleix.png", "dupleix/dupleix_2.png"]
+   },
+   {
+      "id": "700",
+      "name": "Duquesne",
+      "hull": "CA",
+      "rarity": "Elite",
+      "faction": "Iris Libre",
+      "images": ["duquesne/duquesne.png", "duquesne/duquesne_2.png"]
    },
    {
       "id": "143",
@@ -1927,6 +1960,7 @@
          "enterprise/enterprise_7.png",
          "enterprise/enterprise_8.png",
          "enterprise/enterprise_9.png",
+         "enterprise/enterprise_10.png",
          "enterprise/enterprise_h.png"
       ]
    },
@@ -1967,6 +2001,14 @@
       "images": ["_meta/erebus_alter.png"]
    },
    {
+      "id": "M050",
+      "name": "Erebus META",
+      "hull": "BB",
+      "rarity": "Elite",
+      "faction": "META",
+      "images": ["_meta/dunkerque_alter.png"]
+   },
+   {
       "id": "460",
       "name": "Eskimo",
       "hull": "DD",
@@ -1987,7 +2029,8 @@
          "essex/essex_5.png",
          "essex/essex_6.png",
          "essex/essex_7.png",
-         "essex/essex_8.png"
+         "essex/essex_8.png",
+         "essex/essex_g.png"
       ]
    },
    {
@@ -2888,6 +2931,7 @@
          "helena/helena_3.png",
          "helena/helena_4.png",
          "helena/helena_g.png",
+         "helena/helena_5.png",
          "helena/helena_h.png"
       ]
    },
@@ -3440,6 +3484,17 @@
       "images": ["ise/ise.png", "ise/ise_g.png"]
    },
    {
+      "id": "C132",
+      "name": "Isla von Duerer",
+      "hull": "CL",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": [
+         "isla_von_duerer/isla_von_duerer.png",
+         "isla_von_duerer/isla_von_duerer_2.png"
+      ]
+   },
+   {
       "id": "317",
       "name": "Isokaze",
       "hull": "DD",
@@ -3708,7 +3763,7 @@
       "hull": "CA",
       "rarity": "Super Rare",
       "faction": "Misc",
-      "images": ["kala/kala.png"]
+      "images": ["kala/kala.png", "kala/kala_2.png"]
    },
    {
       "id": "363",
@@ -4260,6 +4315,14 @@
       "images": ["langley_II/langley_II.png", "langley_II/langley_II_2.png"]
    },
    {
+      "id": "701",
+      "name": "Le Hardi",
+      "hull": "DD",
+      "rarity": "Super Rare",
+      "faction": "Iris Libre",
+      "images": ["le_hardi/le_hardi.png", "le_hardi/le_hardi_2.png"]
+   },
+   {
       "id": "394",
       "name": "Le Malin",
       "hull": "DD",
@@ -4362,6 +4425,14 @@
       "rarity": "Elite",
       "faction": "Eagle Union",
       "images": ["_children/helena_younv.png"]
+   },
+   {
+      "id": "C134",
+      "name": "Lenja",
+      "hull": "DD",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": ["lenja/lenja.png", "lenja/lenja_2.png"]
    },
    {
       "id": "558",
@@ -4755,6 +4826,14 @@
       ]
    },
    {
+      "id": "698",
+      "name": "Masséna",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Iris Libre",
+      "images": ["masséna/masséna.png", "masséna/masséna_2.png"]
+   },
+   {
       "id": "325",
       "name": "Matchless",
       "hull": "DD",
@@ -5033,7 +5112,8 @@
       "images": [
          "montpelier/montpelier.png",
          "montpelier/montpelier_2.png",
-         "montpelier/montpelier_3.png"
+         "montpelier/montpelier_3.png",
+         "montpelier/montpelier_4.png"
       ]
    },
    {
@@ -5421,6 +5501,14 @@
       ]
    },
    {
+      "id": "C133",
+      "name": "Nina Friede",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": ["nina_friede/nina_friede.png", "nina_friede/nina_friede_2.png"]
+   },
+   {
       "id": "258",
       "name": "Ning Hai",
       "hull": "CL",
@@ -5499,8 +5587,9 @@
          "noshiro/noshiro_5.png",
          "noshiro/noshiro_6.png",
          "noshiro/noshiro_7.png",
-         "noshiro/noshiro_h.png",
-         "noshiro/noshiro_8.png"
+         "noshiro/noshiro_8.png",
+         "noshiro/noshiro_9.png",
+         "noshiro/noshiro_h.png"
       ]
    },
    {
@@ -6053,7 +6142,8 @@
       "faction": "Misc",
       "images": [
          "reisalin_stout/reisalin_stout.png",
-         "reisalin_stout/reisalin_stout_2.png"
+         "reisalin_stout/reisalin_stout_2.png",
+         "reisalin_stout/reisalin_stout_3.png"
       ]
    },
    {
@@ -6166,7 +6256,12 @@
       "hull": "CA",
       "rarity": "Super Rare",
       "faction": "Iron Blood",
-      "images": ["roon/roon.png", "roon/roon_2.png", "roon/roon_4.png"]
+      "images": [
+         "roon/roon.png",
+         "roon/roon_2.png",
+         "roon/roon_4.png",
+         "roon/roon_h.png"
+      ]
    },
    {
       "id": "479",
@@ -7913,6 +8008,17 @@
       "rarity": "Super Rare",
       "faction": "Misc",
       "images": ["yumi_SK/yumi_SK.png", "yumi_SK/yumi_SK_2.png"]
+   },
+   {
+      "id": "C131",
+      "name": "Yumia Liessfeldt",
+      "hull": "CV",
+      "rarity": "Super Rare",
+      "faction": "Misc",
+      "images": [
+         "yumia_liessfeldt/yumia_liessfeldt.png",
+         "yumia_liessfeldt/yumia_liessfeldt_2.png"
+      ]
    },
    {
       "id": "185",

@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 import { FilterContextType, FilterType, ShipType } from '@/utils/types'
-import shipList from '@/assets/shiplist.json'
+import shipList from '@/assets/shiplist-min.json'
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined)
 

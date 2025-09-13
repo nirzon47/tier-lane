@@ -580,6 +580,14 @@
       ]
    },
    {
+      "id": "707",
+      "name": "Asama",
+      "hull": "CA",
+      "rarity": "Super Rare",
+      "faction": "Sakura Empire",
+      "images": ["asama/asama.png", "asama/asama_2.png"]
+   },
+   {
       "id": "608",
       "name": "Asanagi",
       "hull": "DD",
@@ -2715,6 +2723,14 @@
       "images": ["hai_yung/hai_yung.png", "hai_yung/hai_yung_2.png"]
    },
    {
+      "id": "703",
+      "name": "Hakuhou",
+      "hull": "CV",
+      "rarity": "Ultra Rare",
+      "faction": "Sakura Empire",
+      "images": ["hakuhou/hakuhou.png", "hakuhou/hakuhou_2.png"]
+   },
+   {
       "id": "P019",
       "name": "Hakuryuu",
       "hull": "CV",
@@ -3290,6 +3306,14 @@
       "rarity": "Elite",
       "faction": "Sakura Empire",
       "images": ["i26/i26.png", "i26/i26_2.png", "i26/i26_3.png"]
+   },
+   {
+      "id": "705",
+      "name": "I404",
+      "hull": "SS",
+      "rarity": "Ultra Rare",
+      "faction": "Sakura Empire",
+      "images": ["i404/i404.png", "i404/i404_2.png", "i404/i404_3.png"]
    },
    {
       "id": "397",
@@ -4963,6 +4987,14 @@
       ]
    },
    {
+      "id": "708",
+      "name": "Minase",
+      "hull": "CL",
+      "rarity": "Elite",
+      "faction": "Sakura Empire",
+      "images": ["minase/minase.png", "minase/minase_2.png"]
+   },
+   {
       "id": "C073",
       "name": "Minase Iori",
       "hull": "BB",
@@ -5122,7 +5154,11 @@
       "hull": "DD",
       "rarity": "Elite",
       "faction": "Eagle Union",
-      "images": ["morrison/morrison.png", "morrison/morrison_2.png"]
+      "images": [
+         "morrison/morrison.png",
+         "morrison/morrison_2.png",
+         "morrison/morrison_3.png"
+      ]
    },
    {
       "id": "C087",
@@ -5726,6 +5762,14 @@
          "otto_von_alvensleben/otto_von_alvensleben.png",
          "otto_von_alvensleben/otto_von_alvensleben_2.png"
       ]
+   },
+   {
+      "id": "706",
+      "name": "Oumi",
+      "hull": "BB",
+      "rarity": "Super Rare",
+      "faction": "Sakura Empire",
+      "images": ["oumi/oumi.png", "oumi/oumi_2.png"]
    },
    {
       "id": "606",
@@ -6671,7 +6715,8 @@
       "images": [
          "shiratsuyu/shiratsuyu.png",
          "shiratsuyu/shiratsuyu_2.png",
-         "shiratsuyu/shiratsuyu_3.png"
+         "shiratsuyu/shiratsuyu_3.png",
+         "shiratsuyu/shiratsuyu_g.png"
       ]
    },
    {
@@ -6833,6 +6878,8 @@
       "images": [
          "sovetsky_soyuz/sovetsky_soyuz.png",
          "sovetsky_soyuz/sovetsky_soyuz_2.png",
+         "sovetsky_soyuz/sovetsky_soyuz_4.png",
+         "sovetsky_soyuz/sovetsky_soyuz_3.png",
          "sovetsky_soyuz/sovetsky_soyuz_old.png"
       ]
    },
@@ -7012,6 +7059,14 @@
          "swiftsure/swiftsure_3.png",
          "swiftsure/swiftsure_4.png"
       ]
+   },
+   {
+      "id": "704",
+      "name": "Taekaze",
+      "hull": "DD",
+      "rarity": "Elite",
+      "faction": "Sakura Empire",
+      "images": ["taekaze/taekaze.png", "taekaze/taekaze_2.png"]
    },
    {
       "id": "256",
@@ -8051,6 +8106,14 @@
          "yuudachi/yuudachi_g.png",
          "yuudachi/yuudachi_h.png"
       ]
+   },
+   {
+      "id": "M051",
+      "name": "Yuudachi META",
+      "hull": "DD",
+      "rarity": "Super Rare",
+      "faction": "META",
+      "images": ["_meta/yuudachi_alter.png"]
    },
    {
       "id": "176",
